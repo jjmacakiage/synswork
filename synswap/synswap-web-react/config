@@ -1,0 +1,16 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+[remote "synswap-web-react"]
+	url = https://github.com/synswap/synswap-web-react.git
+	fetch = +refs/heads/*:refs/remotes/synswap-web-react/*
+[remote "origin"]
+	url = https://github.com/synswap/synswap-web-react.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
