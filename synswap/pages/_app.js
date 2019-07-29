@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import App, { Container } from 'next/app';
 import { Provider} from 'react-redux';
-import { createStore } from "redux";
 import withRedux from 'next-redux-wrapper';
-import reducer from '../reducers/index';
 import  { makeStore } from '../store';
 
 

@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 
 import ProfileMenu from './ProfileMenu';
 
+
 const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1,

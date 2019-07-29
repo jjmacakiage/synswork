@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Grid, makeStyles } from '@material-ui/core';
 import { useSelector } from "react-redux";
 
@@ -36,6 +36,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function Home(props) {
     const classes = useStyles();
+    const [textFieldValue, changeValue] = useState('');
     /**
      * @constant newPane, readPane, adminPane
      * useSelector hook bound to constants
@@ -72,6 +73,11 @@ export default function Home(props) {
                             items={ readPane.items }
                             links={ readPane.links }
                             onClick={ props.onClick }
+                            showTextField = { props.showTextField }
+                            textFieldLabel="Enter Trade ID"
+                            textFieldValue={ textFieldValue }
+                            onChange={ e => changeValue(e.target.value) }
+                            textFieldSubmit={ () => { return; } }
                         />
                     </Grid>
                     <Grid item  xs={ 4 }>

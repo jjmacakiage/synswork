@@ -1,7 +1,9 @@
-import React from 'react';
-
+import React, {useState} from 'react';
+import { Tab, Tabs, Typography } from "@material-ui/core";
+import PropTypes from 'prop-types';
 
 import DataTable from '../components/DataTable';
+
 
 const columns= [
     {
@@ -54,10 +56,94 @@ for (let i = 0; i < 200; i += 1) {
     rows.push(createData(i, ...randomSelection));
 }
 
-export default function Trade(props) {
+/**
+ * @class TabContainer
+ * @param props
+ * @return {*}
+ * @constructor
+ */
+function TabContainer(props) {
     return (
-        <div>
-            <DataTable data={ { columns: columns, rows: rows }} onRowClick={ () => window.alert('row clicked')}/>
-        </div>
+        <Typography component="div" style={{ padding: 8 * 3 }}>
+            {props.children}
+        </Typography>
     );
 }
+
+TabContainer.propTypes = {
+    children: PropTypes.node.isRequired,
+};
+
+export default function Trade(props) {
+    const [value, setValue] = useState(0);
+
+    /**
+     * @function tabChange
+     * @param e
+     * @param newValue
+     * eventHandler helper function that takes the desired tab as a parameter and makes it the new active tab
+     */
+
+    function tabChange(e, newValue) {
+        setValue(newValue);
+    }
+
+    function bestMatchFormatting() {
+
+    }
+
+    return (
+        <div>
+            <div>
+                <Tabs
+                    value={value}
+                    onChange={tabChange}
+                    indicatorColor="primary"
+                    textColor="primary"
+                    centered
+                >
+                    <Tab label="Fields"/>
+                    <Tab label="Autofill"/>
+                    <Tab label="CashFlow Schedule"/>
+                    <Tab label="Confirmation"/>
+                    <Tab label="Best Match Score"/>
+                </Tabs>
+                {
+                    value === 0 &&
+                    (
+                        <TabContainer>
+                            <DataTable data={{columns: columns, rows: rows}} onRowClick={() => window.alert('row clicked')}/>
+                        </TabContainer>
+                    )
+                }
+                {
+                    value === 1 &&
+                    (
+                        <TabContainer>
+                            <DataTable data={{columns: columns, rows: rows}} onRowClick={() => window.alert('row clicked')}/>
+                        </TabContainer>
+                    )
+                }
+                {
+                    value === 2 &&
+                    (
+                        <h1> CashFlow Schedule </h1>
+                    )
+                }
+                {
+                    value === 3 &&
+                    (
+                        <h1> Confirmation </h1>
+                    )
+                }
+                {
+                    value === 4 &&
+                    (
+                        <h1> Best Match Score </h1>
+                    )
+                }
+            </div>
+        </div>
+    )
+}
+

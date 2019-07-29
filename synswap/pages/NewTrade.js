@@ -82,7 +82,7 @@ export default function NewTrade(props) {
     }
 
     /**
-     * @function handleTabSwitch
+     * @function tabChange
      * @param e
      * @param newValue
      * eventHandler helper function that takes the desired tab as a parameter and makes it the new active tab

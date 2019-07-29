@@ -1,31 +1,27 @@
 import React from "react";
 import { Button, Grid, TextField } from "@material-ui/core";
-import Link from "next/link";
 
 
-const LoginLink = props => (
-    <Link href="/[id]" as={`/${ props.id }`}>
-        <Button color="primary" variant="outlined">{props.id}</Button>
-    </Link>
-);
 
-const FormPage = () => {
+const FormPage = (props) => {
     return (
         <Grid container spacing={ 8 }>
             <Grid item xs={ 12 }>
-                <TextField
-                    variant="outlined"
-                    label="Username"
+                <input
+                    value={ props.username }
+                    onChange={ props.changeUsername }
                 />
             </Grid>
             <Grid item xs={ 12 }>
-                <TextField
-                    variant="outlined"
-                    label="Password"
+                <input
+                    value={ props.password }
+                    onChange={ props.changePassword }
                 />
             </Grid>
             <Grid item xs={ 12 }>
-                <LoginLink id="Main"/>
+                <Button onClick={ props.onClick }>
+                    Login
+                </Button>
             </Grid>
         </Grid>
     );

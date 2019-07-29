@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import {
+    Button,
     Card,
     CardActionArea,
     ClickAwayListener,
@@ -8,11 +9,11 @@ import {
     MenuItem
 } from '@material-ui/core';
 import ReactCardFlip from 'react-card-flip';
+import TextField from "@material-ui/core/TextField";
 
 export default function HomePane(props) {
     const [isFlipped, flip] = useState(false);
     const anchorRef = useRef(null);
-
 
     function flipCard(e) {
         e.preventDefault();
@@ -49,6 +50,7 @@ export default function HomePane(props) {
     }
 
     return (
+        <div>
         <Card>
             <CardActionArea onClick={ e => flipCard(e) }>
                 <ReactCardFlip isFlipped={ isFlipped } flipDirection="horizontal">
@@ -61,6 +63,32 @@ export default function HomePane(props) {
                 </ReactCardFlip>
             </CardActionArea>
         </Card>
+            {
+                (props.showTextField && isFlipped) ?
+                    (
+                        <Card>
+                            <div>
+                                <div style={{padding: 10}}>
+                                    <Grid container spacing={2}>
+                                        <Grid item xs={6}>
+                                            <TextField
+                                                variant="outlined"
+                                                value={props.textFieldValue}
+                                                label={props.textFieldLabel}
+                                                onChange={props.onChange}
+                                            />
+                                        </Grid>
+                                        <Grid item xs={6}>
+                                            <Button onClick={props.textFieldSubmit} color="primary" variant="outlined"
+                                                    style={{margin: 10}}> Submit </Button>
+                                        </Grid>
+                                    </Grid>
+                                </div>
+                            </div>
+                        </Card>
+                    ) : null
+            }
+        </div>
     );
 }
 

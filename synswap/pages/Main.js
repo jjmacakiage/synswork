@@ -3,6 +3,9 @@ import { Grid } from '@material-ui/core';
 import Tabs, {Tab} from "react-awesome-tabs";
 import "../resources/styles/react-awesome-tabs.scss";
 import { useDispatch, useSelector } from "react-redux";
+import Router from 'next/router'
+import fetch from 'isomorphic-unfetch'
+import nextCookie from 'next-cookies'
 
 
 import Header from "../components/Header";
@@ -11,6 +14,8 @@ import NewTrade from './NewTrade';
 import Trade from './Trade';
 import Blotter from './Blotter';
 import {error} from "next/dist/build/output/log";
+import { withAuthSync } from "../utils/auth";
+import getHost from '../utils/get-host'
 
 /**
  * @class Main
@@ -55,17 +60,23 @@ export default function Main() {
     const [tradeProps, changeProps] = useState({ data: { columns: [], rows: [] }});
 
     /**
+     * @constant showTextField
+     * receives data from handleClick function and toggles the Trade ID popup
+     */
+
+    const [showTradeSearch, toggleShow] = useState(false);
+    /**
      * @constant MAIN_TABS
      * @type {array}
      * array of objects that contains a 'key' and a 'component' that is mapped to the 'component' attribute from a tab object in
      * @function matchLink
      */
-    const [MAIN_TABS, changeTabs] = useState([
-        { key: 'Home', component: <Home onClick={ handleClick.bind(this) } />},
+    const MAIN_TABS = [
+        { key: 'Home', component: <Home onClick={ handleClick.bind(this) } showTextField={ showTradeSearch }/>},
         { key: 'NewTrade', component: <NewTrade addNewTrade={ addNewTrade } />},
         { key: 'Trade', component: Trade(tradeProps)},
         { key: 'Blotter', component: <Blotter />}
-    ]);
+    ];
 
     /**
      * @function matchLink
@@ -136,36 +147,41 @@ export default function Main() {
      */
 
     function handleClick(link) {
-        let component = matchLink(link);
-        /*for (let i = 0; i < tabs.length; i++) {
-            console.log('start loop');
-            let tab = tabs[i];
-            if (tab.component === component) {
-                const NEW_TABS = [...MAIN_TABS];
-                NEW_TABS.push({
-                    key: tab.title + MAIN_TABS.length + 1,
-                    component: MAIN_TABS[tab.component].component
-                });
-                changeTabs(NEW_TABS);
-                component = MAIN_TABS.length - 1;
-                const newTabContent = {
-                    title: link,
-                    index: tabs.length,
-                    component: component
-                };
-                dispatch({ type: 'ADD_TAB', payload: newTabContent });
-                return;
+        if (link !== 'TradeSearch') {
+            let component = matchLink(link);
+            /*for (let i = 0; i < tabs.length; i++) {
+                console.log('start loop');
+                let tab = tabs[i];
+                if (tab.component === component) {
+                    const NEW_TABS = [...MAIN_TABS];
+                    NEW_TABS.push({
+                        key: tab.title + MAIN_TABS.length + 1,
+                        component: MAIN_TABS[tab.component].component
+                    });
+                    changeTabs(NEW_TABS);
+                    component = MAIN_TABS.length - 1;
+                    const newTabContent = {
+                        title: link,
+                        index: tabs.length,
+                        component: component
+                    };
+                    dispatch({ type: 'ADD_TAB', payload: newTabContent });
+                    return;
+                }
             }
-        }
-        console.log('no duplicate');
-        */
+            console.log('no duplicate');
+            */
 
-        const newTabContent = {
-            title: link,
-            index: tabs.length,
-            component: component
-        };
-        dispatch({ type: 'ADD_TAB', payload: newTabContent });
+            const newTabContent = {
+                title: link,
+                index: tabs.length,
+                component: component
+            };
+            dispatch({type: 'ADD_TAB', payload: newTabContent});
+        }
+        else {
+            toggleShow(true);
+        }
     }
 
     function addNewTrade(name, fields, values) {
@@ -220,5 +236,36 @@ export default function Main() {
             </Grid>
         </Grid>
     );
+}
+
+Main.getInitialProps = async ctx => {
+    const { token } = nextCookie(ctx);
+    const apiUrl = getHost(ctx.req) + '/api/profile';
+
+    const redirectOnError = () =>
+        typeof window !== 'undefined'
+            ? Router.push('/Login')
+            : ctx.res.writeHead(302, { Location: '/Login' }).end();
+
+    try {
+        const response = await fetch(apiUrl, {
+            credentials: 'include',
+            headers: {
+                Authorization: JSON.stringify({ token })
+            }
+        })
+
+        if (response.ok) {
+            const js = await response.json()
+            console.log('js', js)
+            return js
+        } else {
+            // https://github.com/developit/unfetch#caveats
+            return await redirectOnError()
+        }
+    } catch (error) {
+        // Implementation or Network error
+        return redirectOnError()
+    }
 }
 

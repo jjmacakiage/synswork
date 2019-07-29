@@ -2,6 +2,8 @@ import React from 'react';
 import { withStyles, Button, Menu, MenuItem, ListItemText, ListItemIcon } from '@material-ui/core';
 import { ExitToApp, PersonOutlineSharp } from '@material-ui/icons';
 
+import { logout } from "../utils/auth";
+
 const StyledMenu = withStyles({
     paper: {
         border: '1px solid #d3d4d5',
@@ -61,7 +63,7 @@ export default function ProfileMenu() {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
             >
-                <StyledMenuItem>
+                <StyledMenuItem onClick={ logout }>
                     <ListItemIcon>
                         <ExitToApp />
                     </ListItemIcon>

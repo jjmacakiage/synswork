@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Grid } from '@material-ui/core';
-import axios from 'axios';
 import DataTable from '../components/DataTable';
 
 export default function Blotter() {
