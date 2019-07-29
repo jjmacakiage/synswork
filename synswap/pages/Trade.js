@@ -76,6 +76,7 @@ TabContainer.propTypes = {
 
 export default function Trade(props) {
     const [value, setValue] = useState(0);
+    const [data, setData] = useState({ rows: [], columns: []});
 
     /**
      * @function tabChange
@@ -88,10 +89,7 @@ export default function Trade(props) {
         setValue(newValue);
     }
 
-    function bestMatchFormatting() {
-
-    }
-
+    console.log(props.data);
     return (
         <div>
             <div>
@@ -112,7 +110,7 @@ export default function Trade(props) {
                     value === 0 &&
                     (
                         <TabContainer>
-                            <DataTable data={{columns: columns, rows: rows}} onRowClick={() => window.alert('row clicked')}/>
+                            <DataTable data={ props.data } onRowClick={() => window.alert('row clicked')}/>
                         </TabContainer>
                     )
                 }

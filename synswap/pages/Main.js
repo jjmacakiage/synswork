@@ -8,7 +8,7 @@ import fetch from 'isomorphic-unfetch'
 import nextCookie from 'next-cookies'
 
 
-import Header from "../components/Header";
+import Header from "../components/main/Header";
 import Home from './Home';
 import NewTrade from './NewTrade';
 import Trade from './Trade';
@@ -185,6 +185,7 @@ export default function Main() {
     }
 
     function addNewTrade(name, fields, values) {
+        console.log([values]);
         const newTradeContent = {
             title: name,
             index: tabs.length,
@@ -268,4 +269,3 @@ Main.getInitialProps = async ctx => {
         return redirectOnError()
     }
 }
-

@@ -19,77 +19,74 @@ export default function NewTradeForm(props) {
     const classes = useStyles();
     const { onSubmit, fieldList } = props;
     const [tradeName, changeName] = useState('');
-    const [fields, setFields] = useState([]);
     const [isError, changeError] = useState(false);
-    let temp = [];
-    const [RESULT, setRESULT] = useState({ changes: temp });
 
-    useEffect(() => {
-        generateGrids();
-        temp = resultInit();
-    }, [fieldList]);
-
-    function resultInit() {
-        const result = [];
-        for (let i = 0; i < fieldList.length; i++) {
-            let value = '';
-            result.push(value);
-        }
-        return result;
-    }
+    const [RESULT, setRESULT] = useState({ changes: new Array(fieldList.length) });
 
     function handleChange(e, index) {
-        const newState = { ...RESULT, changes: RESULT.changes[index] = e.target.value };
+        const array = [...RESULT.changes];
+        array.splice(index, 1, e.target.value);
+        const newState = { ...RESULT, changes: array };
         setRESULT(newState);
-
     }
 
     function submitForm() {
-        for (let i = 0; i < RESULT.changes.length; i++) {
-            if (RESULT.changes[i] === '' || RESULT.changes[i] === null) {
-                changeError(true);
-                return;
-            }
-        }
-        changeError(false);
-        if (isError === false) {
-            const final = [...RESULT.changes];
-            final.push(tradeName);
-            onSubmit(final);
-        }
+        console.log(RESULT.changes);
+        const final = [...RESULT.changes];
+        final.push(tradeName);
+        onSubmit(final);
     }
-    function generateGrids() {
-        setFields(fieldList.map((label, index) => {
-                return (
-                    <Grid item key={ index }>
-                        <TextField
-                            id={ label.replace(/ /g,"-") }
-                            label={ label }
-                            disabled={ props.isDisabled }
-                            className={ classes.textField }
-                            value={ RESULT.changes[index] }
-                            onChange={ e => handleChange(e, index) }
-                            margin="normal"
-                            variant="outlined"
-                            error={ isError && value === ''}
-                        />
-                    </Grid>
-                );
-            }
-        ));
-
-    }
-
-
 
     return (
         <div className={ classes.root }>
             <Grid container spacing={ 2 }>
                 <Grid item xs={ 6 }>
-                    { fields.slice(0, fields.length / 2) }
+                    {
+                        fieldList.map((label, index) => {
+                            if (index < fieldList.length / 2) {
+                                return (
+                                    <Grid item key={ index }>
+                                        <TextField
+                                            id={ label.replace(/ /g,"-") }
+                                            label={ label }
+                                            disabled={ props.isDisabled }
+                                            className={ classes.textField }
+                                            value={ RESULT[index] }
+                                            onChange={ e => handleChange(e, index) }
+                                            margin="normal"
+                                            variant="outlined"
+                                            error={ isError }
+                                        />
+                                    </Grid>
+                                );
+                            }
+                            else return null;
+                        })
+                    }
                 </Grid>
                 <Grid item xs={ 6 }>
-                    { fields.slice(fields.length / 2, fields.length) }
+                    {
+                        fieldList.map((label, index) => {
+                            if (index >= fieldList.length / 2) {
+                                return (
+                                    <Grid item key={ index }>
+                                        <TextField
+                                            id={ label.replace(/ /g,"-") }
+                                            label={ label }
+                                            disabled={ props.isDisabled }
+                                            className={ classes.textField }
+                                            value={ RESULT[index] }
+                                            onChange={ e => handleChange(e, index) }
+                                            margin="normal"
+                                            variant="outlined"
+                                            error={ isError }
+                                        />
+                                    </Grid>
+                                );
+                            }
+                            else return null;
+                        })
+                    }
                 </Grid>
                 <Grid item xs={ 3 }>
                     <TextField

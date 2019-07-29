@@ -5,7 +5,7 @@ import "../resources/styles/react-awesome-tabs.scss";
 import { connect } from "react-redux";
 
 
-import Header from "../components/Header";
+import Header from "../components/main/Header";
 import Home from './Home';
 import NewTrade from './NewTrade';
 

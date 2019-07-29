@@ -69,7 +69,22 @@ export default function NewTrade(props) {
         });
         const payload = { id: trades_length, value: nameRemoved };
         dispatch({ type: 'NEW_TRADE', payload: payload });
-        props.addNewTrade(fields[fields.length - 1], FIELDS, fields);
+        const columns = ['Field', 'Value'];
+        props.addNewTrade(fields[fields.length - 1], columns, createRows(nameRemoved));
+    }
+
+    /**
+     * @function createRows
+     * @param data
+     * takes data and maps each field to corresponding data input
+     */
+    function createRows(data) {
+        const result = [];
+        for (let i = 0; i < FIELDS.length; i++) {
+            const row = [FIELDS[i], data[i]];
+            result.push(row);
+        }
+        return result;
     }
 
     /**
