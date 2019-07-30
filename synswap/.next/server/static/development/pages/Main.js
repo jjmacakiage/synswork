@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -595,7 +595,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _material_ui_icons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/icons */ "@material-ui/icons");
 /* harmony import */ var _material_ui_icons__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _utils_auth__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utils/auth */ "./utils/auth.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _utils_Auth_auth__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../utils/Auth/auth */ "./utils/Auth/auth.js");
+
 
 
 
@@ -638,12 +641,21 @@ function ProfileMenu() {
       anchorEl = _React$useState2[0],
       setAnchorEl = _React$useState2[1];
 
+  var dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_5__["useDispatch"])();
+
   function handleClick(event) {
     setAnchorEl(event.currentTarget);
   }
 
   function handleClose() {
     setAnchorEl(null);
+  }
+
+  function handleLogout() {
+    dispatch({
+      type: 'LOGOUT'
+    });
+    Object(_utils_Auth_auth__WEBPACK_IMPORTED_MODULE_6__["logout"])();
   }
 
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Button"], {
@@ -658,7 +670,7 @@ function ProfileMenu() {
     open: Boolean(anchorEl),
     onClose: handleClose
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(StyledMenuItem, {
-    onClick: _utils_auth__WEBPACK_IMPORTED_MODULE_5__["logout"]
+    onClick: handleLogout
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["ListItemIcon"], null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_icons__WEBPACK_IMPORTED_MODULE_4__["ExitToApp"], null)), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["ListItemText"], {
     primary: "Log Out"
   }))));
@@ -993,6 +1005,82 @@ function NewTradeForm(props) {
     color: "primary",
     className: classes.button
   }, "Submit New Trade"))));
+}
+
+/***/ }),
+
+/***/ "./components/trade/BestMatch.js":
+/*!***************************************!*\
+  !*** ./components/trade/BestMatch.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return BestMatch; });
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core */ "@material-ui/core");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! isomorphic-unfetch */ "isomorphic-unfetch");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _DataTable__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../DataTable */ "./components/DataTable.js");
+
+
+
+
+
+
+function BestMatch(props) {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])({
+    data: {
+      columns: ['stuff'],
+      rows: ['stuff']
+    }
+  }),
+      _useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
+      data = _useState2[0],
+      setData = _useState2[1];
+
+  var url = '';
+  var username = Object(react_redux__WEBPACK_IMPORTED_MODULE_4__["useSelector"])(function (state) {
+    return state.AuthReducer.username;
+  });
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Grid"], {
+    container: true,
+    spacing: 2
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Grid"], {
+    item: true,
+    xs: 12
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, " Best Match Score: ", props.score, "% ")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Grid"], {
+    item: true,
+    xs: 12
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Grid"], {
+    container: true,
+    spacing: 2
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Grid"], {
+    item: true,
+    xs: 3
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+    color: "primary",
+    variant: "contained"
+  }, " Amend ")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Grid"], {
+    item: true,
+    xs: 3
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+    color: "primary",
+    variant: "contained"
+  }, " Unmatch ")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Grid"], {
+    item: true,
+    xs: 3
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+    color: "primary",
+    variant: "contained"
+  }, " Manually Match "))))));
 }
 
 /***/ }),
@@ -2082,7 +2170,6 @@ function Home(props) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Main; });
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/json/stringify */ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js");
@@ -2112,11 +2199,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Blotter__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./Blotter */ "./pages/Blotter.js");
 /* harmony import */ var next_dist_build_output_log__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! next/dist/build/output/log */ "./node_modules/next/dist/build/output/log.js");
 /* harmony import */ var next_dist_build_output_log__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(next_dist_build_output_log__WEBPACK_IMPORTED_MODULE_17__);
-/* harmony import */ var _utils_auth__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../utils/auth */ "./utils/auth.js");
-/* harmony import */ var _utils_get_host__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../utils/get-host */ "./utils/get-host.js");
+/* harmony import */ var _utils_Auth_auth__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../utils/Auth/auth */ "./utils/Auth/auth.js");
+/* harmony import */ var _utils_Auth_get_host__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../utils/Auth/get-host */ "./utils/Auth/get-host.js");
 
 
 
+
+
+var _this = undefined;
 
 
 
@@ -2139,17 +2229,17 @@ __webpack_require__.r(__webpack_exports__);
  * @constructor
  * Contains all the navigation functions, including the <Tabs /> and their functions (dispatched to reducers/TabReducer)
  * Dependencies used:
-    * @react-awesome-tabs for the <Tabs> and <Tab> components, react-awesome-tabs.scss for styling (comes with module)
-    * @material-ui for <Grid />
-    * @react-redux for useDispatch and useSelector
+ * @react-awesome-tabs for the <Tabs> and <Tab> components, react-awesome-tabs.scss for styling (comes with module)
+ * @material-ui for <Grid />
+ * @react-redux for useDispatch and useSelector
  * Custom Components used:
-    * @class NewTrade - New Trade page
-    * @class Home - Home page
-    * @class Trade - Trade page
-    * @class Header - Header
+ * @class NewTrade - New Trade page
+ * @class Home - Home page
+ * @class Trade - Trade page
+ * @class Header - Header
  */
 
-function Main() {
+var Main = function Main() {
   /**
    * @constant activeTab
    * @type {object}
@@ -2209,7 +2299,7 @@ function Main() {
   var MAIN_TABS = [{
     key: 'Home',
     component: react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_Home__WEBPACK_IMPORTED_MODULE_13__["default"], {
-      onClick: handleClick.bind(this),
+      onClick: handleClick.bind(_this),
       showTextField: showTradeSearch
     })
   }, {
@@ -2310,29 +2400,6 @@ function Main() {
   function handleClick(link) {
     if (link !== 'TradeSearch') {
       var component = matchLink(link);
-      /*for (let i = 0; i < tabs.length; i++) {
-          console.log('start loop');
-          let tab = tabs[i];
-          if (tab.component === component) {
-              const NEW_TABS = [...MAIN_TABS];
-              NEW_TABS.push({
-                  key: tab.title + MAIN_TABS.length + 1,
-                  component: MAIN_TABS[tab.component].component
-              });
-              changeTabs(NEW_TABS);
-              component = MAIN_TABS.length - 1;
-              const newTabContent = {
-                  title: link,
-                  index: tabs.length,
-                  component: component
-              };
-              dispatch({ type: 'ADD_TAB', payload: newTabContent });
-              return;
-          }
-      }
-      console.log('no duplicate');
-      */
-
       var newTabContent = {
         title: link,
         index: tabs.length,
@@ -2388,9 +2455,9 @@ function Main() {
     xs: 12
   }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react_awesome_tabs__WEBPACK_IMPORTED_MODULE_6___default.a, {
     active: activeTab,
-    onTabSwitch: handleTabSwitch.bind(this),
-    onTabPositionChange: handleTabPositionChange.bind(this),
-    onTabClose: handleTabClose.bind(this),
+    onTabSwitch: handleTabSwitch.bind(_this),
+    onTabPositionChange: handleTabPositionChange.bind(_this),
+    onTabClose: handleTabClose.bind(_this),
     draggable: true,
     showAdd: false
   }, //maps 'tabs' piece of state to a <Tab> component, changes when 'tabs' changes
@@ -2401,7 +2468,7 @@ function Main() {
       showClose: index !== 0
     }, MAIN_TABS[value.component].component);
   }))));
-}
+};
 
 Main.getInitialProps =
 /*#__PURE__*/
@@ -2416,7 +2483,7 @@ function () {
         switch (_context.prev = _context.next) {
           case 0:
             _nextCookie = next_cookies__WEBPACK_IMPORTED_MODULE_11___default()(ctx), token = _nextCookie.token;
-            apiUrl = Object(_utils_get_host__WEBPACK_IMPORTED_MODULE_19__["default"])(ctx.req) + '/api/profile';
+            apiUrl = Object(_utils_Auth_get_host__WEBPACK_IMPORTED_MODULE_19__["default"])(ctx.req) + '/api/profile';
 
             redirectOnError = function redirectOnError() {
               return  false ? undefined : ctx.res.writeHead(302, {
@@ -2480,6 +2547,8 @@ function () {
   };
 }();
 
+/* harmony default export */ __webpack_exports__["default"] = (Object(_utils_Auth_auth__WEBPACK_IMPORTED_MODULE_18__["withAuthSync"])(Main));
+
 /***/ }),
 
 /***/ "./pages/NewTrade.js":
@@ -2499,11 +2568,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "react-redux");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! prop-types */ "prop-types");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _components_newtrade_NewTradeForm__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/newtrade/NewTradeForm */ "./components/newtrade/NewTradeForm.js");
-/* harmony import */ var _components_newtrade_CustomiseFields__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/newtrade/CustomiseFields */ "./components/newtrade/CustomiseFields.js");
-/* harmony import */ var _components_DataTable__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/DataTable */ "./components/DataTable.js");
+/* harmony import */ var _components_newtrade_NewTradeForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/newtrade/NewTradeForm */ "./components/newtrade/NewTradeForm.js");
+/* harmony import */ var _components_newtrade_CustomiseFields__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/newtrade/CustomiseFields */ "./components/newtrade/CustomiseFields.js");
+/* harmony import */ var _utils_tradehelpers__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils/tradehelpers */ "./utils/tradehelpers.js");
 
 
 
@@ -2512,25 +2579,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-/**
- * @class TabContainer
- * @param props
- * @return {*}
- * @constructor
- */
-
-function TabContainer(props) {
-  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Typography"], {
-    component: "div",
-    style: {
-      padding: 8 * 3
-    }
-  }, props.children);
-}
-
-TabContainer.propTypes = {
-  children: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.node.isRequired
-};
 /**
  * @constant useStyles
  * hook used for styling
@@ -2591,24 +2639,7 @@ function NewTrade(props) {
       payload: payload
     });
     var columns = ['Field', 'Value'];
-    props.addNewTrade(fields[fields.length - 1], columns, createRows(nameRemoved));
-  }
-  /**
-   * @function createRows
-   * @param data
-   * takes data and maps each field to corresponding data input
-   */
-
-
-  function createRows(data) {
-    var result = [];
-
-    for (var i = 0; i < FIELDS.length; i++) {
-      var row = [FIELDS[i], data[i]];
-      result.push(row);
-    }
-
-    return result;
+    props.addNewTrade(fields[fields.length - 1], columns, Object(_utils_tradehelpers__WEBPACK_IMPORTED_MODULE_6__["createRows"])(nameRemoved, FIELDS));
   }
   /**
    * @function addFields
@@ -2657,23 +2688,23 @@ function NewTrade(props) {
     label: "Edit"
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Tab"], {
     label: "Autofill"
-  })), value === 0 && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(TabContainer, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Grid"], {
+  })), value === 0 && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_utils_tradehelpers__WEBPACK_IMPORTED_MODULE_6__["TabContainer"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Grid"], {
     container: true,
     spacing: 2
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Grid"], {
     item: true,
     xs: 6
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_newtrade_NewTradeForm__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_newtrade_NewTradeForm__WEBPACK_IMPORTED_MODULE_4__["default"], {
     fieldList: FIELDS,
     onSubmit: handleSubmit.bind(this),
     isDisabled: false
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Grid"], {
     item: true,
     xs: 6
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_newtrade_CustomiseFields__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_newtrade_CustomiseFields__WEBPACK_IMPORTED_MODULE_5__["default"], {
     className: classes.customise,
     addFields: addFields.bind(this)
-  })))), value === 1 && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(TabContainer, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, " Stuff "))));
+  })))), value === 1 && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_utils_tradehelpers__WEBPACK_IMPORTED_MODULE_6__["TabContainer"], null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, " Stuff "))));
 }
 
 /***/ }),
@@ -2694,9 +2725,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core */ "@material-ui/core");
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! prop-types */ "prop-types");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _components_DataTable__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/DataTable */ "./components/DataTable.js");
+/* harmony import */ var _components_DataTable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/DataTable */ "./components/DataTable.js");
+/* harmony import */ var _utils_tradehelpers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/tradehelpers */ "./utils/tradehelpers.js");
+/* harmony import */ var _components_trade_BestMatch__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/trade/BestMatch */ "./components/trade/BestMatch.js");
+
 
 
 
@@ -2747,26 +2779,7 @@ for (var i = 0; i < 200; i += 1) {
   var randomSelection = sample[Math.floor(Math.random() * sample.length)];
   rows.push(createData.apply(void 0, [i].concat(Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__["default"])(randomSelection))));
 }
-/**
- * @class TabContainer
- * @param props
- * @return {*}
- * @constructor
- */
 
-
-function TabContainer(props) {
-  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Typography"], {
-    component: "div",
-    style: {
-      padding: 8 * 3
-    }
-  }, props.children);
-}
-
-TabContainer.propTypes = {
-  children: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.node.isRequired
-};
 function Trade(props) {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(0),
       _useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
@@ -2780,6 +2793,11 @@ function Trade(props) {
       _useState4 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState3, 2),
       data = _useState4[0],
       setData = _useState4[1];
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(0),
+      _useState6 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState5, 2),
+      score = _useState6[0],
+      setScore = _useState6[1];
   /**
    * @function tabChange
    * @param e
@@ -2792,7 +2810,7 @@ function Trade(props) {
     setValue(newValue);
   }
 
-  console.log(props.data);
+  var BEST_MATCH_TITLE = 'Best Match Score: ' + score + '%';
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Tabs"], {
     value: value,
     onChange: tabChange,
@@ -2808,13 +2826,13 @@ function Trade(props) {
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Tab"], {
     label: "Confirmation"
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Tab"], {
-    label: "Best Match Score"
-  })), value === 0 && react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(TabContainer, null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_DataTable__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    label: BEST_MATCH_TITLE
+  })), value === 0 && react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_utils_tradehelpers__WEBPACK_IMPORTED_MODULE_5__["TabContainer"], null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_DataTable__WEBPACK_IMPORTED_MODULE_4__["default"], {
     data: props.data,
     onRowClick: function onRowClick() {
       return window.alert('row clicked');
     }
-  })), value === 1 && react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(TabContainer, null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_DataTable__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  })), value === 1 && react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_utils_tradehelpers__WEBPACK_IMPORTED_MODULE_5__["TabContainer"], null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_DataTable__WEBPACK_IMPORTED_MODULE_4__["default"], {
     data: {
       columns: columns,
       rows: rows
@@ -2822,7 +2840,9 @@ function Trade(props) {
     onRowClick: function onRowClick() {
       return window.alert('row clicked');
     }
-  })), value === 2 && react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("h1", null, " CashFlow Schedule "), value === 3 && react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("h1", null, " Confirmation "), value === 4 && react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("h1", null, " Best Match Score ")));
+  })), value === 2 && react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("h1", null, " CashFlow Schedule "), value === 3 && react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("h1", null, " Confirmation "), value === 4 && react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_trade_BestMatch__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    score: score
+  })));
 }
 
 /***/ }),
@@ -2838,10 +2858,10 @@ function Trade(props) {
 
 /***/ }),
 
-/***/ "./utils/auth.js":
-/*!***********************!*\
-  !*** ./utils/auth.js ***!
-  \***********************/
+/***/ "./utils/Auth/auth.js":
+/*!****************************!*\
+  !*** ./utils/Auth/auth.js ***!
+  \****************************/
 /*! exports provided: login, logout, withAuthSync, auth */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3033,10 +3053,10 @@ function auth(ctx) {
 
 /***/ }),
 
-/***/ "./utils/get-host.js":
-/*!***************************!*\
-  !*** ./utils/get-host.js ***!
-  \***************************/
+/***/ "./utils/Auth/get-host.js":
+/*!********************************!*\
+  !*** ./utils/Auth/get-host.js ***!
+  \********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3059,7 +3079,64 @@ function getHost(req) {
 
 /***/ }),
 
-/***/ 4:
+/***/ "./utils/tradehelpers.js":
+/*!*******************************!*\
+  !*** ./utils/tradehelpers.js ***!
+  \*******************************/
+/*! exports provided: createRows, TabContainer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createRows", function() { return createRows; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TabContainer", function() { return TabContainer; });
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @material-ui/core */ "@material-ui/core");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+/**
+ * @function createRows
+ * @param data
+ * takes data and maps each field to corresponding data input
+ */
+
+function createRows(data, fields) {
+  var result = [];
+
+  for (var i = 0; i < fields.length; i++) {
+    var row = [fields[i], data[i]];
+    result.push(row);
+  }
+
+  return result;
+}
+/**
+ * @class TabContainer
+ * @param props
+ * @return {*}
+ * @constructor
+ */
+
+function TabContainer(props) {
+  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_0__["Typography"], {
+    component: "div",
+    style: {
+      padding: 8 * 3
+    }
+  }, props.children);
+}
+TabContainer.propTypes = {
+  children: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node.isRequired
+};
+
+/***/ }),
+
+/***/ 6:
 /*!*****************************!*\
   !*** multi ./pages/Main.js ***!
   \*****************************/

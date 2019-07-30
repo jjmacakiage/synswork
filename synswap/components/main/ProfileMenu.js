@@ -1,8 +1,8 @@
 import React from 'react';
 import { withStyles, Button, Menu, MenuItem, ListItemText, ListItemIcon } from '@material-ui/core';
 import { ExitToApp, PersonOutlineSharp } from '@material-ui/icons';
-
-import { logout } from "../../utils/auth";
+import { useDispatch } from "react-redux";
+import { logout } from "../../utils/Auth/auth";
 
 const StyledMenu = withStyles({
     paper: {
@@ -37,6 +37,7 @@ const StyledMenuItem = withStyles(theme => ({
 
 export default function ProfileMenu() {
     const [anchorEl, setAnchorEl] = React.useState(null);
+    const dispatch = useDispatch();
 
     function handleClick(event) {
         setAnchorEl(event.currentTarget);
@@ -44,6 +45,11 @@ export default function ProfileMenu() {
 
     function handleClose() {
         setAnchorEl(null);
+    }
+
+    function handleLogout() {
+        dispatch({ type: 'LOGOUT' });
+        logout();
     }
 
     return (
@@ -63,7 +69,7 @@ export default function ProfileMenu() {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
             >
-                <StyledMenuItem onClick={ logout }>
+                <StyledMenuItem onClick={ handleLogout }>
                     <ListItemIcon>
                         <ExitToApp />
                     </ListItemIcon>

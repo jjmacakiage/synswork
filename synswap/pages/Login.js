@@ -1,52 +1,29 @@
 import React, { useState } from 'react'
-import fetch from 'isomorphic-unfetch'
-import { login } from '../utils/auth'
+import doLogin  from '../utils/Auth/login';
 import LoginForm from '../components/login/LoginForm';
+import {useDispatch} from "react-redux";
 
 export default function Login () {
-    const [userData, setUserData] = useState({ username: '', error: '' , password: ''});
+    const [userData, setUserData] = useState({ username: '', error: '' , password: '', token: ''});
+    const dispatch = useDispatch();
 
-    async function handleSubmit (event) {
-        event.preventDefault();
-
-        const username = userData.username;
-        const url = '/api/login';
-
-        try {
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ username })
-            })
-            if (response.status === 200) {
-                const { token } = await response.json()
-                await login({ token });
-            } else {
-                console.log('Login failed.')
-                // https://github.com/developit/unfetch#caveats
-                let error = new Error(response.statusText)
-                error.response = response
-                throw error
-            }
-        } catch (error) {
-            console.error(
-                'You have an error in your code or there are Network issues.',
-                error
-            )
-
-            const { response } = error
-            setUserData(
-                Object.assign({}, userData, {
-                    error: response ? response.statusText : error.message
-                })
-            )
+    async function handleSubmit(e) {
+        e.preventDefault();
+        const res = await doLogin(userData);
+        if (res.status === 'success') {
+            const payload = { username: userData.username, password: userData.password, token: res.token };
+            dispatch({ type: 'LOGIN', payload: payload });
+        }
+        else {
+            //setUserData({ ...userData, error: res });
         }
     }
+
 
     return (
         <div className='login'>
            <LoginForm
-               onClick={ e => handleSubmit(e) }
+               onClick={ e =>  handleSubmit(e) }
                username={ userData.username }
                changeUsername={ e => { const newUsername = e.target.value;  setUserData({ username: newUsername, error: userData.error, password: userData.password}) } }
                changePassword={ e => { const newPassword = e.target.value;  setUserData({ username: userData.username, error: userData.error, password: newPassword}) } }

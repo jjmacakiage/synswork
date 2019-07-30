@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
-import { Tab, Tabs, Typography } from "@material-ui/core";
-import PropTypes from 'prop-types';
+import { Tab, Tabs } from "@material-ui/core";
+
 
 import DataTable from '../components/DataTable';
-
+import { TabContainer } from "../utils/tradehelpers";
+import BestMatch from '../components/trade/BestMatch';
 
 const columns= [
     {
@@ -56,27 +57,13 @@ for (let i = 0; i < 200; i += 1) {
     rows.push(createData(i, ...randomSelection));
 }
 
-/**
- * @class TabContainer
- * @param props
- * @return {*}
- * @constructor
- */
-function TabContainer(props) {
-    return (
-        <Typography component="div" style={{ padding: 8 * 3 }}>
-            {props.children}
-        </Typography>
-    );
-}
 
-TabContainer.propTypes = {
-    children: PropTypes.node.isRequired,
-};
+
 
 export default function Trade(props) {
     const [value, setValue] = useState(0);
     const [data, setData] = useState({ rows: [], columns: []});
+    const [score, setScore] = useState(0);
 
     /**
      * @function tabChange
@@ -84,12 +71,11 @@ export default function Trade(props) {
      * @param newValue
      * eventHandler helper function that takes the desired tab as a parameter and makes it the new active tab
      */
-
     function tabChange(e, newValue) {
         setValue(newValue);
     }
 
-    console.log(props.data);
+    const BEST_MATCH_TITLE = 'Best Match Score: ' + score + '%';
     return (
         <div>
             <div>
@@ -104,7 +90,7 @@ export default function Trade(props) {
                     <Tab label="Autofill"/>
                     <Tab label="CashFlow Schedule"/>
                     <Tab label="Confirmation"/>
-                    <Tab label="Best Match Score"/>
+                    <Tab label={ BEST_MATCH_TITLE } />
                 </Tabs>
                 {
                     value === 0 &&
@@ -137,7 +123,7 @@ export default function Trade(props) {
                 {
                     value === 4 &&
                     (
-                        <h1> Best Match Score </h1>
+                        <BestMatch score={ score }/>
                     )
                 }
             </div>

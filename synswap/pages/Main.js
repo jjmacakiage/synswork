@@ -14,24 +14,24 @@ import NewTrade from './NewTrade';
 import Trade from './Trade';
 import Blotter from './Blotter';
 import {error} from "next/dist/build/output/log";
-import { withAuthSync } from "../utils/auth";
-import getHost from '../utils/get-host'
+import { withAuthSync } from "../utils/Auth/auth";
+import getHost from '../utils/Auth/get-host'
 
 /**
  * @class Main
  * @constructor
  * Contains all the navigation functions, including the <Tabs /> and their functions (dispatched to reducers/TabReducer)
  * Dependencies used:
-    * @react-awesome-tabs for the <Tabs> and <Tab> components, react-awesome-tabs.scss for styling (comes with module)
-    * @material-ui for <Grid />
-    * @react-redux for useDispatch and useSelector
+ * @react-awesome-tabs for the <Tabs> and <Tab> components, react-awesome-tabs.scss for styling (comes with module)
+ * @material-ui for <Grid />
+ * @react-redux for useDispatch and useSelector
  * Custom Components used:
-    * @class NewTrade - New Trade page
-    * @class Home - Home page
-    * @class Trade - Trade page
-    * @class Header - Header
+ * @class NewTrade - New Trade page
+ * @class Home - Home page
+ * @class Trade - Trade page
+ * @class Header - Header
  */
-export default function Main() {
+const Main = () => {
     /**
      * @constant activeTab
      * @type {object}
@@ -149,29 +149,6 @@ export default function Main() {
     function handleClick(link) {
         if (link !== 'TradeSearch') {
             let component = matchLink(link);
-            /*for (let i = 0; i < tabs.length; i++) {
-                console.log('start loop');
-                let tab = tabs[i];
-                if (tab.component === component) {
-                    const NEW_TABS = [...MAIN_TABS];
-                    NEW_TABS.push({
-                        key: tab.title + MAIN_TABS.length + 1,
-                        component: MAIN_TABS[tab.component].component
-                    });
-                    changeTabs(NEW_TABS);
-                    component = MAIN_TABS.length - 1;
-                    const newTabContent = {
-                        title: link,
-                        index: tabs.length,
-                        component: component
-                    };
-                    dispatch({ type: 'ADD_TAB', payload: newTabContent });
-                    return;
-                }
-            }
-            console.log('no duplicate');
-            */
-
             const newTabContent = {
                 title: link,
                 index: tabs.length,
@@ -269,3 +246,5 @@ Main.getInitialProps = async ctx => {
         return redirectOnError()
     }
 }
+
+export default withAuthSync(Main);

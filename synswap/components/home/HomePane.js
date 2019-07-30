@@ -18,7 +18,6 @@ export default function HomePane(props) {
     function flipCard(e) {
         e.preventDefault();
         flip(!isFlipped);
-
     }
     function OptionsList(props) {
         return (
