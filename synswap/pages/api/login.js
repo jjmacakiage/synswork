@@ -6,7 +6,7 @@ export default async (req, res) => {
   const url = `https://api.github.com/users/${username}`;
 
   try {
-    const response = await fetch(url)
+    const response = await fetch(url);
     if (response.ok) {
       const { id } = await response.json()
       return res.status(200).json({ token: id })

@@ -57346,7 +57346,7 @@ function _doLogin() {
 
 /***/ }),
 
-/***/ 1:
+/***/ 0:
 /*!***************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2FLogin&absolutePagePath=%2FUsers%2Fjjmacakiage%2Fdev%2Fsynswap-web-react%2Fsynswap%2Fpages%2FLogin.js ***!
   \***************************************************************************************************************************************************/
@@ -57369,5 +57369,5 @@ module.exports = dll_7aff549c98b978433226;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[0,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=Login.js.map

@@ -190,10 +190,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/synswap/pages/Trade.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1224">
+              <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/synswap/components/trade/BestMatch.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="276">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -201,23 +213,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/synswap/utils/Auth/auth.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-342">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
-              <folding>
-                <element signature="e#0#33#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/synswap/pages/Main.js">
+        <entry file="file://$PROJECT_DIR$/synswap/components/DataTable.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5336">
-              <caret line="249" column="34" selection-start-line="249" selection-start-column="34" selection-end-line="249" selection-end-column="34" />
+            <state relative-caret-position="424">
+              <caret line="157" column="8" selection-start-line="157" selection-start-column="8" selection-end-line="157" selection-end-column="8" />
+              <folding>
+                <element signature="e#0#45#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -260,7 +263,6 @@
         <option value="$PROJECT_DIR$/synswap/package.json" />
         <option value="$PROJECT_DIR$/synswap/components/login/LoginForm.js" />
         <option value="$PROJECT_DIR$/synswap/components/Header.js" />
-        <option value="$PROJECT_DIR$/synswap/pages/api/login.js" />
         <option value="$PROJECT_DIR$/synswap/pages/api/dev.js" />
         <option value="$PROJECT_DIR$/synswap/server.js" />
         <option value="$PROJECT_DIR$/synswap/utils/auth.js" />
@@ -275,21 +277,23 @@
         <option value="$PROJECT_DIR$/synswap/pages/NewTrade.js" />
         <option value="$PROJECT_DIR$/synswap/pages/index.js" />
         <option value="$PROJECT_DIR$/synswap/components/home/HomePane.js" />
-        <option value="$PROJECT_DIR$/synswap/pages/Trade.js" />
         <option value="$PROJECT_DIR$/synswap/reducers/index.js" />
-        <option value="$PROJECT_DIR$/synswap/components/trade/BestMatch.js" />
         <option value="$PROJECT_DIR$/synswap/pages/Login.js" />
-        <option value="$PROJECT_DIR$/synswap/utils/Auth/login.js" />
         <option value="$PROJECT_DIR$/synswap/reducers/AuthReducer.js" />
         <option value="$PROJECT_DIR$/synswap/components/main/ProfileMenu.js" />
         <option value="$PROJECT_DIR$/synswap/pages/Main.js" />
+        <option value="$PROJECT_DIR$/synswap/pages/api/login.js" />
+        <option value="$PROJECT_DIR$/synswap/utils/Auth/login.js" />
+        <option value="$PROJECT_DIR$/synswap/pages/Trade.js" />
+        <option value="$PROJECT_DIR$/synswap/components/trade/BestMatch.js" />
+        <option value="$PROJECT_DIR$/synswap/components/DataTable.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="823" />
+    <option name="height" value="822" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -312,12 +316,6 @@
               <item name="synswap-web-react" type="b2602c69:ProjectViewProjectNode" />
               <item name="synswap-web-react" type="462c0819:PsiDirectoryNode" />
               <item name="synswap" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="synswap-web-react" type="b2602c69:ProjectViewProjectNode" />
-              <item name="synswap-web-react" type="462c0819:PsiDirectoryNode" />
-              <item name="synswap" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -325,32 +323,6 @@
               <item name="synswap-web-react" type="462c0819:PsiDirectoryNode" />
               <item name="synswap" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="synswap-web-react" type="b2602c69:ProjectViewProjectNode" />
-              <item name="synswap-web-react" type="462c0819:PsiDirectoryNode" />
-              <item name="synswap" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="synswap-web-react" type="b2602c69:ProjectViewProjectNode" />
-              <item name="synswap-web-react" type="462c0819:PsiDirectoryNode" />
-              <item name="synswap" type="462c0819:PsiDirectoryNode" />
-              <item name="reducers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="synswap-web-react" type="b2602c69:ProjectViewProjectNode" />
-              <item name="synswap-web-react" type="462c0819:PsiDirectoryNode" />
-              <item name="synswap" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="synswap-web-react" type="b2602c69:ProjectViewProjectNode" />
-              <item name="synswap-web-react" type="462c0819:PsiDirectoryNode" />
-              <item name="synswap" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-              <item name="Auth" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -378,14 +350,14 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/synswap/utils/Auth" />
-      <recent name="$PROJECT_DIR$/synswap/components/main" />
-      <recent name="$PROJECT_DIR$/synswap/pages" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/synswap" />
       <recent name="$PROJECT_DIR$/synswap/utils" />
+      <recent name="$PROJECT_DIR$/synswap/pages" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/synswap/utils/Auth" />
+      <recent name="$PROJECT_DIR$/synswap/components/main" />
       <recent name="$PROJECT_DIR$/synswap/pages" />
     </key>
   </component>
@@ -417,13 +389,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37072000" />
+    <option name="totallyTimeSpent" value="40404000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="822" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -440,7 +412,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32876712" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4985694" weight="0.6260274" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4985694" visible="true" weight="0.2041096" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50143063" side_tool="true" weight="0.22054794" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -586,7 +558,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/synswap/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
+        <state relative-caret-position="805">
           <caret line="35" selection-start-line="35" selection-end-line="35" />
         </state>
       </provider>
@@ -608,19 +580,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/synswap/js/main_tabs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/synswap/js/newtrade_props.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/synswap/js/main_tabs.js" />
+    <entry file="file://$PROJECT_DIR$/synswap/js/newtrade_props.js" />
     <entry file="file://$PROJECT_DIR$/synswap/store.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -630,26 +591,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/synswap/js/component_props.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/synswap/components/DataTable.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-427">
-          <caret line="99" column="27" selection-start-line="99" selection-start-column="27" selection-end-line="99" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/synswap/js/component_props.js" />
     <entry file="file://$PROJECT_DIR$/synswap/components/newtrade/NewTradeForm.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="424">
@@ -701,29 +643,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/synswap/pages/NewTrade.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/synswap/pages/MainClass.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/synswap/pages/Trade.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="72" column="7" selection-start-line="72" selection-start-column="7" selection-end-line="72" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-            <element signature="e#1457#1644#0" />
           </folding>
         </state>
       </provider>
@@ -745,45 +669,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/synswap/utils/Auth/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/synswap/pages/Login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/synswap/pages/api/profile.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/synswap/pages/api/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/synswap/components/trade/BestMatch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/synswap/reducers/TabReducer.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -811,7 +698,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/synswap/utils/Auth/auth.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-342">
+        <state relative-caret-position="230">
           <caret line="10" selection-start-line="10" selection-end-line="10" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
@@ -819,10 +706,71 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/synswap/pages/api/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/synswap/utils/Auth/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-177">
+          <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/synswap/pages/Login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/synswap/pages/Main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5336">
+        <state relative-caret-position="804">
           <caret line="249" column="34" selection-start-line="249" selection-start-column="34" selection-end-line="249" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/synswap/pages/NewTrade.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-927">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/synswap/components/trade/BestMatch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/synswap/pages/Trade.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1224">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/synswap/components/DataTable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="157" column="8" selection-start-line="157" selection-start-column="8" selection-end-line="157" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

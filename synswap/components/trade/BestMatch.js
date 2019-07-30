@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import DataTable from '../DataTable';
 
 export default function BestMatch(props) {
-    const [data, setData] = useState({ data: { columns: ['stuff'], rows: ['stuff'] } });
+    const [data, setData] = useState({ columns: ['Fields', 'Party', 'Counterparty'], rows: [['stuff', 'stuff', 'stuff']] });
     const url = '';
     const username = useSelector(state => state.AuthReducer.username);
 
@@ -13,7 +13,7 @@ export default function BestMatch(props) {
         <div>
             <Grid container spacing={ 2 }>
                 <Grid item xs={ 12 }>
-                    <h1> Best Match Score: { props.score }% </h1>
+                    <DataTable data={ data } />
                 </Grid>
                 <Grid item xs={ 12 }>
                     <Grid container spacing={ 2 }>

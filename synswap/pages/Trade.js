@@ -58,8 +58,6 @@ for (let i = 0; i < 200; i += 1) {
 }
 
 
-
-
 export default function Trade(props) {
     const [value, setValue] = useState(0);
     const [data, setData] = useState({ rows: [], columns: []});

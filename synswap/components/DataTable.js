@@ -51,7 +51,7 @@ class MuiVirtualizedTable extends PureComponent {
                     [classes.noClick]: onRowClick == null,
                 })}
                 variant="body"
-                style={{ height: rowHeight }}
+                style={{ height: rowHeight, justifyContent: "center" }}
                 align={(columnIndex != null && columns[columnIndex].numeric) || false ? 'right' : 'left'}
             >
                 {cellData}
@@ -133,12 +133,39 @@ function formatColumns(columns) {
     }
     return result;
 }
+
+function formatRows(rows, columns) {
+    if (rows.length === 0 || !rows[0].length ){
+        return rows;
+    }
+    let result = [];
+    for (let i = 0; i < rows.length; i++) {
+        let row = rows[i];
+        let temp = [];
+        for (let j = 0; j < row.length; j++) {
+            let dataKey = columns[j].toString().toLowerCase().replace("\s", "");
+            temp.push({ [dataKey]: row[j] });
+        }
+        console.log('here');
+        let objectList = temp.reduce((result, item) => {
+            let key = Object.keys(item)[0];
+            result[key] = item[key];
+            return result;
+        }, {});
+        result.push(objectList);
+    }
+    return result;
+}
+
+
 export default function ReactVirtualizedTable(props) {
+    console.log(formatRows(props.data.rows, props.data.columns));
+
     return (
         <Paper style={{ height: 400, width: '100%' }}>
             <VirtualizedTable
                 rowCount={ props.data.rows.length }
-                rowGetter={({ index }) => props.data.rows[index]}
+                rowGetter={({ index }) => formatRows(props.data.rows, props.data.columns)[index]}
                 columns={ formatColumns(props.data.columns) }
                 onRowClick={ props.onRowClick }
             />
