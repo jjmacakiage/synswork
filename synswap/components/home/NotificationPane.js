@@ -18,7 +18,7 @@ export default function NotificationPane(){
     const [notifications, addNotifications] = useState([]);
     return (
         <div className={classes.root}>
-            <Card>
+            <Card square={ true }>
                 <NotificationList data={notifications}/>
             </Card>
         </div>

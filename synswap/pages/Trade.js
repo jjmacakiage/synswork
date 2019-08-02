@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { Tab, Tabs } from "@material-ui/core";
-
+import { useSelector } from "react-redux";
 
 import DataTable from '../components/DataTable';
 import { TabContainer } from "../utils/tradehelpers";
@@ -69,9 +69,9 @@ export default function Trade(props) {
      * @param newValue
      * eventHandler helper function that takes the desired tab as a parameter and makes it the new active tab
      */
-    function tabChange(e, newValue) {
+    const tabChange = (e, newValue) => {
         setValue(newValue);
-    }
+    };
 
     const BEST_MATCH_TITLE = 'Best Match Score: ' + score + '%';
     return (
@@ -94,7 +94,7 @@ export default function Trade(props) {
                     value === 0 &&
                     (
                         <TabContainer>
-                            <DataTable data={ props.data } onRowClick={() => window.alert('row clicked')}/>
+                            <DataTable data={ data } onRowClick={() => window.alert('row clicked')}/>
                         </TabContainer>
                     )
                 }

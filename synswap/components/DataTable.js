@@ -146,7 +146,6 @@ function formatRows(rows, columns) {
             let dataKey = columns[j].toString().toLowerCase().replace("\s", "");
             temp.push({ [dataKey]: row[j] });
         }
-        console.log('here');
         let objectList = temp.reduce((result, item) => {
             let key = Object.keys(item)[0];
             result[key] = item[key];
@@ -159,10 +158,9 @@ function formatRows(rows, columns) {
 
 
 export default function ReactVirtualizedTable(props) {
-    console.log(formatRows(props.data.rows, props.data.columns));
 
     return (
-        <Paper style={{ height: 400, width: '100%' }}>
+        <Paper style={{ height: 400, width: '100%' }} square={ true }>
             <VirtualizedTable
                 rowCount={ props.data.rows.length }
                 rowGetter={({ index }) => formatRows(props.data.rows, props.data.columns)[index]}

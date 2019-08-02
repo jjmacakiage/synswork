@@ -6,7 +6,7 @@ import cookie from 'js-cookie'
 function login ({ token }) {
   cookie.set('token', token, {expires: 1});
   console.log(token);
-  Router.push('/Main')
+  Router.push('/Main');
 }
 
 function logout () {

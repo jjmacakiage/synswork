@@ -16,7 +16,7 @@ export default function BestMatch(props) {
                     <DataTable data={ data } />
                 </Grid>
                 <Grid item xs={ 12 }>
-                    <Grid container spacing={ 2 }>
+                    <Grid container spacing={ 2 } style={{ justifyContent: "space-around" }}>
                         <Grid item xs={ 3 }>
                             <Button color="primary" variant="contained"> Amend </Button>
                         </Grid>

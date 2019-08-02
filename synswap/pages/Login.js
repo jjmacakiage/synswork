@@ -15,7 +15,7 @@ export default function Login () {
             dispatch({ type: 'LOGIN', payload: payload });
         }
         else {
-            //setUserData({ ...userData, error: res });
+            setUserData({ username: '', error: res, password: '', token: ''});
         }
     }
 

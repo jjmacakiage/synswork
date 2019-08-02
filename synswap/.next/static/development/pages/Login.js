@@ -22,13 +22,15 @@ var FormPage = function FormPage(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Grid"], {
     item: true,
     xs: 12
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["TextField"], {
+    variant: "outlined",
     value: props.username,
     onChange: props.changeUsername
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Grid"], {
     item: true,
     xs: 12
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["TextField"], {
+    variant: "outlined",
     value: props.password,
     onChange: props.changePassword
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Grid"], {
@@ -57005,7 +57007,13 @@ function Login() {
                   type: 'LOGIN',
                   payload: payload
                 });
-              } else {//setUserData({ ...userData, error: res });
+              } else {
+                setUserData({
+                  username: '',
+                  error: res,
+                  password: '',
+                  token: ''
+                });
               }
 
             case 5:
@@ -57346,7 +57354,7 @@ function _doLogin() {
 
 /***/ }),
 
-/***/ 0:
+/***/ 2:
 /*!***************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2FLogin&absolutePagePath=%2FUsers%2Fjjmacakiage%2Fdev%2Fsynswap-web-react%2Fsynswap%2Fpages%2FLogin.js ***!
   \***************************************************************************************************************************************************/
@@ -57369,5 +57377,5 @@ module.exports = dll_7aff549c98b978433226;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=Login.js.map

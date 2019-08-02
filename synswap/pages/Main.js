@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Grid } from '@material-ui/core';
 import Tabs, {Tab} from "react-awesome-tabs";
 import "../resources/styles/react-awesome-tabs.scss";
 import { useDispatch, useSelector } from "react-redux";
-import Router from 'next/router'
-import fetch from 'isomorphic-unfetch'
-import nextCookie from 'next-cookies'
-
+import nextCookie from 'next-cookies';
+import Router from 'next/router';
 
 import Header from "../components/main/Header";
 import Home from './Home';
@@ -15,7 +13,7 @@ import Trade from './Trade';
 import Blotter from './Blotter';
 import {error} from "next/dist/build/output/log";
 import { withAuthSync } from "../utils/Auth/auth";
-import getHost from '../utils/Auth/get-host'
+import getHost from '../utils/Auth/get-host';
 
 /**
  * @class Main
@@ -26,7 +24,7 @@ import getHost from '../utils/Auth/get-host'
  * @material-ui for <Grid />
  * @react-redux for useDispatch and useSelector
  * Custom Components used:
- * @class NewTrade - New Trade page
+ * @class NewTradeContent - New Trade page
  * @class Home - Home page
  * @class Trade - Trade page
  * @class Header - Header
@@ -60,23 +58,19 @@ const Main = () => {
     const [tradeProps, changeProps] = useState({ data: { columns: [], rows: [] }});
 
     /**
-     * @constant showTextField
-     * receives data from handleClick function and toggles the Trade ID popup
-     */
-
-    const [showTradeSearch, toggleShow] = useState(false);
-    /**
      * @constant MAIN_TABS
      * @type {array}
      * array of objects that contains a 'key' and a 'component' that is mapped to the 'component' attribute from a tab object in
      * @function matchLink
      */
-    const MAIN_TABS = [
-        { key: 'Home', component: <Home onClick={ handleClick.bind(this) } showTextField={ showTradeSearch }/>},
-        { key: 'NewTrade', component: <NewTrade addNewTrade={ addNewTrade } />},
-        { key: 'Trade', component: Trade(tradeProps)},
-        { key: 'Blotter', component: <Blotter />}
+    const MAIN_TABS= [
+        { key: 'Home', component: Home({ onClick: handleClick.bind(this) }) },
+        { key: 'NewTrade', component: NewTrade({ onClick : handleClick }) },
+        { key: 'Trade', component: Trade(tradeProps) },
+        { key: 'Blotter', component: Blotter() }
     ];
+
+    const [openTabs, changeTabs] = useState(['Home']);
 
     /**
      * @function matchLink
@@ -95,9 +89,9 @@ const Main = () => {
         return new error('Component Not Found');
     }
 
-
     /**
      * @function handleTabSwitch
+     * @type number
      * @type dispatch
      * @param active
      * eventHandler helper function that takes the desired tab as a parameter and makes it the new active tab
@@ -129,12 +123,15 @@ const Main = () => {
 
     /**
      * @function handleTabClose
-     * @type dispatch
      * @param index
      * eventHandler helper function that takes the closed tab and pops it from 'tabs' piece of state
      */
     function handleTabClose(index) {
         dispatch({ type: 'REMOVE_TAB', payload: index });
+        const newTabs = openTabs.filter((value, i) => {
+            return i !== index;
+        });
+        changeTabs(newTabs)
     }
 
 
@@ -147,31 +144,28 @@ const Main = () => {
      */
 
     function handleClick(link) {
-        if (link !== 'TradeSearch') {
-            let component = matchLink(link);
-            const newTabContent = {
+        let component = matchLink(link);
+        if (index(openTabs, link) === -1) {
+            let newTabContent = {
                 title: link,
                 index: tabs.length,
                 component: component
             };
             dispatch({type: 'ADD_TAB', payload: newTabContent});
+            const newOpen = [...openTabs];
+            newOpen.push(link);
+            changeTabs(newOpen);
         }
         else {
-            toggleShow(true);
+            handleTabSwitch(index(openTabs, link));
         }
     }
 
-    function addNewTrade(name, fields, values) {
-        console.log([values]);
-        const newTradeContent = {
-            title: name,
-            index: tabs.length,
-            component: matchLink('Trade'),
-            fields: fields,
-            values: values
-        };
-        dispatch({ type: 'ADD_TAB', payload: newTradeContent });
-        changeProps({ data: { columns: fields, rows: values } })
+    function index(list, target) {
+        for (let i = 0; i < list.length; i++) {
+            if (list[i] === target) return i;
+        }
+        return -1;
     }
     /**
      * @return
@@ -181,13 +175,16 @@ const Main = () => {
      * @type Tab
      * @type MAIN_TABS[component]
      */
-
     return (
-        <Grid container spacing={ 0 }>
+        <Grid container spacing={ 2 }>
             <Grid item xs={ 12 }>
-                <Header />
+                <Header
+                    items={ ['Home', 'Blotter', 'New Trade'] }
+                    links={ ['Home', 'Blotter', 'NewTrade'] }
+                    onClick={ handleClick.bind(this) }
+                />
             </Grid>
-            <Grid item xs={ 12 }>
+            <Grid item xs={ 12 } style={{ maxWidth: 'min-content'}}>
                 <Tabs
                     active={ activeTab }
                     onTabSwitch={ handleTabSwitch.bind(this) }
@@ -205,7 +202,9 @@ const Main = () => {
                                     title={ value.title }
                                     showClose={ index !== 0 }
                                 >
-                                    { MAIN_TABS[ value.component ].component }
+                                    {
+                                        MAIN_TABS[ value.component ].component
+                                    }
                                 </Tab>
                             );
                         })
@@ -214,7 +213,7 @@ const Main = () => {
             </Grid>
         </Grid>
     );
-}
+};
 
 Main.getInitialProps = async ctx => {
     const { token } = nextCookie(ctx);
@@ -245,6 +244,6 @@ Main.getInitialProps = async ctx => {
         // Implementation or Network error
         return redirectOnError()
     }
-}
+};
 
 export default withAuthSync(Main);

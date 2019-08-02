@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Grid } from '@material-ui/core';
+import { useSelector } from "react-redux";
 import DataTable from '../components/DataTable';
 
 export default function Blotter() {

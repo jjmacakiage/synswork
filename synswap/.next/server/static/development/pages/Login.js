@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -116,13 +116,15 @@ var FormPage = function FormPage(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Grid"], {
     item: true,
     xs: 12
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["TextField"], {
+    variant: "outlined",
     value: props.username,
     onChange: props.changeUsername
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Grid"], {
     item: true,
     xs: 12
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["TextField"], {
+    variant: "outlined",
     value: props.password,
     onChange: props.changePassword
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_1__["Grid"], {
@@ -807,7 +809,13 @@ function Login() {
                   type: 'LOGIN',
                   payload: payload
                 });
-              } else {//setUserData({ ...userData, error: res });
+              } else {
+                setUserData({
+                  username: '',
+                  error: res,
+                  password: '',
+                  token: ''
+                });
               }
 
             case 5:
@@ -1148,7 +1156,7 @@ function _doLogin() {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/Login.js ***!
   \******************************/
