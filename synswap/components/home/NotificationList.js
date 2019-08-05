@@ -1,5 +1,5 @@
 import React from 'react';
-import {List, ListItem, ListItemText, makeStyles } from '@material-ui/core';
+import {List, ListItem, ListItemText, makeStyles, Typography } from '@material-ui/core';
 
 
 const useStyles = makeStyles({
@@ -18,7 +18,7 @@ export default function NotificationList(props) {
             <List component="ul">
                 {!isEmpty ? props.data.map((value, index) => {
                     return <ListItem><ListItemText key={index} secondary={value.message}>{value.title}</ListItemText></ListItem>
-                }) : <h6> No notifications to display </h6>}
+                }) : <Typography variant="overline"> No notifications to display </Typography>}
             </List>
         </div>
     );

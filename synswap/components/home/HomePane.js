@@ -6,6 +6,7 @@ import {
 import ReactCardFlip from 'react-card-flip';
 
 import List from './List';
+import Typography from "@material-ui/core/Typography";
 
 export default function HomePane(props) {
     const [isFlipped, flip] = useState(false);
@@ -30,7 +31,7 @@ export default function HomePane(props) {
             <CardActionArea onClick={ e => flipCard(e) }>
                 <ReactCardFlip isFlipped={ isFlipped } flipDirection="horizontal">
                     <div key="front">
-                        <h1>{ props.title }</h1>
+                        <Typography variant="overline"> { props.title }</Typography>
                     </div>
                     <div key="back">
                         <List

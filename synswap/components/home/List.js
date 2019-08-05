@@ -1,5 +1,6 @@
 import {ClickAwayListener, Divider, MenuItem, MenuList} from "@material-ui/core";
 import React from "react";
+import Typography from "@material-ui/core/Typography";
 
 export default function OptionsList(props) {
     return (
@@ -18,7 +19,7 @@ export default function OptionsList(props) {
                                             value={props.links[index]}
                                             onClick={() => onClick(props.links[index])}
                                         >
-                                            {value}
+                                            <Typography variant="overline"> {value} </Typography>
                                         </MenuItem>
                                         {
                                             (index !== props.items.length - 1) ?

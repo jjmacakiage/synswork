@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Grid, makeStyles, Tabs, Tab } from '@material-ui/core';
 import { useSelector, useDispatch } from "react-redux";
 
 import NewTradeForm from './NewTradeForm';
+import Form from './Form';
 import CustomiseFields from './CustomiseFields';
 import { createRows } from "../../utils/tradehelpers";
 import { TabContainer } from "../../utils/tradehelpers";
@@ -114,7 +115,7 @@ export default function NewTradeContent(props) {
                     value === 1
                     &&
                     <TabContainer>
-                        <h1> Stuff </h1>
+                        <Form fields={ FIELDS } initialValues={ FIELDS } counterparties={['Barclays', 'Morgan']}/>
                     </TabContainer>
                 }
             </div>

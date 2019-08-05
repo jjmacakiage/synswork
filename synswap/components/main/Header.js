@@ -12,9 +12,6 @@ const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1,
     },
-    menuButton: {
-        marginLeft: theme.spacing(80)
-    },
     title: {
         flexGrow: 1,
         display: 'none',
@@ -29,7 +26,6 @@ const useStyles = makeStyles(theme => ({
         '&:hover': {
             backgroundColor: fade(theme.palette.common.white, 0.25),
         },
-        marginRight: theme.spacing(2),
         width: '100%',
         [theme.breakpoints.up('sm')]: {
             marginLeft: theme.spacing(1),
@@ -67,6 +63,10 @@ const useStyles = makeStyles(theme => ({
         top: 36,
         right: 0,
         left: 0,
+    },
+    toolbar: {
+        display: 'flex',
+        justifyContent: 'space-between'
     }
 }));
 
@@ -94,7 +94,7 @@ export default function Header(props) {
     return (
         <div className={classes.root}>
             <AppBar position="static">
-                <Toolbar>
+                <Toolbar className={ classes.toolbar }>
                     <div className={classes.search}>
                         {
                             /*
@@ -116,7 +116,6 @@ export default function Header(props) {
                     </div>
                     <IconButton
                         edge="start"
-                        className={classes.menuButton}
                         color="inherit"
                         aria-label="open drawer"
                     >

@@ -11,9 +11,11 @@ import Home from './Home';
 import NewTrade from './NewTrade';
 import Trade from './Trade';
 import Blotter from './Blotter';
+import FileUpload from './FileUpload';
 import {error} from "next/dist/build/output/log";
 import { withAuthSync } from "../utils/Auth/auth";
 import getHost from '../utils/Auth/get-host';
+import Typography from "@material-ui/core/Typography";
 
 /**
  * @class Main
@@ -60,16 +62,22 @@ const Main = () => {
     /**
      * @constant MAIN_TABS
      * @type {array}
-     * array of objects that contains a 'key' and a 'component' that is mapped to the 'component' attribute from a tab object in
-     * @function matchLink
+     * array of objects that contains a 'key' and a 'component' that is mapped to the 'component' attribute from a tab object in....
+     * ....matchLink
      */
     const MAIN_TABS= [
         { key: 'Home', component: Home({ onClick: handleClick.bind(this) }) },
         { key: 'NewTrade', component: NewTrade({ onClick : handleClick }) },
         { key: 'Trade', component: Trade(tradeProps) },
-        { key: 'Blotter', component: Blotter() }
+        { key: 'Blotter', component: Blotter() },
+        { key: 'FileNewTrade', component: FileUpload() }
     ];
 
+    /**
+     * @constant openTabs
+     * @type {array}
+     * used in handleClick method to redirect to a tab if it is already open
+     */
     const [openTabs, changeTabs] = useState(['Home']);
 
     /**
@@ -78,6 +86,7 @@ const Main = () => {
      * @param link
      * helper function that receives a link {string} from an option in the <HomePane />'s (child components of <Home />) and
      * matches it to a 'component' in the MAIN_TABS array via the 'key'
+     * @return number
      */
     function matchLink(link) {
         for (let i = 0; i < MAIN_TABS.length; i++) {
@@ -134,20 +143,19 @@ const Main = () => {
         changeTabs(newTabs)
     }
 
-
     /**
      * @function handleClick
      * @param link
-     * eventHandler helper function that takes the link as a param and returns a component number from matchLink()...
-     * ...then dispatches a new tab object containing a title, index, and component keys to be appended to 'tabs'...
+     * eventHandler helper function that takes the link as a param and returns a component number from matchLink()
+     * if the tab is already open (!indexOf(link) === -1) then switch to that tab with handleTabSwitch
+     * else dispatch a new tab object containing a title, index, and component keys to be appended to 'tabs'...
      * ...piece of state
      */
-
     function handleClick(link) {
         let component = matchLink(link);
-        if (index(openTabs, link) === -1) {
+        if (openTabs.indexOf(link) === -1) {
             let newTabContent = {
-                title: link,
+                title: link.match(/[A-Z][a-z]+|[0-9]+/g).join(" "),
                 index: tabs.length,
                 component: component
             };
@@ -157,16 +165,10 @@ const Main = () => {
             changeTabs(newOpen);
         }
         else {
-            handleTabSwitch(index(openTabs, link));
+            handleTabSwitch(openTabs.indexOf(link));
         }
     }
 
-    function index(list, target) {
-        for (let i = 0; i < list.length; i++) {
-            if (list[i] === target) return i;
-        }
-        return -1;
-    }
     /**
      * @return
      * @type Grid
@@ -199,7 +201,7 @@ const Main = () => {
                             return (
                                 <Tab
                                     key={ value.title + index }
-                                    title={ value.title }
+                                    title={value.title}
                                     showClose={ index !== 0 }
                                 >
                                     {
@@ -214,6 +216,13 @@ const Main = () => {
         </Grid>
     );
 };
+
+/**
+ * @function getInitialProps
+ * @param ctx
+ * checks if user is already logged in before Main component is mounted, if not redirected to  Login page
+ * @return {Promise<boolean|any|Promise<boolean>>}
+ */
 
 Main.getInitialProps = async ctx => {
     const { token } = nextCookie(ctx);
@@ -230,7 +239,7 @@ Main.getInitialProps = async ctx => {
             headers: {
                 Authorization: JSON.stringify({ token })
             }
-        })
+        });
 
         if (response.ok) {
             const js = await response.json()

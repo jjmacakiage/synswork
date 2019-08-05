@@ -74,7 +74,6 @@
     bottom: 0;
     left: 0;
     right: 9px;
-    padding: 9px 8px;
     border-radius: 5px 5px 0 0;
     overflow: hidden; }
     .r-a-t .tab-wrapper.with-add {
@@ -221,8 +220,7 @@
     position: inherit;
     margin-top: 50px;
     align-content: center;
-    padding-left: 12px;
-    padding-top: 3px;
+    padding-top: 50px;
     width: 100%; }
   .r-a-t .tooltip {
     display: none;

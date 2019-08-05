@@ -1,5 +1,5 @@
 import React from 'react';
-import { withStyles, Button, Menu, MenuItem, ListItemText, ListItemIcon } from '@material-ui/core';
+import { makeStyles, withStyles, Button, Menu, MenuItem, ListItemText, ListItemIcon } from '@material-ui/core';
 import { ExitToApp, PersonOutlineSharp } from '@material-ui/icons';
 import { useDispatch } from "react-redux";
 import { logout } from "../../utils/Auth/auth";
@@ -35,14 +35,31 @@ const StyledMenuItem = withStyles(theme => ({
     },
 }))(MenuItem);
 
+const useStyles = makeStyles({
+    root: {
+        transition: 'all 0.05s ease-in',
+        cursor: 'pointer',
+        marginTop: 2,
+        marginBottom: 2,
+        '&:hover' :{
+            marginTop: 0,
+            marginBottom: 4
+        }
+    }
+});
 export default function ProfileMenu() {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const dispatch = useDispatch();
+    const classes = useStyles();
+    const [hover, toggleHover] = React.useState(false);
 
     function handleClick(event) {
         setAnchorEl(event.currentTarget);
     }
 
+    function onMouseHover(e) {
+
+    }
     function handleClose() {
         setAnchorEl(null);
     }
@@ -53,7 +70,7 @@ export default function ProfileMenu() {
     }
 
     return (
-        <div>
+        <div className={ classes.root }>
             <Button
                 aria-controls="customized-menu"
                 aria-haspopup="true"
