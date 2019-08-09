@@ -32,6 +32,11 @@ app.prepare().then(() => {
                 });
                 break;
 
+            case "/api/new_trade.js":
+                proxy.web(req, res, { target }, error => {
+                    console.log("Error!", error);
+                });
+                break;
             case "/Main":
                 app.render(req, res, "/Main", query);
                 break;

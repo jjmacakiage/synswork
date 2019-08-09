@@ -1553,7 +1553,10 @@ var INITIAL_STATE = {
   tabs: [],
   NEW_TRADE_FIELDS: _js_new_trade_fields__WEBPACK_IMPORTED_MODULE_1__["new_trade_fields"],
   AUTOFILL_FIELDS: [],
-  FIELD_DATA: []
+  FIELD_DATA: [],
+  validationSchema: {},
+  // || API CALL TO OBTAIN DEFAULT SCHEMA
+  validationFunctions: []
 };
 function NewTradeReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : INITIAL_STATE;
@@ -1565,6 +1568,9 @@ function NewTradeReducer() {
       return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
         NEW_TRADE_FIELDS: result
       });
+
+    case 'CHANGE_SCHEMA':
+      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state);
 
     default:
       return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state);

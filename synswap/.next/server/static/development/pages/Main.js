@@ -1341,18 +1341,23 @@ function CustomiseFields(props) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_core_js_map__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/map */ "./node_modules/@babel/runtime-corejs2/core-js/map.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_map__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_map__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/toConsumableArray.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var formik__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! formik */ "formik");
-/* harmony import */ var formik__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(formik__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core */ "@material-ui/core");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var yup__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! yup */ "yup");
-/* harmony import */ var yup__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(yup__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_map__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/map */ "./node_modules/@babel/runtime-corejs2/core-js/map.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_map__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_map__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var formik__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! formik */ "formik");
+/* harmony import */ var formik__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(formik__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_loading_overlay__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-loading-overlay */ "react-loading-overlay");
+/* harmony import */ var react_loading_overlay__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_loading_overlay__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var react_loading_io__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-loading-io */ "react-loading-io");
+/* harmony import */ var react_loading_io__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_loading_io__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var yup__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! yup */ "yup");
+/* harmony import */ var yup__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(yup__WEBPACK_IMPORTED_MODULE_8__);
+
+
 
 
 
@@ -1363,27 +1368,46 @@ __webpack_require__.r(__webpack_exports__);
 
 var NewTradeFrom = function NewTradeFrom(props) {
   //const validationSchema = useSelector(state => state.NewTradeReducer.validationSchema);
-  var _React$useState = react__WEBPACK_IMPORTED_MODULE_3___default.a.useState(''),
-      _React$useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_2__["default"])(_React$useState, 2),
+  var _React$useState = react__WEBPACK_IMPORTED_MODULE_4___default.a.useState(''),
+      _React$useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_3__["default"])(_React$useState, 2),
       counterparty = _React$useState2[0],
       changeCounterparty = _React$useState2[1];
 
+  var _React$useState3 = react__WEBPACK_IMPORTED_MODULE_4___default.a.useState(false),
+      _React$useState4 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_3__["default"])(_React$useState3, 2),
+      isLoading = _React$useState4[0],
+      changeLoading = _React$useState4[1];
+
   var values = function values() {
-    var list = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__["default"])(props.initialValues);
+    var list = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_2__["default"])(props.initialValues);
 
     var result = [];
 
     for (var i = 0; i < list.length; i++) {
-      result.push([list[i], yup__WEBPACK_IMPORTED_MODULE_6__["string"]().required('Required')]);
+      result.push([list[i], yup__WEBPACK_IMPORTED_MODULE_8__["string"]().required('Required')]);
     }
 
-    return Object.fromEntries(new _babel_runtime_corejs2_core_js_map__WEBPACK_IMPORTED_MODULE_0___default.a(result));
+    return Object.fromEntries(new _babel_runtime_corejs2_core_js_map__WEBPACK_IMPORTED_MODULE_1___default.a(result));
   };
 
-  var testSchema = yup__WEBPACK_IMPORTED_MODULE_6__["object"]().shape(values());
-  return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_4__["Formik"], {
+  var testSchema = yup__WEBPACK_IMPORTED_MODULE_8__["object"]().shape(values());
+  return react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react_loading_overlay__WEBPACK_IMPORTED_MODULE_6___default.a, {
+    active: isLoading,
+    spinner: react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react_loading_io__WEBPACK_IMPORTED_MODULE_7__["Ball"], null),
+    styles: {
+      overlay: function overlay(base) {
+        return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, base, {
+          background: 'rgba(255, 255, 255, 0.1)'
+        });
+      }
+    }
+  }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_5__["Formik"], {
     initialValues: props.initialValues,
     onSubmit: function onSubmit(values, actions) {
+      changeLoading(true);
+      setTimeout(function () {
+        changeLoading(false);
+      }, 2000);
       console.log(values);
       actions.setSubmitting(false);
     },
@@ -1411,34 +1435,34 @@ var NewTradeFrom = function NewTradeFrom(props) {
         touched = _ref.touched,
         isValidating = _ref.isValidating,
         isSubmitting = _ref.isSubmitting;
-    return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_4__["Form"], null, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("select", {
+    return react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_5__["Form"], null, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("select", {
       value: counterparty,
       onChange: function onChange(e) {
         return changeCounterparty(e.target.value);
       }
-    }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("option", {
+    }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("option", {
       value: ""
     }, " Select Counterparty "), props.counterparties.map(function (value, index) {
-      return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("option", {
+      return react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("option", {
         key: value + index,
         value: value
       }, value);
     })), props.fields.map(function (field, index) {
-      return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("div", {
         className: "col",
         key: field + index
-      }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_4__["Field"], {
+      }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_5__["Field"], {
         type: "name",
         name: field,
         disabled: counterparty === ''
-      }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_4__["ErrorMessage"], {
+      }), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_5__["ErrorMessage"], {
         name: field
       }));
-    }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("button", {
+    }), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("button", {
       type: "submit",
       disabled: isValidating || isSubmitting
     }, " Submit "));
-  });
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (NewTradeFrom);
@@ -4499,6 +4523,28 @@ module.exports = require("react-card-flip");
 /***/ (function(module, exports) {
 
 module.exports = require("react-dropzone");
+
+/***/ }),
+
+/***/ "react-loading-io":
+/*!***********************************!*\
+  !*** external "react-loading-io" ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-loading-io");
+
+/***/ }),
+
+/***/ "react-loading-overlay":
+/*!****************************************!*\
+  !*** external "react-loading-overlay" ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-loading-overlay");
 
 /***/ }),
 

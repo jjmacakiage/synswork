@@ -70,6 +70,7 @@
   .r-a-t .tab-wrapper {
     position: absolute;
     display: flex;
+    width: 50%;
     top: 0;
     bottom: 0;
     left: 0;
