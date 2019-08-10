@@ -7,6 +7,7 @@ import Form from './Form';
 import CustomiseFields from './CustomiseFields';
 import { createRows } from "../../utils/tradehelpers";
 import { TabContainer } from "../../utils/tradehelpers";
+import { fetchCounterpartyList } from '../../utils/NewTrade/new_trade_util';
 
 /**
  * @constant useStyles
@@ -35,9 +36,21 @@ const useStyles = makeStyles(theme => ({
 export default function NewTradeContent(props) {
     const classes = useStyles();
     const FIELDS = useSelector(state => state.NewTradeReducer.NEW_TRADE_FIELDS);
+    const currentUser = useSelector(state.AuthReducer.token);
     const trades_length = useSelector(state => state.TradeReducer.tradeStates).length;
     const dispatch = useDispatch();
     const [value, setValue] = useState(0);
+    const [counterpartyList, changeCounterpartyList] =
+        useState(async () => {
+            const res = await fetchCounterpartyList(currentUser);
+            if (res.status === success) {
+                return res.counterpartyList
+            }
+            else {
+                return [];
+            }
+        });
+
 
     /**
      * @function handleSubmit
@@ -102,7 +115,11 @@ export default function NewTradeContent(props) {
                     <TabContainer>
                         <Grid container spacing={ 2 }>
                             <Grid item xs={ 6 }>
-                                <NewTradeForm fieldList={ FIELDS } onSubmit={ handleSubmit.bind(this) } isDisabled={ false }/>
+                                <NewTradeForm
+                                    fieldList={ FIELDS }
+                                    onSubmit={ handleSubmit.bind(this) }
+                                    isDisabled={ false }
+                                />
                             </Grid>
                             <Grid item xs={ 6 } >
                                 <CustomiseFields className={ classes.customise } addFields={ addFields.bind(this) }/>
@@ -115,7 +132,10 @@ export default function NewTradeContent(props) {
                     value === 1
                     &&
                     <TabContainer>
-                        <Form fields={ FIELDS } initialValues={ FIELDS } counterparties={['Barclays', 'Morgan']}/>
+                        <Form
+                            fields={ FIELDS }
+                            initialValues={ FIELDS }
+                            counterpartyList={ counterpartyList }/>
                     </TabContainer>
                 }
             </div>

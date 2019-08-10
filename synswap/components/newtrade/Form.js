@@ -7,10 +7,11 @@ import * as Yup from 'yup';
 
 const NewTradeFrom = props => {
     //const validationSchema = useSelector(state => state.NewTradeReducer.validationSchema);
+    const { counterpartyList, initialValues, fields } = props;
     const [counterparty, changeCounterparty] = React.useState('');
     const [isLoading, changeLoading] = React.useState(false);
     const values = () => {
-        const list = [...props.initialValues];
+        const list = [...initialValues];
         const result = [];
         for (let i = 0; i < list.length; i++) {
             result.push(
@@ -20,6 +21,7 @@ const NewTradeFrom = props => {
         return Object.fromEntries(new Map(result));
     };
     const testSchema = Yup.object().shape(values());
+
     return (
         <LoadingOverlay
             active={ isLoading }
@@ -32,7 +34,7 @@ const NewTradeFrom = props => {
             }}
         >
             <Formik
-                initialValues={ props.initialValues }
+                initialValues={ initialValues }
                 onSubmit={ (values, actions)=> {
                     changeLoading(true);
                     setTimeout(() => {
@@ -64,7 +66,7 @@ const NewTradeFrom = props => {
                     <Form>
                         <select value={ counterparty } onChange={ e => changeCounterparty(e.target.value)}>
                             <option value=""> Select Counterparty </option>
-                            { props.counterparties.map((value, index) => {
+                            { counterpartyList.map((value, index) => {
                                 return (
                                    <option key={ value + index } value={ value }>
                                         {value}
@@ -73,7 +75,7 @@ const NewTradeFrom = props => {
                             })}
                         </select>
                         {
-                            props.fields.map((field, index) => {
+                            fields.map((field, index) => {
                                 return (
                                     <div className="col" key={ field + index }>
                                         <Field type="name" name={ field } disabled={ counterparty === ''} />

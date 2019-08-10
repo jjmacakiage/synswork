@@ -6,15 +6,17 @@ const INITIAL_STATE = {
     AUTOFILL_FIELDS: [],
     FIELD_DATA: [],
     validationSchema: {}, // || API CALL TO OBTAIN DEFAULT SCHEMA
-    validationFunctions: []
+    validationFunctions: [],
+    counterpartyList: [],
+    currentCounterparty: ''
 };
 export default function NewTradeReducer(state = INITIAL_STATE, action) {
     switch (action.type) {
         case 'APPEND_FIELDS':
             const result = state.NEW_TRADE_FIELDS.concat(action.payload);
             return { ...state, NEW_TRADE_FIELDS: result };
-        case 'CHANGE_SCHEMA':
-            return { ...state };
+        case 'CHANGE_COUNTERPARTY':
+            return { ...state, currentCounterparty: action.payload };
         default:
             return { ...state };
     }

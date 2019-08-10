@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-unfetch';
 
 export default async function fetchCounterpartyList(currentUser) {
-    const url = '/api/new_trade';
+    const url = '/js/api/new_trade';
     try {
         const response = await fetch(url, {
             method: 'POST',
