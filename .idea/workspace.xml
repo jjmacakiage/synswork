@@ -3,13 +3,168 @@
   <component name="ChangeListManager">
     <list default="true" id="7ffb33f5-9010-4c63-94aa-8ac1cabb86bb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/autodll-webpack-plugin/development_instance_0_a643e77195746246c2da99c21fe209fe/stats.json" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/cache/autodll-webpack-plugin/development_instance_0_a643e77195746246c2da99c21fe209fe/stats.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/23b8a724cae136b66c914587a071f8f7.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/33efb2919b7d596068d1acf17f2efe8b.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/35b7a7e52828df0af72981d4335b0c26.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/3ebe4bb8794a912aba578b9d2f1d3c1f.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/4d9ce17a1825a76603f866db03649f2a.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/5b17ce3d5fdda1ebcafa9fc7b98548ce.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/5cddadd024989c32183f90faa071a827.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/6d43dedb1eb82c587a17cf5930592738.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/6fe1b915a33d1e0883b7c9968ae5e2e4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/72785b030d56169f2a8b8f9e612d932e.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/75d6df4a67ce7fd93a1c2e2fc73040b7.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/7b9cab91e63e6861aceb3f339171a6c5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/7ff902d078d32fab288579908bfa61cd.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/8086e0fe715bdc92ec78d9da9227f289.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/81544ca82fd9bd41d9bd66acbcae75f4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/8182b7acbd4a2807b3e64d9ac0ea0e52.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/828d66633a7a0bc0421b8d8a717cc745.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/866117bd96a78d6760c7e209c8eb7fed.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/86b31e9253349e8d706e51d19012203e.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/889f5f63efd53ba7f82bff1961ac774e.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/8a2a95036b3be1a5a5a66256252504f2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/8b3f54178758b025b38760b7892f789c.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/8b7febd2af18e1ffda671e556f77d6f0.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/90980162e9bad51cf122b3e7703830d4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/90ca3147841f4402b753fd86566ffa2b.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/920fb9d21e6cb9fd0ed485eb3e7d4104.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/952f4171253c318a92ebb39c1eb5a62e.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/957455cfdbed4b0b4144cedc6b2b0c1f.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/962909c3c20bdb302034c2227fa34abd.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/a4e947981faaad956a2c45d2447bad69.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/a89ed6eaa10a65305d4f97ee07472218.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/bb1691bdfec972a512404bff245b86ba.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/c0c5f5557b2c729eced503df0bfa84c4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/c22060f7ce0aee85a3b56f97cfb58da3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/c39f2d2caf104a00efdf8def4fe28137.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/e30a7c4b9a8f18470e467470a6322619.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/e384028852692f1ade5ea4ed8d0fd76a.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/e6af5aba945a8e7f8973d4e46fb64445.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/eea47136e47ecf99836d0638106949e5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/f7646a4577e03082bf8b9147ea1e00c8.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/f7e98aff7525ceb9a02d600750c979af.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/server/pages-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/server/pages-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/server/static/development/pages/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/server/static/development/pages/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/server/static/development/pages/Login.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/server/static/development/pages/Login.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/server/static/development/pages/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/server/static/development/pages/Main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/server/static/development/pages/Main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/server/static/development/pages/Main.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/server/static/development/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/server/static/development/pages/_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/server/static/development/pages/_app.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/server/static/development/pages/_app.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/server/static/development/pages/api/login.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/server/static/development/pages/api/login.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/server/static/development/pages/api/profile.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/server/static/development/pages/api/profile.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/server/static/development/pages/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/server/static/development/pages/index.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/chunks/styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/static/chunks/styles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/chunks/styles.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/static/chunks/styles.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/css/styles.chunk.css" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/static/css/styles.chunk.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/css/styles.chunk.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/static/css/styles.chunk.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/development/pages/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/static/development/pages/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/development/pages/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/static/development/pages/Main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/development/pages/Main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/static/development/pages/Main.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/development/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/static/development/pages/_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/development/pages/_app.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/static/development/pages/_app.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/runtime/webpack.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/static/runtime/webpack.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/runtime/webpack.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/static/runtime/webpack.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/04ea90e8f6d6c7465398.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/0a3d6157df25b4e25dab.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/0a84886d80b65f346196.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/0db97e9cd63e4964bd4b.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/20264b5083ffea0fe2c7.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/38910ebac7e216382e42.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/40c2c7194d3082ef1c3c.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/490e1ac3c771ff6f6685.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/55fb43c92cb69af93291.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/75a1c96448d5a0fa8669.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/7886ef662e07aa51dd60.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/7cadb8b49f36562b18f1.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/8628867f668380dc1737.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/887b19216905416fbee8.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/8b434b6133badb921237.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/8bf83b0eaa3e45f5f9e8.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/8d71d38411ab53b5a302.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/8ff3332006e9a0e5f184.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/9746fac1f5f55ffe0075.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/ab58a61b92e685ac0f16.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/ac35e0ceba342a7fc651.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/b65a76ded51763714d4b.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/ba7c53a674355befa3b6.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/c88fab7c5bc91d154296.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/e577567e35f64b3b6f41.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/e629b0facd0810414c36.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/ef177f17f0e99a0b345b.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/f2515d156582e0df39b9.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/ff190b5f5251792c3409.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.04ea90e8f6d6c7465398.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.04ea90e8f6d6c7465398.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.0a3d6157df25b4e25dab.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.0a3d6157df25b4e25dab.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.0a84886d80b65f346196.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.0a84886d80b65f346196.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.0db97e9cd63e4964bd4b.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.0db97e9cd63e4964bd4b.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.490e1ac3c771ff6f6685.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.490e1ac3c771ff6f6685.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.55fb43c92cb69af93291.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.55fb43c92cb69af93291.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.7cadb8b49f36562b18f1.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.7cadb8b49f36562b18f1.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.8628867f668380dc1737.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.8628867f668380dc1737.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.887b19216905416fbee8.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.887b19216905416fbee8.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.8b434b6133badb921237.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.8b434b6133badb921237.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.8bf83b0eaa3e45f5f9e8.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.8bf83b0eaa3e45f5f9e8.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.8d71d38411ab53b5a302.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.8d71d38411ab53b5a302.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.9746fac1f5f55ffe0075.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.9746fac1f5f55ffe0075.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.ab58a61b92e685ac0f16.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.ab58a61b92e685ac0f16.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.ac35e0ceba342a7fc651.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.ac35e0ceba342a7fc651.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.ba7c53a674355befa3b6.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.ba7c53a674355befa3b6.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.e577567e35f64b3b6f41.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.e577567e35f64b3b6f41.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.e629b0facd0810414c36.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.e629b0facd0810414c36.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.f2515d156582e0df39b9.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.f2515d156582e0df39b9.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.ff190b5f5251792c3409.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.ff190b5f5251792c3409.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/_app.js.8ff3332006e9a0e5f184.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/_app.js.8ff3332006e9a0e5f184.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/_error.js.75a1c96448d5a0fa8669.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/_error.js.75a1c96448d5a0fa8669.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/_error.js.c88fab7c5bc91d154296.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/_error.js.c88fab7c5bc91d154296.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/styles.20264b5083ffea0fe2c7.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/styles.20264b5083ffea0fe2c7.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/styles.38910ebac7e216382e42.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/styles.38910ebac7e216382e42.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/styles.ef177f17f0e99a0b345b.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/styles.ef177f17f0e99a0b345b.hot-update.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/components/context.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/components/contexttest.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/components/main/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/components/main/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/components/main/SearchList.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/components/main/SearchList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/synswap/components/newtrade/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/components/newtrade/Form.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/synswap/components/newtrade/NewTradeContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/components/newtrade/NewTradeContent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/js/api/new_trade.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/pages/api/new_trade.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/synswap/js/new_trade_fields.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/js/new_trade_fields.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/synswap/pages/api/new_trade.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/js/api/new_trade.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/pages/Blotter.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/pages/Blotter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/pages/FileUpload.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/pages/FileUpload.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/pages/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/pages/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/pages/Main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/pages/NewTrade.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/pages/NewTrade.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/pages/Trade.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/pages/Trade.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/pages/_app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/synswap/reducers/NewTradeReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/reducers/NewTradeReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/synswap/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/synswap/utils/NewTrade/new_trade.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/utils/NewTrade/new_trade_util.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/resources/styles/react-awesome-tabs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/resources/styles/react-awesome-tabs.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/utils/NewTrade/new_trade_util.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/utils/NewTrade/new_trade_util.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,49 +178,30 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/synswap/js/new_trade_fields.js">
+        <entry file="file://$PROJECT_DIR$/synswap/reducers/NewTradeReducer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#13#17882#0" />
-                <element signature="e#44#515#0" />
-                <element signature="e#546#17018#0" />
-                <element signature="e#17033#17073#0" />
-                <element signature="e#17091#17454#0" />
-                <element signature="e#17456#17755#0" />
-                <element signature="e#17475#17561#0" />
-                <element signature="e#17585#17747#0" />
-                <element signature="e#17827#17874#0" />
-              </folding>
+            <state relative-caret-position="230">
+              <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/synswap/utils/NewTrade/new_trade_util.js">
+        <entry file="file://$PROJECT_DIR$/synswap/reducers/TabReducer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+            <state relative-caret-position="660">
+              <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/synswap/reducers/NewTradeReducer.js">
+        <entry file="file://$PROJECT_DIR$/synswap/pages/NewTrade.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="11" column="2" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/synswap/components/newtrade/Form.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1771">
-              <caret line="77" column="28" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="28" />
+            <state relative-caret-position="431">
+              <caret line="66" column="42" selection-start-line="66" selection-start-column="42" selection-end-line="66" selection-end-column="42" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#0#38#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -74,31 +210,31 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/synswap/components/newtrade/NewTradeContent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="980">
-              <caret line="137" column="64" selection-start-line="137" selection-start-column="64" selection-end-line="137" selection-end-column="64" />
+            <state relative-caret-position="892">
+              <caret line="191" column="86" selection-start-line="191" selection-start-column="86" selection-end-line="191" selection-end-column="86" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
-                <element signature="e#1224#1378#0" />
-                <element signature="e#1413#1668#0" />
-                <element signature="e#1675#1852#0" />
-                <element signature="e#1887#1959#0" />
-                <element signature="e#1965#2152#0" />
-                <element signature="e#2190#2225#0" />
-                <element signature="e#2231#2391#0" />
-                <element signature="e#2481#2807#0" />
+                <element signature="e#655#710#0" />
+                <element signature="e#750#895#0" />
+                <element signature="e#1486#1640#0" />
+                <element signature="e#1937#2114#0" />
+                <element signature="e#2149#2221#0" />
+                <element signature="e#2227#2414#0" />
+                <element signature="e#2493#2653#0" />
+                <element signature="e#2642#4895#0" />
+                <element signature="e#3007#3138#0" />
+                <element signature="e#3320#3642#0" />
+                <element signature="e#3720#4513#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/synswap/pages/Login.js">
+        <entry file="file://$PROJECT_DIR$/synswap/js/new_trade_fields.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-92">
+              <caret line="470" column="34" selection-start-line="470" selection-start-column="34" selection-end-line="470" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -107,19 +243,7 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>suggestions</find>
-      <find>input</find>
-      <find>handleKeyDown</find>
-      <find>classes</find>
-      <find>inputRoot</find>
-      <find>search for</find>
-      <find>onFocus</find>
-      <find>inputProps</find>
-      <find>search</find>
-      <find>render</find>
-      <find>paper</find>
       <find>onBlur</find>
-      <find>renderInput</find>
       <find>inputRef</find>
       <find>ref</find>
       <find>inputValue</find>
@@ -135,8 +259,20 @@
       <find>text</find>
       <find>className={ classes.pane }</find>
       <find>typo</find>
-      <find>Ball</find>
       <find>Eclipse</find>
+      <find>props</find>
+      <find>props.</find>
+      <find>fields</find>
+      <find>FIELDS</find>
+      <find>Provider</find>
+      <find>renderInput</find>
+      <find>useStyles</find>
+      <find>handleClick</find>
+      <find>Form</find>
+      <find>NewTradeForm</find>
+      <find>CustomiseFields</find>
+      <find>Ball</find>
+      <find>Ellipse</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -145,10 +281,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/synswap/package.json" />
-        <option value="$PROJECT_DIR$/synswap/components/Header.js" />
-        <option value="$PROJECT_DIR$/synswap/pages/api/dev.js" />
-        <option value="$PROJECT_DIR$/synswap/utils/auth.js" />
         <option value="$PROJECT_DIR$/synswap/components/ProfileMenu.js" />
         <option value="$PROJECT_DIR$/synswap/js/main_tabs.js" />
         <option value="$PROJECT_DIR$/synswap/js/home_props.js" />
@@ -166,9 +298,6 @@
         <option value="$PROJECT_DIR$/synswap/pages/Login.js" />
         <option value="$PROJECT_DIR$/synswap/components/login/LoginForm.js" />
         <option value="$PROJECT_DIR$/synswap/components/newtrade/CustomiseFields.js" />
-        <option value="$PROJECT_DIR$/synswap/components/main/SearchList.js" />
-        <option value="$PROJECT_DIR$/synswap/pages/Trade.js" />
-        <option value="$PROJECT_DIR$/synswap/pages/Blotter.js" />
         <option value="$PROJECT_DIR$/synswap/utils/Auth/auth.js" />
         <option value="$PROJECT_DIR$/synswap/components/newtrade/NewTrade.js" />
         <option value="$PROJECT_DIR$/synswap/components/newtrade/NewTradeDrawer.js" />
@@ -176,26 +305,33 @@
         <option value="$PROJECT_DIR$/synswap/components/newtrade/Drawer.js" />
         <option value="$PROJECT_DIR$/synswap/pages/NewTradePage.js" />
         <option value="$PROJECT_DIR$/synswap/components/DataTable.js" />
-        <option value="$PROJECT_DIR$/synswap/pages/NewTrade.js" />
-        <option value="$PROJECT_DIR$/synswap/components/main/Header.js" />
         <option value="$PROJECT_DIR$/synswap/components/main/ProfileMenu.js" />
         <option value="$PROJECT_DIR$/synswap/components/home/List.js" />
         <option value="$PROJECT_DIR$/synswap/components/home/HomePane.js" />
         <option value="$PROJECT_DIR$/synswap/components/home/NotificationList.js" />
         <option value="$PROJECT_DIR$/synswap/node_modules/react-awesome-tabs/src/js/react-awesome-tabs.js" />
         <option value="$PROJECT_DIR$/synswap/components/fileupload/FileTypeList.js" />
-        <option value="$PROJECT_DIR$/synswap/resources/styles/react-awesome-tabs.scss" />
-        <option value="$PROJECT_DIR$/synswap/pages/Home.js" />
-        <option value="$PROJECT_DIR$/synswap/pages/FileUpload.js" />
-        <option value="$PROJECT_DIR$/synswap/pages/Main.js" />
-        <option value="$PROJECT_DIR$/synswap/pages/api/new_trade.js" />
         <option value="$PROJECT_DIR$/synswap/server.js" />
         <option value="$PROJECT_DIR$/synswap/utils/NewTrade/new_trade.js" />
-        <option value="$PROJECT_DIR$/synswap/js/new_trade_fields.js" />
-        <option value="$PROJECT_DIR$/synswap/reducers/NewTradeReducer.js" />
         <option value="$PROJECT_DIR$/synswap/components/newtrade/NewTradeForm.js" />
-        <option value="$PROJECT_DIR$/synswap/components/newtrade/NewTradeContent.js" />
+        <option value="$PROJECT_DIR$/synswap/pages/_app.js" />
+        <option value="$PROJECT_DIR$/synswap/js/api/new_trade.js" />
+        <option value="$PROJECT_DIR$/synswap/utils/NewTrade/new_trade_util.js" />
+        <option value="$PROJECT_DIR$/synswap/pages/api/new_trade.js" />
+        <option value="$PROJECT_DIR$/synswap/components/main/Header.js" />
+        <option value="$PROJECT_DIR$/synswap/components/main/SearchList.js" />
+        <option value="$PROJECT_DIR$/synswap/pages/Blotter.js" />
+        <option value="$PROJECT_DIR$/synswap/pages/FileUpload.js" />
+        <option value="$PROJECT_DIR$/synswap/pages/Trade.js" />
+        <option value="$PROJECT_DIR$/synswap/pages/Home.js" />
+        <option value="$PROJECT_DIR$/synswap/resources/styles/react-awesome-tabs.scss" />
+        <option value="$PROJECT_DIR$/synswap/pages/Main.js" />
+        <option value="$PROJECT_DIR$/synswap/components/newtrade/Fields2.js" />
+        <option value="$PROJECT_DIR$/synswap/js/new_trade_fields.js" />
         <option value="$PROJECT_DIR$/synswap/components/newtrade/Form.js" />
+        <option value="$PROJECT_DIR$/synswap/reducers/NewTradeReducer.js" />
+        <option value="$PROJECT_DIR$/synswap/components/newtrade/NewTradeContent.js" />
+        <option value="$PROJECT_DIR$/synswap/pages/NewTrade.js" />
       </list>
     </option>
   </component>
@@ -209,6 +345,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -227,6 +364,20 @@
               <item name="synswap-web-react" type="462c0819:PsiDirectoryNode" />
               <item name="synswap" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="synswap-web-react" type="b2602c69:ProjectViewProjectNode" />
+              <item name="synswap-web-react" type="462c0819:PsiDirectoryNode" />
+              <item name="synswap" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="synswap-web-react" type="b2602c69:ProjectViewProjectNode" />
+              <item name="synswap-web-react" type="462c0819:PsiDirectoryNode" />
+              <item name="synswap" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="synswap-web-react" type="b2602c69:ProjectViewProjectNode" />
@@ -259,11 +410,17 @@
               <item name="synswap" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="synswap-web-react" type="b2602c69:ProjectViewProjectNode" />
+              <item name="synswap-web-react" type="462c0819:PsiDirectoryNode" />
+              <item name="synswap" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="NewTrade" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -285,17 +442,17 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/synswap/js/apii" />
-      <recent name="$PROJECT_DIR$/synswap/components/newtrade" />
-      <recent name="$PROJECT_DIR$/synswap/components/home" />
-      <recent name="$PROJECT_DIR$/synswap/utils/Auth" />
-      <recent name="$PROJECT_DIR$/synswap/components/main" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/synswap" />
       <recent name="$PROJECT_DIR$/synswap/utils" />
       <recent name="$PROJECT_DIR$/synswap/pages" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/synswap/pages/api" />
+      <recent name="$PROJECT_DIR$/synswap/js/apii" />
+      <recent name="$PROJECT_DIR$/synswap/components/newtrade" />
+      <recent name="$PROJECT_DIR$/synswap/components/home" />
+      <recent name="$PROJECT_DIR$/synswap/utils/Auth" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -324,18 +481,20 @@
       <workItem from="1564238868389" duration="23666000" />
       <workItem from="1564578877098" duration="30543000" />
       <workItem from="1565197472631" duration="3209000" />
-      <workItem from="1565358479550" duration="4640000" />
+      <workItem from="1565358479550" duration="7105000" />
+      <workItem from="1565523603670" duration="15338000" />
+      <workItem from="1565953787407" duration="4639000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102232000" />
+    <option name="totallyTimeSpent" value="124674000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="823" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22031474" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22603719" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -343,7 +502,7 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32876712" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32831737" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -352,7 +511,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32876712" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49713877" weight="0.41538462" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49713877" weight="0.2749658" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5028612" side_tool="true" weight="0.2849315" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -420,60 +579,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/synswap/node_modules/@material-ui/core/Card/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/synswap/node_modules/@material-ui/core/Card/Card.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-260">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/synswap/node_modules/@material-ui/core/CardActionArea/CardActionArea.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-262" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/synswap/components/newtrade/CustomiseFields.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/synswap/components/trade/BestMatch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="18" column="88" selection-start-line="18" selection-start-column="88" selection-end-line="18" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/synswap/pages/Trade.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="63" column="42" selection-start-line="63" selection-start-column="42" selection-end-line="63" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/synswap/reducers/TradeReducer.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/synswap/pages/Blotter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="6" column="72" selection-start-line="6" selection-start-column="72" selection-end-line="6" selection-end-column="72" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-            <element signature="e#401#629#0" />
-            <element signature="e#664#1438#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/synswap/utils/Auth/get-host.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -484,16 +589,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/synswap/components/newtrade/NewTradeDrawer.js" />
-    <entry file="file://$PROJECT_DIR$/synswap/components/main/SearchList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1840">
-          <caret line="88" column="40" selection-start-line="88" selection-start-column="40" selection-end-line="88" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/synswap/components/newtrade/Drawer.js" />
     <entry file="file://$PROJECT_DIR$/synswap/components/DataTable.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -512,16 +607,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/synswap/components/main/Header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="659">
-          <caret line="96" column="53" selection-start-line="96" selection-start-column="53" selection-end-line="96" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -567,13 +652,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/synswap/resources/styles/react-awesome-tabs.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="259" column="30" selection-start-line="259" selection-start-column="30" selection-end-line="259" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/synswap/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -589,48 +667,12 @@
         <state relative-caret-position="-2402" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/synswap/pages/NewTrade.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/synswap/components/fileupload/FileTypeList.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="87">
           <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="50" selection-end-column="23" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/synswap/pages/FileUpload.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="106" column="34" selection-start-line="106" selection-start-column="34" selection-end-line="106" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <element signature="e#193#487#0" />
-            <element signature="e#205#385#0" />
-            <element signature="e#482#837#0" />
-            <element signature="e#785#815#0" />
-            <element signature="e#838#868#0" />
-            <element signature="e#891#921#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/synswap/components/home/List.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="2" column="54" lean-forward="true" selection-start-line="2" selection-start-column="54" selection-end-line="2" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#81#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -655,16 +697,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/synswap/pages/Home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2277">
-          <caret line="99" column="56" lean-forward="true" selection-start-line="99" selection-start-column="56" selection-end-line="99" selection-end-column="56" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/synswap/components/home/HomePane.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="713">
@@ -677,13 +709,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/synswap/node_modules/attr-accept/dist/index.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/synswap/reducers/TabReducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="736">
-          <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/synswap/utils/Auth/auth.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -705,20 +730,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/synswap/pages/Main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4968">
-          <caret line="233" column="67" lean-forward="true" selection-start-line="233" selection-start-column="67" selection-end-line="233" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/synswap/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/synswap/utils/tradehelpers.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -728,39 +739,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/synswap/pages/api/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/synswap/pages/api/profile.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/synswap/js/api/new_trade.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/synswap/js/new_trade_fields.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#13#17882#0" />
-            <element signature="e#44#515#0" />
-            <element signature="e#546#17018#0" />
-            <element signature="e#17033#17073#0" />
-            <element signature="e#17091#17454#0" />
-            <element signature="e#17456#17755#0" />
-            <element signature="e#17475#17561#0" />
-            <element signature="e#17585#17747#0" />
-            <element signature="e#17827#17874#0" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/synswap/reducers/AuthReducer.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -769,16 +749,78 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/synswap/components/contexttest.js" />
+    <entry file="file://$PROJECT_DIR$/synswap/components/context.js" />
+    <entry file="file://$PROJECT_DIR$/synswap/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/synswap/store.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/synswap/pages/_app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2">
+          <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/synswap/pages/api/new_trade.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="63" selection-start-line="9" selection-start-column="63" selection-end-line="9" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/synswap/utils/NewTrade/new_trade_util.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+        <state relative-caret-position="69">
+          <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/synswap/pages/api/dev.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/synswap/components/main/Header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="95" column="35" selection-start-line="95" selection-start-column="35" selection-end-line="95" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/synswap/components/main/SearchList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="29" column="22" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/synswap/pages/api/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/synswap/pages/Login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
+        <state relative-caret-position="368">
           <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
@@ -786,48 +828,140 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/synswap/components/newtrade/NewTradeForm.js">
+    <entry file="file://$PROJECT_DIR$/synswap/pages/Blotter.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/synswap/components/newtrade/NewTradeContent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="980">
-          <caret line="137" column="64" selection-start-line="137" selection-start-column="64" selection-end-line="137" selection-end-column="64" />
+        <state relative-caret-position="92">
+          <caret line="4" column="47" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
           <folding>
             <element signature="e#0#51#0" expanded="true" />
-            <element signature="e#1224#1378#0" />
-            <element signature="e#1413#1668#0" />
-            <element signature="e#1675#1852#0" />
-            <element signature="e#1887#1959#0" />
-            <element signature="e#1965#2152#0" />
-            <element signature="e#2190#2225#0" />
-            <element signature="e#2231#2391#0" />
-            <element signature="e#2481#2807#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/synswap/components/newtrade/Form.js">
+    <entry file="file://$PROJECT_DIR$/synswap/pages/FileUpload.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1771">
-          <caret line="77" column="28" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="28" />
+        <state relative-caret-position="92">
+          <caret line="4" column="47" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/synswap/pages/Trade.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/synswap/resources/styles/react-awesome-tabs.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="67" column="29" selection-start-line="67" selection-start-column="29" selection-end-line="67" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/synswap/pages/Home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1772">
+          <caret line="126" column="14" selection-start-line="126" selection-start-column="14" selection-end-line="126" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/synswap/pages/Main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="181" column="92" selection-start-line="181" selection-start-column="92" selection-end-line="181" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/synswap/components/newtrade/Fields2.js" />
+    <entry file="file://$PROJECT_DIR$/synswap/reducers/TabReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/synswap/components/home/List.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="25" column="73" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="73" />
+          <folding>
+            <element signature="e#0#81#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/synswap/reducers/NewTradeReducer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="2" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+        <state relative-caret-position="230">
+          <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/synswap/components/newtrade/NewTradeForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="966">
+          <caret line="60" column="54" selection-start-line="60" selection-start-column="54" selection-end-line="60" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/synswap/js/new_trade_fields.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-92">
+          <caret line="470" column="34" selection-start-line="470" selection-start-column="34" selection-end-line="470" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/synswap/components/newtrade/Form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/synswap/components/newtrade/NewTradeContent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="892">
+          <caret line="191" column="86" selection-start-line="191" selection-start-column="86" selection-end-line="191" selection-end-column="86" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+            <element signature="e#655#710#0" />
+            <element signature="e#750#895#0" />
+            <element signature="e#1486#1640#0" />
+            <element signature="e#1937#2114#0" />
+            <element signature="e#2149#2221#0" />
+            <element signature="e#2227#2414#0" />
+            <element signature="e#2493#2653#0" />
+            <element signature="e#2642#4895#0" />
+            <element signature="e#3007#3138#0" />
+            <element signature="e#3320#3642#0" />
+            <element signature="e#3720#4513#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/synswap/pages/NewTrade.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="66" column="42" selection-start-line="66" selection-start-column="42" selection-end-line="66" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

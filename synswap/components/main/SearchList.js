@@ -6,7 +6,6 @@ import {fade, makeStyles} from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import MenuItem from '@material-ui/core/MenuItem';
 import {InputBase} from "@material-ui/core";
-import SearchIcon from "@material-ui/core/SvgIcon/SvgIcon";
 
 const suggestions = [
     { label: 'Afghanistan' },

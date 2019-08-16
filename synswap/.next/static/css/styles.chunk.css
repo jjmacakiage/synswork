@@ -2,7 +2,7 @@
   position: absolute;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   left: 0;
-  top: 80px;
+  top: 2px;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
@@ -68,9 +68,7 @@
     .r-a-t .add-wrapper:hover {
       background: #f3f3f3; }
   .r-a-t .tab-wrapper {
-    position: absolute;
     display: flex;
-    width: 50%;
     top: 0;
     bottom: 0;
     left: 0;
@@ -81,6 +79,7 @@
       width: calc(100% - 35px); }
     .r-a-t .tab-wrapper .tab-button {
       position: absolute;
+      max-width: 240px;
       height: 27px;
       border-width: 2px 0 0;
       user-select: none; }

@@ -179,14 +179,7 @@ const Main = () => {
      */
     return (
         <Grid container spacing={ 2 }>
-            <Grid item xs={ 12 }>
-                <Header
-                    items={ ['Home', 'Blotter', 'New Trade'] }
-                    links={ ['Home', 'Blotter', 'NewTrade'] }
-                    onClick={ handleClick.bind(this) }
-                />
-            </Grid>
-            <Grid item xs={ 12 } style={{ maxWidth: 'min-content'}}>
+            <Grid item xs={ 12 } style={{ maxWidth: 'min-content', backgroundColor: '#f5f5f5'}}>
                 <Tabs
                     active={ activeTab }
                     onTabSwitch={ handleTabSwitch.bind(this) }

@@ -93,7 +93,7 @@ export default function Header(props) {
 
     return (
         <div className={classes.root}>
-            <AppBar position="static">
+            <div position="static">
                 <Toolbar className={ classes.toolbar }>
                     <div className={classes.search}>
                         {
@@ -122,7 +122,7 @@ export default function Header(props) {
                         <ProfileMenu />
                     </IconButton>
                 </Toolbar>
-            </AppBar>
+            </div>
         </div>
     );
 }

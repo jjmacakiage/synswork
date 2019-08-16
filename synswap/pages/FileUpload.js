@@ -2,6 +2,7 @@ import React, { useMemo, useState } from 'react';
 import {Divider, Grid, makeStyles, Typography} from "@material-ui/core";
 import { useDropzone } from 'react-dropzone';
 import FileTypeList from '../components/fileupload/FileTypeList';
+import Header from '../components/main/Header';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -113,6 +114,12 @@ export default function FileUpload(props) {
     };
     return (
         <Grid container spacing={ 2 } className={ classes.root }>
+            <Grid item xs={ 12 }>
+                <Header
+                    items={ ['Home', 'Blotter', 'New Trade'] }
+                    links={ ['Home', 'Blotter', 'NewTrade'] }
+                />
+            </Grid>
             <Grid item xs={ 12 }>
                 <Typography variant="overline" align="center"> UPLOAD NEW TRADE </Typography>
                 <Divider dark={ true } />

@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
-import { Tab, Tabs } from "@material-ui/core";
+import { Tab, Tabs, Grid } from "@material-ui/core";
 import { useSelector } from "react-redux";
 
 import DataTable from '../components/DataTable';
+import Header from '../components/main/Header';
 import { TabContainer } from "../utils/tradehelpers";
 import BestMatch from '../components/trade/BestMatch';
 
@@ -76,55 +77,65 @@ export default function Trade(props) {
     const BEST_MATCH_TITLE = 'Best Match Score: ' + score + '%';
     return (
         <div>
-            <div>
-                <Tabs
-                    value={value}
-                    onChange={tabChange}
-                    indicatorColor="primary"
-                    textColor="primary"
-                    centered
-                >
-                    <Tab label="Fields"/>
-                    <Tab label="Autofill"/>
-                    <Tab label="CashFlow Schedule"/>
-                    <Tab label="Confirmation"/>
-                    <Tab label={ BEST_MATCH_TITLE } />
-                </Tabs>
-                {
-                    value === 0 &&
-                    (
-                        <TabContainer>
-                            <DataTable data={ data } onRowClick={() => window.alert('row clicked')}/>
-                        </TabContainer>
-                    )
-                }
-                {
-                    value === 1 &&
-                    (
-                        <TabContainer>
-                            <DataTable data={{columns: columns, rows: rows}} onRowClick={() => window.alert('row clicked')}/>
-                        </TabContainer>
-                    )
-                }
-                {
-                    value === 2 &&
-                    (
-                        <h1> CashFlow Schedule </h1>
-                    )
-                }
-                {
-                    value === 3 &&
-                    (
-                        <h1> Confirmation </h1>
-                    )
-                }
-                {
-                    value === 4 &&
-                    (
-                        <BestMatch score={ score }/>
-                    )
-                }
-            </div>
+            <Grid container spacing={ 2 }>
+                <Grid item xs={ 12 }>
+                    <Header
+                        items={ ['Home', 'Blotter', 'New Trade'] }
+                        links={ ['Home', 'Blotter', 'NewTrade'] }
+                    />
+                </Grid>
+                <Grid item xs={ 12 }>
+                    <div>
+                        <Tabs
+                            value={value}
+                            onChange={tabChange}
+                            indicatorColor="primary"
+                            textColor="primary"
+                            centered
+                        >
+                            <Tab label="Fields"/>
+                            <Tab label="Autofill"/>
+                            <Tab label="CashFlow Schedule"/>
+                            <Tab label="Confirmation"/>
+                            <Tab label={ BEST_MATCH_TITLE } />
+                        </Tabs>
+                        {
+                            value === 0 &&
+                            (
+                                <TabContainer>
+                                    <DataTable data={ data } onRowClick={() => window.alert('row clicked')}/>
+                                </TabContainer>
+                            )
+                        }
+                        {
+                            value === 1 &&
+                            (
+                                <TabContainer>
+                                    <DataTable data={{columns: columns, rows: rows}} onRowClick={() => window.alert('row clicked')}/>
+                                </TabContainer>
+                            )
+                        }
+                        {
+                            value === 2 &&
+                            (
+                                <h1> CashFlow Schedule </h1>
+                            )
+                        }
+                        {
+                            value === 3 &&
+                            (
+                                <h1> Confirmation </h1>
+                            )
+                        }
+                        {
+                            value === 4 &&
+                            (
+                                <BestMatch score={ score }/>
+                            )
+                        }
+                    </div>
+                </Grid>
+            </Grid>
         </div>
     )
 }

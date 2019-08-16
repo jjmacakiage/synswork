@@ -20,7 +20,7 @@ class MyApp extends App {
         const { Component, pageProps, store } = this.props;
 
         return (
-            <Provider store={store}>
+            <Provider store={ store }>
                 <Container>
                     <Component {...pageProps} />
                 </Container>

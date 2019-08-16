@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Button, Grid } from '@material-ui/core';
 import { useSelector } from "react-redux";
 import DataTable from '../components/DataTable';
+import Header from '../components/main/Header';
 
 export default function Blotter() {
     const [data, setData] = useState({ rows: [['f']], columns: ['a'] });
@@ -42,6 +43,12 @@ export default function Blotter() {
     return (
       <div>
           <Grid container spacing={ 2 }>
+              <Grid item xs={ 12 }>
+                  <Header
+                      items={ ['Home', 'Blotter', 'New Trade'] }
+                      links={ ['Home', 'Blotter', 'NewTrade'] }
+                  />
+              </Grid>
               <Grid item xs={ 12 }>
                   <Button color="primary" onClick={ exportToCSV.bind(this) }>
                       Export to CSV

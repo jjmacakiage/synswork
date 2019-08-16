@@ -1,26 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ErrorMessage, Formik, Form, Field } from 'formik';
 import LoadingOverlay from 'react-loading-overlay';
 import { Ball } from 'react-loading-io';
 import * as Yup from 'yup';
+import {TextField, Select, InputLabel} from "@material-ui/core";
 
-
-const NewTradeFrom = props => {
+const NewTradeForm = props => {
     //const validationSchema = useSelector(state => state.NewTradeReducer.validationSchema);
     const { counterpartyList, initialValues, fields } = props;
-    const [counterparty, changeCounterparty] = React.useState('');
-    const [isLoading, changeLoading] = React.useState(false);
-    const values = () => {
-        const list = [...initialValues];
-        const result = [];
-        for (let i = 0; i < list.length; i++) {
-            result.push(
-                [list[i], Yup.string().required('Required')]
-            )
-        }
-        return Object.fromEntries(new Map(result));
-    };
-    const testSchema = Yup.object().shape(values());
+
+
+
 
     return (
         <LoadingOverlay
@@ -64,7 +54,7 @@ const NewTradeFrom = props => {
                 >
                 {({ errors, touched, isValidating, isSubmitting }) => (
                     <Form>
-                        <select value={ counterparty } onChange={ e => changeCounterparty(e.target.value)}>
+                        <Select value={ counterparty } onChange={ e => handleCounterpartyChange(e) } >
                             <option value=""> Select Counterparty </option>
                             { counterpartyList.map((value, index) => {
                                 return (
@@ -73,15 +63,61 @@ const NewTradeFrom = props => {
                                    </option>
                                 );
                             })}
-                        </select>
+                        </Select>
                         {
                             fields.map((field, index) => {
-                                return (
-                                    <div className="col" key={ field + index }>
-                                        <Field type="name" name={ field } disabled={ counterparty === ''} />
-                                        <ErrorMessage name={ field } />
-                                    </div>
-                                )
+                                switch(field[1]){
+                                    case 'text':
+                                        return (
+                                            <div className="col" key={ field[0] + index }>
+                                                <Field name={ field[0] }
+                                                       render={() => (
+                                                           <TextField label={ field[0] } disabled={ counterparty === ''} variant="outlined"/>
+                                                       )}
+                                                />
+                                                <ErrorMessage name={ field[0] } />
+                                            </div>
+                                        );
+                                    case 'select':
+                                        return (
+                                            <Field name={ field[0]}
+                                                   render={() => (
+                                                       <div>
+                                                           <InputLabel htmlFor={ field[0] }> { field[0] } </InputLabel>
+                                                           <Select name={ field[0]} >
+                                                               <option value="DEFAULT"> Default </option>
+                                                           </Select>
+                                                           <ErrorMessage name={ field[0] } />
+                                                       </div>
+                                                   )}
+                                            />
+                                        );
+                                    case 'number':
+                                        return (
+                                            <div className="col" key={ field[0] + index }>
+                                                <Field name={ field[0] }
+                                                       render={() => (
+                                                           <TextField label={ field[0] } disabled={ counterparty === ''} variant="outlined" type="number"/>
+                                                       )}
+                                                />
+                                                <ErrorMessage name={ field[0] } />
+                                            </div>
+                                        );
+                                    case 'date':
+                                        return (
+                                            <div className="col" key={ field[0] + index }>
+                                                <Field name={ field[0] }
+                                                       render={() => (
+                                                           <TextField label={ field[0] } disabled={ counterparty === ''} variant="outlined" type="date"/>
+                                                       )}
+                                                />
+                                                <ErrorMessage name={ field[0] } />
+                                            </div>
+                                        );
+                                    default:
+                                        return;
+                                }
+
                             })
                         }
                         <button type="submit" disabled={ isValidating || isSubmitting }> Submit </button>
@@ -91,4 +127,4 @@ const NewTradeFrom = props => {
         </LoadingOverlay>
     )
 };
-export default NewTradeFrom;
+export default NewTradeForm;

@@ -1,25 +1,70 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 
 import List from '../components/home/List';
+import Header from '../components/main/Header';
+import { Grid } from '@material-ui/core';
 import NewTradeContent from '../components/newtrade/NewTradeContent';
+import { useSelector } from "react-redux";
+import fetchCounterpartyList  from '../utils/NewTrade/new_trade_util';
+import { useDispatch } from "react-redux";
 
 export default function NewTrade(props) {
+    const fields = useSelector(state => state.NewTradeReducer.NEW_TRADE_FIELDS);
+    const counterpartyList = useSelector(state => state.NewTradeReducer.counterpartyList);
+    const currentUser = useSelector(state => state.AuthReducer.token);
+    const trades_length = useSelector(state => state.TradeReducer.tradeStates).length;
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        async function fetchList() {
+            const res = await fetchCounterpartyList(currentUser);
+            if (res.status === 'success') {
+                dispatch({ type: 'CHANGE_COUNTERPARTYLIST', payload: res.counterpartyList });
+            } else {
+                return;
+            }
+        }
+        fetchList();
+    }, []);
+
     return (
         <div>
-            <Drawer items={ ['Create New Trade', 'Go To Blotter']} links={['NewTrade', 'Blotter']} onClick={ props.onClick } />
+            <Grid container spacing={ 2 }>
+                <Grid item xs={ 12 }>
+                    <Header
+                        items={ ['Home', 'Blotter', 'New Trade'] }
+                        links={ ['Home', 'Blotter', 'NewTrade'] }
+                    />
+                </Grid>
+                <Grid item xs={ 12 }>
+                    <Drawer
+                        items={ ['Create New Trade', 'Go To Blotter']}
+                        links={['NewTrade', 'Blotter']}
+                        onClick={ props.onClick }
+                        fields={ fields }
+                        counterpartyList={ counterpartyList }
+                        trades_length={ trades_length }
+                    />
+                </Grid>
+            </Grid>
         </div>
     );
 }
 
 function Drawer(props) {
     const { items, links, onClick } = props;
+    const { fields, counterpartyList, trades_length } = props;
     return (
-        <div style={{ display: 'flex', flexGrow: 1, alignItems: "center", justifyContent: "center"}}>
-            <div style={{ maxWidth: "min-content", marginRight: 10 }}>
+        <div style={{ display: 'flex', flexGrow: 1, alignItems: "center", justifyContent: "space-around"}}>
+            <div style={{ maxWidth: "min-content", left: 0 }}>
                 <List handleClose={() => {}} items={ items } links={ links } onClick={ onClick } />
             </div>
-            <div>
-                <NewTradeContent />
+            <div style={{ padding: 15 }}>
+                <NewTradeContent
+                    fields={ fields }
+                    counterpartyList={ counterpartyList }
+                    trades_length={ trades_length }
+                />
             </div>
         </div>
     )

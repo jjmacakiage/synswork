@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import NotificationPane from '../components/home/NotificationPane';
 import HomePane from '../components/home/HomePane';
 import Typography from "@material-ui/core/Typography";
+import Header from "../components/main/Header";
 
 /**
  * @constant useStyles
@@ -66,54 +67,61 @@ export default function Home(props) {
      */
     return (
         <div className={ classes.root }>
-            <div className={ classes.content }>
+            <div className={ classes.content}>
                 <Grid container spacing={ 3 } className={ classes.grid }>
-                    <Grid item xs={ 12}>
-                        <Typography variant="subtitle1"> HOME </Typography>
-                        <br />
-                        <Divider dark={ true } />
-                    </Grid>
-                    <Grid item xs={ 12 }>
-                        <NotificationPane />
-                        <br />
-                        <br />
-                        <Divider dark={ true } />
-                    </Grid>
-                    <Grid item xs={ 4 }>
-                        <div className={ classes.pane }>
-                            <HomePane
-                                title="New Trade"
-                                items={ newPane.items }
-                                links={ newPane.links }
-                                onClick={ props.onClick }
+                        <Grid item xs={ 12 }>
+                            <Header
+                                items={ ['Home', 'Blotter', 'New Trade'] }
+                                links={ ['Home', 'Blotter', 'NewTrade'] }
                             />
-                        </div>
-                    </Grid>
-                    <Grid item xs={4}>
-                        <div className={ classes.pane }>
-                            <HomePane
-                                title="Read"
-                                items={ readPane.items }
-                                links={ readPane.links }
-                                onClick={ props.onClick }
-                                showTextField = { props.showTextField }
-                                textFieldLabel="Enter Trade ID"
-                                textFieldValue={ textFieldValue }
-                                onChange={ e => changeValue(e.target.value) }
-                                textFieldSubmit={ () => { return; } }
-                            />
-                        </div>
-                    </Grid>
-                    <Grid item  xs={ 4 }>
-                        <div className={ classes.pane }>
-                            <HomePane
-                                title="Admin"
-                                items={ adminPane.items }
-                                links={ adminPane.links }
-                                onClick={ props.onClick }
-                            />
-                        </div>
-                    </Grid>
+                        </Grid>
+
+                        <Grid item xs={ 12}>
+                            <Typography variant="subtitle1"> HOME </Typography>
+                            <br />
+                            <Divider dark={ true } />
+                        </Grid>
+                        <Grid item xs={ 12 }>
+                            <NotificationPane />
+                            <br />
+                            <br />
+                            <Divider dark={ true } />
+                        </Grid>
+                        <Grid item xs={ 4 }>
+                            <div className={ classes.pane }>
+                                <HomePane
+                                    title="New Trade"
+                                    items={ newPane.items }
+                                    links={ newPane.links }
+                                    onClick={ props.onClick }
+                                />
+                            </div>
+                        </Grid>
+                        <Grid item xs={4}>
+                            <div className={ classes.pane }>
+                                <HomePane
+                                    title="Read"
+                                    items={ readPane.items }
+                                    links={ readPane.links }
+                                    onClick={ props.onClick }
+                                    showTextField = { props.showTextField }
+                                    textFieldLabel="Enter Trade ID"
+                                    textFieldValue={ textFieldValue }
+                                    onChange={ e => changeValue(e.target.value) }
+                                    textFieldSubmit={ () => { return; } }
+                                />
+                            </div>
+                        </Grid>
+                        <Grid item  xs={ 4 }>
+                            <div className={ classes.pane }>
+                                <HomePane
+                                    title="Admin"
+                                    items={ adminPane.items }
+                                    links={ adminPane.links }
+                                    onClick={ props.onClick }
+                                />
+                            </div>
+                        </Grid>
                 </Grid>
             </div>
         </div>

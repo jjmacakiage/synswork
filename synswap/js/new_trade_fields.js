@@ -440,5 +440,63 @@ export function extractByKey(obj, key) {     //Pull all values of specified key 
     }
     return extract(obj, arr, key);
 }
+const base_fields = [
+    ['Trade ID', 'text'],
+    ['Trade Date', 'date'],
+    ['Trade Type', 'select'],
+    ['Counterparty', 'select'],
+    ['Direction', 'select'],
+    ['Amount', 'number'],
+    ['Currency', 'select'],
+    ['Fixed Rate', 'number'],
+    ['Duration', 'select']
+];
 
-export const new_trade_fields = ['1', '2', '3','4','5','6','7','8','9','10', '11', '12']; //Add fields as needed
+const extended_fields = [
+    ['Counterparty Trade ID', 'text'],
+    ['Termination Date (Fixed Leg)', 'date'],
+    ['Bus Day Convention', 'select'],
+    ['Business Centre', 'select'],
+    ['Rate Reference', 'select'],
+    ['Period', 'select'],
+    ['Day Count Fraction', 'select'],
+    ['Fixing Date Offset', 'select'],
+    ['Bus Day Convention', 'select'],
+    ['Business Centre', 'select'],
+    ['Effective Date', 'date'],
+    ['Bus Day Convention', 'select'],
+    ['Business Centre', 'select'],
+    ['Termination Date', 'date'],
+    ['Bus Day Convention', 'select'],
+    ['Business Centre', 'select'],
+    ['Period (Fixed Leg)', 'select'],
+    ['Day Count Fraction (Fixed Leg)', 'select'],
+    ['Effective Date (Fixed Leg)', 'date'],
+    ['Bus Day Convention', 'select'],
+    ['Business Centre', 'select'],
+    ['Termination Date (Fixed Leg)', 'date'],
+    ['Bus Day Convention (Fixed Leg)', 'select'],
+    ['Business Centre(Fixed Leg)', 'select'],
+];
+
+export const new_trade_fields = () => {
+    const base = () => {
+        for (let i = 0; i < base_fields.length; i++) {
+            base_fields[i].push('0');
+        }
+        return base_fields;
+    };
+
+    const extended = () => {
+        for (let i = 0; i < extended_fields.length; i++) {
+            extended_fields[i].push('1');
+        }
+        return extended_fields;
+    };
+
+    return base().concat(extended());
+};
+
+
+
+
