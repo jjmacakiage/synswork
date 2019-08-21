@@ -40,7 +40,7 @@ app.post('/api/tradeagreements', (req, res) => {
 /**
  * This endpoint gets all the counterparties a given counterparty (id) can trade with.
  */
-app.get('/api/:id/counterparties', (req, res) => {
+app.get('/api/parties/:id/counterparties', (req, res) => {
     const contract = new web3.eth.Contract(abi, address);
 
     contract.methods.getCounterParties(req.params.id).call(function(err, result){
@@ -66,8 +66,8 @@ app.get('/api/:id/counterparties', (req, res) => {
 /**
  * This endpoint allows you to add a new counterparty to the system.
  */
-app.post('/api/counterparties', (req, res) => {
-    if(!req.body.counterparty){
+app.post('/api/parties', (req, res) => {
+    if(!req.body.party){
         res.status(400).send({
             success: 'false',
             message: 'No counterparty given to add.'
@@ -77,8 +77,7 @@ app.post('/api/counterparties', (req, res) => {
 
     const contract = new web3.eth.Contract(abi, address);
 
-    contract.methods.addCounterParty(req.body.counterparty).send({from: sender, gas: 999999},
-        function(err, result){
+    contract.methods.addCounterParty(req.body.party).send({from: sender, gas: 999999}, function(err, result){
         if(!err){
             return res.status(200).send({
                 success: true,
@@ -98,7 +97,7 @@ app.post('/api/counterparties', (req, res) => {
 /**
  * This endpoint gets the trade with tradeid for the party with partyid.
  */
-app.get('/api/:partyid/trades/:tradeid' , (req, res) => {
+app.get('/api/parties/:partyid/trades/:tradeid' , (req, res) => {
     const tradeid = parseInt(req.params.tradeid, 10);
     const partyid = parseInt(req.params.partyid, 10);
     const contract = new web3.eth.Contract(abi, address);
@@ -129,7 +128,7 @@ app.get('/api/:partyid/trades/:tradeid' , (req, res) => {
  * TODO: Currently, the result is given as a set of arrays as opposed to an array of structs.
  * TODO: This should change in the future as this will not be ideal once all the trade info has been modelled.
  */
-app.get('/api/:id/trades', (req, res) => {
+app.get('/api/parties/:id/trades', (req, res) => {
     const id = parseInt(req.params.id, 10);
     const contract = new web3.eth.Contract(abi, address);
 
@@ -158,7 +157,7 @@ app.get('/api/:id/trades', (req, res) => {
 /**
  * This alleges a new trade from the party with the url id to the counterparty given in the body.
  */
-app.post('/api/:id/trades', (req, res) => {
+app.post('/api/parties/:id/trades', (req, res) => {
     if(!req.body.counterpartyid){
         res.status(400).send({
             success: 'false',
