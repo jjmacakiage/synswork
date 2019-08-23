@@ -8,7 +8,7 @@ const mockSetup = function(){
     mta.addCounterParty("Bank1");
     mta.addCounterParty("Bank2");
     mta.addTradeAgreement(1, 2);
-    mta.addTrade(1, 2);
+    //mta.addTrade(1, 2);
 };
 
 mockSetup();
@@ -75,8 +75,8 @@ app.get('/parties/:partyid/trades/:tradeid', (req, res) => {
 });
 
 app.post('/parties/:partyid/trades/', (req, res) => {
-    const partyid = parseInt(req.params.partyid, 10);
-    if(mta.addTrade(partyid, req.body.counterpartyid)){
+    const partyId = parseInt(req.params.partyid, 10);
+    if(mta.addTrade(partyId, req.body)){
         return res.status(200).send({
             success: true,
         });

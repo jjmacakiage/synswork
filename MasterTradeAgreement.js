@@ -64,17 +64,23 @@ MasterTradeAgreement.prototype.addTradeAgreement = function(idParty1, idParty2){
 
 /**
  * Adds a new trade between two parties given, given that a trade agreement exists between the two.
- * @param idParty1 Counterparty innvoled in trade. This is the party alleging the trade.
- * @param idParty2 The other counterparty.
  */
-MasterTradeAgreement.prototype.addTrade = function(idParty1, idParty2){
-    const [i, exists] = this.findTradeAgreement(idParty1, idParty2);
+MasterTradeAgreement.prototype.addTrade = function(partyId, tradeParams){
+    const [i, exists] = this.findTradeAgreement(partyId, tradeParams.counterPartyId);
     if(!exists){
         console.error("Trade agreement does not exist");
         return false;
     }
 
-    this.tradeAgreements[i].addTrade(idParty1, ++this.numTrades);
+    try {
+        const tradeId = this.numTrades + 1;
+        this.tradeAgreements[i].addTrade(tradeId, partyId, tradeParams);
+        this.numTrades++;
+    }
+    catch(e){
+        console.error(e.message);
+        return false;
+    }
     return true;
 };
 

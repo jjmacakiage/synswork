@@ -9,12 +9,12 @@ function TradeAgreement(party1, party2){
     this.matchedTrades = [];
 }
 
-TradeAgreement.prototype.addTrade = function(sendingPartyId, tradeId){
-    if(this.party1.id === sendingPartyId){
-        this.tradesParty1.push(new Trade(tradeId, this.party1.id, this.party2.id));
+TradeAgreement.prototype.addTrade = function(tradeId, partyId, tradeParams){
+    if(this.party1.id === partyId){
+        this.tradesParty1.push(new Trade(tradeId, this.party1.id, this.party2.id, tradeParams));
     }
-    else if(this.party2.id === sendingPartyId){
-        this.tradesParty2.push(new Trade(tradeId, this.party2.id, this.party1.id));
+    else if(this.party2.id === partyId){
+        this.tradesParty2.push(new Trade(tradeId, this.party2.id, this.party1.id, tradeParams));
     }
     else{
         // Don't really want to do this but seeing as it's only a mock backend.
@@ -24,17 +24,17 @@ TradeAgreement.prototype.addTrade = function(sendingPartyId, tradeId){
 
 TradeAgreement.prototype.getTradeInfo = function(tradeId){
     for(let i = 0; i < this.tradesParty1.length; i++){
-        if(this.tradesParty1[i].id === tradeId){
+        if(this.tradesParty1[i].tradeId === tradeId){
             return this.tradesParty1[i];
         }
     }
     for(let i = 0; i < this.tradesParty2.length; i++){
-        if(this.tradesParty2[i].id === tradeId){
+        if(this.tradesParty2[i].tradeId === tradeId){
             return this.tradesParty2[i];
         }
     }
     for(let i = 0; i < this.matchedTrades.length; i++){
-        if(this.matchedTrades[i].id === tradeId){
+        if(this.matchedTrades[i].tradeId === tradeId){
             return this.matchedTrades[i];
         }
     }
