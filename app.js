@@ -128,7 +128,7 @@ app.get('/api/parties/:id/trades', (req, res) => {
  * This alleges a new trade from the party with the url id to the counterparty given in the body.
  */
 app.post('/api/parties/:id/trades', (req, res) => {
-    if(!req.body.counterpartyid){
+    if(!req.body.counterPartyId){
         res.status(400).send({
             success: 'false',
             message: 'Missing parameter.'
@@ -137,7 +137,7 @@ app.post('/api/parties/:id/trades', (req, res) => {
     }
 
     const id = parseInt(req.params.id, 10);
-    axios.post(address + '/parties/' + id + '/trades', {counterpartyid: req.body.counterpartyid})
+    axios.post(address + '/parties/' + id + '/trades', req.body)
         .then(response => {
             return res.status(200).send({
                 success: true,
