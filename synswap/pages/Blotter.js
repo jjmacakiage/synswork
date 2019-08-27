@@ -44,12 +44,6 @@ export default function Blotter() {
       <div>
           <Grid container spacing={ 2 }>
               <Grid item xs={ 12 }>
-                  <Header
-                      items={ ['Home', 'Blotter', 'New Trade'] }
-                      links={ ['Home', 'Blotter', 'NewTrade'] }
-                  />
-              </Grid>
-              <Grid item xs={ 12 }>
                   <Button color="primary" onClick={ exportToCSV.bind(this) }>
                       Export to CSV
                   </Button>

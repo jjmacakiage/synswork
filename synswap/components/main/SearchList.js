@@ -5,7 +5,7 @@ import Downshift from 'downshift';
 import {fade, makeStyles} from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import MenuItem from '@material-ui/core/MenuItem';
-import {InputBase} from "@material-ui/core";
+import {TextField} from "@material-ui/core";
 
 const suggestions = [
     { label: 'Afghanistan' },
@@ -18,7 +18,8 @@ const suggestions = [
 function renderInput(inputProps) {
     const { InputProps, classes, ref, ...other } = inputProps;
     return (
-        <InputBase
+        <TextField
+            variant="outlined"
             InputProps={{
                 inputRef: ref,
                 classes: {
@@ -97,23 +98,6 @@ const useStyles = makeStyles(theme => ({
         left: 0,
         right: 0,
     },
-    inputRoot: {
-        color: 'inherit',
-    },
-    inputInput: {
-        padding: theme.spacing(1, 1, 1, 7),
-        transition: theme.transitions.create('width'),
-        width: '100%',
-        [theme.breakpoints.up('sm')]: {
-            width: 120,
-            '&:onFocus': {
-                width: 200,
-            },
-        },
-    },
-    divider: {
-        height: theme.spacing(2),
-    },
     search: {
         position: 'relative',
         borderRadius: theme.shape.borderRadius,
@@ -121,7 +105,6 @@ const useStyles = makeStyles(theme => ({
         '&:hover': {
             backgroundColor: fade(theme.palette.common.white, 0.25),
         },
-        marginRight: theme.spacing(2),
         width: '100%',
         [theme.breakpoints.up('sm')]: {
             marginLeft: theme.spacing(1),
@@ -136,6 +119,23 @@ const useStyles = makeStyles(theme => ({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    inputRoot: {
+        color: 'inherit',
+    },
+    inputInput: {
+        padding: theme.spacing(1, 1, 1, 7),
+        transition: theme.transitions.create('width'),
+        width: '100%',
+        [theme.breakpoints.up('sm')]: {
+            width: 300,
+            '&:focus': {
+                width: 600,
+            },
+        },
+    },
+    divider: {
+        height: theme.spacing(2),
     },
 }));
 
@@ -155,7 +155,7 @@ export default function SearchList() {
                   selectedItem,
               }) => {
                 const {onBlur, onFocus, ...inputProps} = getInputProps({
-                    placeholder: 'Search...',
+                    placeholder: '',
                 });
 
                 return (
@@ -163,7 +163,7 @@ export default function SearchList() {
                         { renderInput({
                             fullWidth: true,
                             classes,
-                            label: 'Country',
+                            label: 'Formula',
                             InputLabelProps: getLabelProps({shrink: true}),
                             InputProps: {onBlur, onFocus},
                             inputProps,

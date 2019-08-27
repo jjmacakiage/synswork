@@ -197,9 +197,14 @@ const Main = () => {
                                     title={value.title}
                                     showClose={ index !== 0 }
                                 >
-                                    {
-                                        MAIN_TABS[ value.component ].component
-                                    }
+                                    <Grid container spacing={ 4 }>
+                                        <Grid item xs={ 12 }>
+                                            <Header />
+                                        </Grid>
+                                        <Grid item xs={ 12 }>
+                                            { MAIN_TABS[ value.component ].component }
+                                        </Grid>
+                                    </Grid>
                                 </Tab>
                             );
                         })
@@ -217,7 +222,7 @@ const Main = () => {
  * @return {Promise<boolean|any|Promise<boolean>>}
  */
 
-Main.getInitialProps = async ctx => {
+/*Main.getInitialProps = async ctx => {
     const { token } = nextCookie(ctx);
     const apiUrl = getHost(ctx.req) + '/api/profile';
 
@@ -249,3 +254,6 @@ Main.getInitialProps = async ctx => {
 };
 
 export default withAuthSync(Main);
+
+ */
+export default Main;

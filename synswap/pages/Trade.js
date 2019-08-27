@@ -79,12 +79,6 @@ export default function Trade(props) {
         <div>
             <Grid container spacing={ 2 }>
                 <Grid item xs={ 12 }>
-                    <Header
-                        items={ ['Home', 'Blotter', 'New Trade'] }
-                        links={ ['Home', 'Blotter', 'NewTrade'] }
-                    />
-                </Grid>
-                <Grid item xs={ 12 }>
                     <div>
                         <Tabs
                             value={value}

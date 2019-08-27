@@ -10,6 +10,8 @@ import { useDispatch } from "react-redux";
 
 export default function NewTrade(props) {
     const fields = useSelector(state => state.NewTradeReducer.NEW_TRADE_FIELDS);
+    const schema = useSelector(state => state.NewTradeReducer.schema);
+    const validationFunctions = useSelector(state => state.NewTradeReducer.validationFunctions);
     const counterpartyList = useSelector(state => state.NewTradeReducer.counterpartyList);
     const currentUser = useSelector(state => state.AuthReducer.token);
     const trades_length = useSelector(state => state.TradeReducer.tradeStates).length;
@@ -18,7 +20,7 @@ export default function NewTrade(props) {
     useEffect(() => {
         async function fetchList() {
             const res = await fetchCounterpartyList(currentUser);
-            if (res.status === 'success') {
+            if (1 === 0) { //res.status === 'success') {
                 dispatch({ type: 'CHANGE_COUNTERPARTYLIST', payload: res.counterpartyList });
             } else {
                 return;
@@ -31,12 +33,6 @@ export default function NewTrade(props) {
         <div>
             <Grid container spacing={ 2 }>
                 <Grid item xs={ 12 }>
-                    <Header
-                        items={ ['Home', 'Blotter', 'New Trade'] }
-                        links={ ['Home', 'Blotter', 'NewTrade'] }
-                    />
-                </Grid>
-                <Grid item xs={ 12 }>
                     <Drawer
                         items={ ['Create New Trade', 'Go To Blotter']}
                         links={['NewTrade', 'Blotter']}
@@ -44,6 +40,8 @@ export default function NewTrade(props) {
                         fields={ fields }
                         counterpartyList={ counterpartyList }
                         trades_length={ trades_length }
+                        schema = { schema }
+                        validationFunctions = { validationFunctions }
                     />
                 </Grid>
             </Grid>
@@ -53,9 +51,9 @@ export default function NewTrade(props) {
 
 function Drawer(props) {
     const { items, links, onClick } = props;
-    const { fields, counterpartyList, trades_length } = props;
+    const { fields, counterpartyList, trades_length, schema, validationFunctions } = props;
     return (
-        <div style={{ display: 'flex', flexGrow: 1, alignItems: "center", justifyContent: "space-around"}}>
+        <div style={{ display: 'flex', flexGrow: 1, justifyContent: "space-around"}}>
             <div style={{ maxWidth: "min-content", left: 0 }}>
                 <List handleClose={() => {}} items={ items } links={ links } onClick={ onClick } />
             </div>
@@ -64,6 +62,8 @@ function Drawer(props) {
                     fields={ fields }
                     counterpartyList={ counterpartyList }
                     trades_length={ trades_length }
+                    schema = { schema }
+                    validationFunctions = { validationFunctions }
                 />
             </div>
         </div>

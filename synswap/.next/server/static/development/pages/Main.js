@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -984,7 +984,8 @@ function renderInput(inputProps) {
       ref = inputProps.ref,
       other = Object(_babel_runtime_corejs2_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_3__["default"])(inputProps, ["InputProps", "classes", "ref"]);
 
-  return react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_11__["InputBase"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
+  return react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_11__["TextField"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
+    variant: "outlined",
     InputProps: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_2__["default"])({
       inputRef: ref,
       classes: {
@@ -1060,22 +1061,6 @@ var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_8__["ma
       left: 0,
       right: 0
     },
-    inputRoot: {
-      color: 'inherit'
-    },
-    inputInput: Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
-      padding: theme.spacing(1, 1, 1, 7),
-      transition: theme.transitions.create('width'),
-      width: '100%'
-    }, theme.breakpoints.up('sm'), {
-      width: 120,
-      '&:onFocus': {
-        width: 200
-      }
-    }),
-    divider: {
-      height: theme.spacing(2)
-    },
     search: Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
       position: 'relative',
       borderRadius: theme.shape.borderRadius,
@@ -1083,7 +1068,6 @@ var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_8__["ma
       '&:hover': {
         backgroundColor: Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_8__["fade"])(theme.palette.common.white, 0.25)
       },
-      marginRight: theme.spacing(2),
       width: '100%'
     }, theme.breakpoints.up('sm'), {
       marginLeft: theme.spacing(1),
@@ -1097,6 +1081,22 @@ var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_8__["ma
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center'
+    },
+    inputRoot: {
+      color: 'inherit'
+    },
+    inputInput: Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
+      padding: theme.spacing(1, 1, 1, 7),
+      transition: theme.transitions.create('width'),
+      width: '100%'
+    }, theme.breakpoints.up('sm'), {
+      width: 300,
+      '&:focus': {
+        width: 600
+      }
+    }),
+    divider: {
+      height: theme.spacing(2)
     }
   };
 });
@@ -1115,7 +1115,7 @@ function SearchList() {
         selectedItem = _ref2.selectedItem;
 
     var _getInputProps = getInputProps({
-      placeholder: 'Search...'
+      placeholder: ''
     }),
         onBlur = _getInputProps.onBlur,
         onFocus = _getInputProps.onFocus,
@@ -1126,7 +1126,7 @@ function SearchList() {
     }, renderInput({
       fullWidth: true,
       classes: classes,
-      label: 'Country',
+      label: 'Formula',
       InputLabelProps: getLabelProps({
         shrink: true
       }),
@@ -1165,20 +1165,24 @@ function SearchList() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return NewTradeContent; });
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core */ "@material-ui/core");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ "react-redux");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _utils_tradehelpers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utils/tradehelpers */ "./utils/tradehelpers.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core */ "@material-ui/core");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var react_loading_io__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-loading-io */ "react-loading-io");
 /* harmony import */ var react_loading_io__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_loading_io__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var formik__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! formik */ "formik");
 /* harmony import */ var formik__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(formik__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var react_loading_overlay__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-loading-overlay */ "react-loading-overlay");
 /* harmony import */ var react_loading_overlay__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_loading_overlay__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _utils_tradehelpers__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../utils/tradehelpers */ "./utils/tradehelpers.js");
+/* harmony import */ var _js_new_trade_fields__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../js/new_trade_fields */ "./js/new_trade_fields.js");
+
+
 
 
 
@@ -1193,7 +1197,7 @@ __webpack_require__.r(__webpack_exports__);
  * hook used for styling
  */
 
-var useStyles = Object(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["makeStyles"])(function (theme) {
+var useStyles = Object(_material_ui_core__WEBPACK_IMPORTED_MODULE_5__["makeStyles"])(function (theme) {
   return {
     root: {
       flexGrow: 1,
@@ -1217,22 +1221,24 @@ function NewTradeContent(props) {
   var classes = useStyles();
   var fields = props.fields,
       counterpartyList = props.counterpartyList,
-      trades_length = props.trades_length;
+      trades_length = props.trades_length,
+      schema = props.schema,
+      validationFunctions = props.validationFunctions;
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(false),
-      _useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__["default"])(_useState, 2),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(false),
+      _useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_2__["default"])(_useState, 2),
       isLoading = _useState2[0],
       changeLoading = _useState2[1];
 
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(''),
-      _useState4 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__["default"])(_useState3, 2),
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(''),
+      _useState4 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_2__["default"])(_useState3, 2),
       counterparty = _useState4[0],
       changeCounterparty = _useState4[1];
 
   var dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_4__["useDispatch"])();
 
-  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(0),
-      _useState6 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__["default"])(_useState5, 2),
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(0),
+      _useState6 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_2__["default"])(_useState5, 2),
       value = _useState6[0],
       setValue = _useState6[1];
   /**
@@ -1283,8 +1289,6 @@ function NewTradeContent(props) {
    * @return
    * @type Grid
    * @type TabContainer
-   * @type Tab
-   * @type Tabs
    * @type div
    */
 
@@ -1294,51 +1298,92 @@ function NewTradeContent(props) {
   }
 
   function createFormColumns(array) {
-    return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-      className: "col"
-    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-      className: "row"
-    }, array.map(function (field, index) {
-      if (field[1] !== 'select') {
-        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_7__["Field"], {
-          name: field[0],
-          key: field[0],
-          render: function render() {
-            return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["TextField"], {
-              label: field[0],
-              disabled: counterparty === '',
+    return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_3___default.a.Fragment, null, array.map(function (value, index) {
+      if (value[1] !== 'select') {
+        return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_5__["Grid"], {
+          item: true,
+          xs: 4
+        }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_7__["Field"], {
+          name: value[0],
+          key: value[0],
+          type: value[1],
+          render: function render(_ref) {
+            var field = _ref.field,
+                isSubmitting = _ref.form.isSubmitting;
+            return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_5__["TextField"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, field, {
+              label: value[1] === 'date' ? '' : value[0],
+              disabled: counterparty === '' || isSubmitting,
               variant: "outlined",
-              type: field[2]
-            });
-          }
-        }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_7__["ErrorMessage"], {
-          name: field[0]
-        }));
-      } else {
-        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_7__["Field"], {
-          name: field[0],
-          key: field[0],
-          render: function render() {
-            return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["InputLabel"], {
-              htmlFor: field[0]
-            }, " ", field[0], " "), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Select"], {
-              name: field[0]
-            }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("option", {
-              value: "DEFAULT"
-            }, " Default")), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_7__["ErrorMessage"], {
-              name: field[0]
+              type: value[1]
             }));
           }
-        });
+        }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_7__["ErrorMessage"], {
+          name: value[0]
+        }));
+      } else {
+        return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_5__["Grid"], {
+          item: true,
+          xs: 4
+        }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_7__["Field"], {
+          name: value[0],
+          key: value[0],
+          render: function render(_ref2) {
+            var field = _ref2.field,
+                isSubmitting = _ref2.form.isSubmitting;
+            return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_5__["TextField"], {
+              select: true,
+              label: value[0],
+              disabled: counterparty === '' || isSubmitting,
+              variant: "outlined",
+              type: value[1],
+              style: {
+                width: '100%'
+              }
+            }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_5__["MenuItem"], null, "Default")), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_7__["ErrorMessage"], {
+              name: value[0]
+            }));
+          }
+        }));
       }
-    })));
+    }));
   }
 
-  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+  function extendedFields() {
+    var extended = fields.filter(function (field) {
+      return field[2] === '1';
+    });
+
+    var returnExtended = function returnExtended(i) {
+      return extended[i];
+    };
+
+    return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_5__["Grid"], {
+      container: true,
+      spacing: 2
+    }, [[0], [1, 2, 3], [4], [5, 6], [7, 8, 9], [10, 11, 12], [13, 14, 15], [16, 17], [18, 19, 20], [21, 22, 23]].map(function (value, index) {
+      var temp = [];
+
+      for (var i = 0; i < value.length; i++) {
+        temp.push(returnExtended(value[i]));
+      }
+
+      return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_5__["Grid"], {
+        item: true,
+        xs: 12
+      }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_5__["Grid"], {
+        container: true,
+        spacing: 2
+      }, createFormColumns(temp)));
+    }));
+  }
+
+  return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
     className: classes.root
-  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_loading_overlay__WEBPACK_IMPORTED_MODULE_8___default.a, {
-    active: false,
-    spinner: react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_loading_io__WEBPACK_IMPORTED_MODULE_6__["Eclipse"], null),
+  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_5__["Typography"], {
+    variant: "overline"
+  }, " New Trade "), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react_loading_overlay__WEBPACK_IMPORTED_MODULE_8___default.a, {
+    active: isLoading,
+    spinner: react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react_loading_io__WEBPACK_IMPORTED_MODULE_6__["Eclipse"], null),
     styles: {
       overlay: function overlay(base) {
         return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, base, {
@@ -1346,79 +1391,72 @@ function NewTradeContent(props) {
         });
       }
     }
-  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_7__["Formik"], {
-    initialValues: [],
+  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_7__["Formik"], {
+    initialValues: function initialValues() {
+      return fields.map(function (field) {
+        return field[0];
+      });
+    },
+    enableReinitialize: true,
     onSubmit: function onSubmit(values, actions) {
-      changeLoading(true);
-      setTimeout(function () {
-        changeLoading(false);
-      }, 2000);
+      var extractByKey = validationFunctions[0];
       console.log(values);
       actions.setSubmitting(false);
     },
-    enableReinitialize: true
-    /*onSubmit={(values, actions) => {
-        MyImaginaryRestApiCall(user.id, values).then(
-            updatedUser => {
-                actions.setSubmitting(false);
-                updateUser(updatedUser);
-                onClose();
-            },
-            error => {
-                actions.setSubmitting(false);
-                actions.setErrors(transformMyRestApiErrorsToAnObject(error));
-                actions.setStatus({ msg: 'Set some arbitrary status or data' });
+    validateOnBlur: true,
+    render: function render(_ref3) {
+      var errors = _ref3.errors,
+          status = _ref3.status,
+          touched = _ref3.touched,
+          isSubmitting = _ref3.isSubmitting,
+          isValidating = _ref3.isValidating;
+      return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_7__["Form"], null, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_5__["TextField"], {
+        select: true,
+        label: "Select Counterparty",
+        disabled: isSubmitting,
+        variant: "outlined",
+        type: value[1],
+        value: counterparty,
+        onChange: function onChange(e) {
+          return handleCounterpartyChange(e);
+        },
+        style: {
+          width: '100%',
+          marginBottom: 20
+        }
+      }, counterpartyList.map(function (value, index) {
+        return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_5__["MenuItem"], {
+          key: value + index,
+          value: value
+        }, value);
+      })), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_5__["Grid"], {
+        container: true,
+        spacing: 2
+      }, fields.map(function (field, index) {
+        if (field[2] === '0') {
+          return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_5__["Grid"], {
+            item: true,
+            xs: 6,
+            style: {
+              marginTop: 2,
+              marginBottom: 2
             }
-        );
-    }}
-    */
-    ,
-    validateOnBlur: true
-  }, function (_ref) {
-    var errors = _ref.errors,
-        touched = _ref.touched,
-        isValidating = _ref.isValidating,
-        isSubmitting = _ref.isSubmitting;
-    return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(formik__WEBPACK_IMPORTED_MODULE_7__["Form"], null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Select"], {
-      value: counterparty,
-      onChange: function onChange(e) {
-        return handleCounterpartyChange(e);
-      }
-    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("option", {
-      value: ""
-    }, " Select Counterparty "), counterpartyList.map(function (value, index) {
-      return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("option", {
-        key: value + index,
-        value: value
-      }, value);
-    })), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Grid"], {
-      container: true,
-      spacing: 2
-    }, fields.map(function (field, index) {
-      if (field[2] === '0') {
-        return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Grid"], {
-          item: true,
-          xs: 6,
-          style: {
-            marginTop: 2,
-            marginBottom: 2
-          }
-        }, createFormColumns([field]));
-      }
-    })), function () {
-      var extended = fields.filter(function (field) {
-        return field[2] === '1';
-      });
-      return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", null, createFormColumns([extended[0]]), createFormColumns([extended[1], extended[2], extended[3]]), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Divider"], {
-        dark: true
-      }), createFormColumns([extended[4]]), createFormColumns([extended[5], extended[6]]), createFormColumns([extended[7], extended[8], extended[9]]), createFormColumns([extended[10], extended[11], extended[12]]), createFormColumns([extended[13], extended[14], extended[15]]), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Divider"], {
-        dark: true
-      }), createFormColumns([extended[16], extended[17]]), createFormColumns([extended[18], extended[19], extended[20]]), createFormColumns([extended[21], extended[22], extended[23]]));
-    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Button"], {
-      variant: "contained",
-      type: "submit",
-      disabled: isValidating || isSubmitting
-    }, " Submit "));
+          }, createFormColumns([field]));
+        }
+      })), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
+        style: {
+          marginTop: 20,
+          marginBottom: 20
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_5__["Divider"], null)), extendedFields(), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_5__["Button"], {
+        variant: "contained",
+        type: "submit",
+        disabled: isValidating || isSubmitting,
+        style: {
+          marginTop: 20
+        }
+      }, "Submit"));
+    }
   }))));
 }
 
@@ -1500,6 +1538,122 @@ function BestMatch(props) {
     variant: "contained"
   }, " Manually Match "))))));
 }
+
+/***/ }),
+
+/***/ "./js/new_trade_fields.js":
+/*!********************************!*\
+  !*** ./js/new_trade_fields.js ***!
+  \********************************/
+/*! exports provided: extractByKey, new_trade_fields, IRS */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "extractByKey", function() { return extractByKey; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "new_trade_fields", function() { return new_trade_fields; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IRS", function() { return IRS; });
+function extractByKey(obj, key) {
+  //Pull all values of specified key from nested JSON
+  var arr = [];
+
+  function extract(obj, arr, key) {
+    //Recursively search for values of key in JSON tree
+    if (obj instanceof Object) {
+      var values = obj.values();
+
+      for (var i = 0; i < keys.length; i++) {
+        if (values[i] instanceof Object || values[i] instanceof Array) {
+          extract(values[i], arr, key);
+        } else if (values[i] === key) {
+          arr.append(values[i]);
+        }
+      }
+    } else if (obj instanceof Array) {
+      for (var _i = 0; _i < obj.length; _i++) {
+        extract(obj[_i], arr, key);
+      }
+    }
+
+    return arr;
+  }
+
+  return extract(obj, arr, key);
+}
+var base_fields = [['Trade ID', 'text'], ['Trade Date', 'date'], ['Trade Type', 'select'], ['Counterparty', 'select'], ['Direction', 'select'], ['Amount', 'number'], ['Currency', 'select'], ['Fixed Rate', 'number'], ['Duration', 'select']];
+var extended_fields = [['Counterparty Trade ID', 'text'], ['Termination Date (Fixed Leg)', 'date'], ['Bus Day Convention', 'select'], ['Business Centre', 'select'], ['Rate Reference', 'select'], ['Period', 'select'], ['Day Count Fraction', 'select'], ['Fixing Date Offset', 'select'], ['Bus Day Convention', 'select'], ['Business Centre', 'select'], ['Effective Date', 'date'], ['Bus Day Convention', 'select'], ['Business Centre', 'select'], ['Termination Date', 'date'], ['Bus Day Convention', 'select'], ['Business Centre', 'select'], ['Period (Fixed Leg)', 'select'], ['Day Count Fraction (Fixed Leg)', 'select'], ['Effective Date (Fixed Leg)', 'date'], ['Bus Day Convention', 'select'], ['Business Centre', 'select'], ['Termination Date (Fixed Leg)', 'date'], ['Bus Day Convention (Fixed Leg)', 'select'], ['Business Centre(Fixed Leg)', 'select']];
+var new_trade_fields = function new_trade_fields() {
+  var base = function base() {
+    for (var i = 0; i < base_fields.length; i++) {
+      base_fields[i].push('0');
+    }
+
+    return base_fields;
+  };
+
+  var extended = function extended() {
+    for (var i = 0; i < extended_fields.length; i++) {
+      extended_fields[i].push('1');
+    }
+
+    return extended_fields;
+  };
+
+  return base().concat(extended());
+};
+var IRS = {
+  "tradeDate": "2019-08-02",
+  "tradeType": "IRS",
+  "direction": "PayFixed",
+  "amount": 100000,
+  "currency": "GBP",
+  "fixedRate": 0.1,
+  "duration": "5Y",
+  "counterPartyId": 2,
+  "terminationDate": {
+    "date": "2020-08-02",
+    "busDayConvention": "ModFollowing",
+    "businessCentre": "GBLO"
+  },
+  "floatingLeg": {
+    "rateReference": "EURIBOR",
+    "effectiveDate": {
+      "date": "2019-08-02",
+      "busDayConvention": "ModFollowing",
+      "businessCentre": "GBLO"
+    },
+    "terminationDate": {
+      "date": "2020-08-02",
+      "busDayConvention": "ModFollowing",
+      "businessCentre": "GBLO"
+    },
+    "paymentTerms": {
+      "period": "6M",
+      "dayCountFraction": "ACT/360"
+    },
+    "fixingDateOffset": {
+      "offset": "-2D",
+      "busDayConvention": "ModFollowing",
+      "businessCentre": "GBLO"
+    }
+  },
+  "fixedLeg": {
+    "effectiveDate": {
+      "date": "2019-08-02",
+      "busDayConvention": "ModFollowing",
+      "businessCentre": "GBLO"
+    },
+    "terminationDate": {
+      "date": "2019-08-02",
+      "busDayConvention": "ModFollowing",
+      "businessCentre": "GBLO"
+    },
+    "paymentTerms": {
+      "period": "6M",
+      "dayCountFraction": "ACT/360"
+    }
+  }
+};
 
 /***/ }),
 
@@ -2437,12 +2591,6 @@ function Blotter() {
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__["Grid"], {
     item: true,
     xs: 12
-  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_components_main_Header__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    items: ['Home', 'Blotter', 'New Trade'],
-    links: ['Home', 'Blotter', 'NewTrade']
-  })), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__["Grid"], {
-    item: true,
-    xs: 12
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__["Button"], {
     color: "primary",
     onClick: exportToCSV.bind(this)
@@ -2599,12 +2747,6 @@ function FileUpload(props) {
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__["Grid"], {
     item: true,
     xs: 12
-  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_components_main_Header__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    items: ['Home', 'Blotter', 'New Trade'],
-    links: ['Home', 'Blotter', 'NewTrade']
-  })), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__["Grid"], {
-    item: true,
-    xs: 12
   }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__["Typography"], {
     variant: "overline",
     align: "center"
@@ -2683,11 +2825,9 @@ __webpack_require__.r(__webpack_exports__);
 var useStyles = Object(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["makeStyles"])(function (theme) {
   return {
     root: {
-      flexGrow: 1
-    },
-    content: {
-      paddingRight: theme.spacing(30),
-      paddingLeft: theme.spacing(30)
+      flexGrow: 1,
+      paddingLeft: 90,
+      paddingRight: 90
     },
     grid: {
       textAlign: 'center',
@@ -2748,19 +2888,11 @@ function Home(props) {
 
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: classes.root
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    className: classes.content
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Grid"], {
     container: true,
     spacing: 3,
     className: classes.grid
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Grid"], {
-    item: true,
-    xs: 12
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_main_Header__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    items: ['Home', 'Blotter', 'New Trade'],
-    links: ['Home', 'Blotter', 'NewTrade']
-  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Grid"], {
     item: true,
     xs: 12
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6___default.a, {
@@ -2811,7 +2943,7 @@ function Home(props) {
     items: adminPane.items,
     links: adminPane.links,
     onClick: props.onClick
-  }))))));
+  })))));
 }
 
 /***/ }),
@@ -2825,42 +2957,34 @@ function Home(props) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
-/* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/json/stringify */ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime-corejs2/helpers/esm/asyncToGenerator.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/toConsumableArray.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core */ "@material-ui/core");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var react_awesome_tabs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-awesome-tabs */ "react-awesome-tabs");
-/* harmony import */ var react_awesome_tabs__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_awesome_tabs__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _resources_styles_react_awesome_tabs_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../resources/styles/react-awesome-tabs.scss */ "./resources/styles/react-awesome-tabs.scss");
-/* harmony import */ var _resources_styles_react_awesome_tabs_scss__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_resources_styles_react_awesome_tabs_scss__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-redux */ "react-redux");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var next_cookies__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! next-cookies */ "next-cookies");
-/* harmony import */ var next_cookies__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(next_cookies__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _components_main_Header__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/main/Header */ "./components/main/Header.js");
-/* harmony import */ var _Home__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Home */ "./pages/Home.js");
-/* harmony import */ var _NewTrade__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./NewTrade */ "./pages/NewTrade.js");
-/* harmony import */ var _Trade__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./Trade */ "./pages/Trade.js");
-/* harmony import */ var _Blotter__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./Blotter */ "./pages/Blotter.js");
-/* harmony import */ var _FileUpload__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./FileUpload */ "./pages/FileUpload.js");
-/* harmony import */ var next_dist_build_output_log__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! next/dist/build/output/log */ "./node_modules/next/dist/build/output/log.js");
-/* harmony import */ var next_dist_build_output_log__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(next_dist_build_output_log__WEBPACK_IMPORTED_MODULE_18__);
-/* harmony import */ var _utils_Auth_auth__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../utils/Auth/auth */ "./utils/Auth/auth.js");
-/* harmony import */ var _utils_Auth_get_host__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../utils/Auth/get-host */ "./utils/Auth/get-host.js");
-/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @material-ui/core/Typography */ "@material-ui/core/Typography");
-/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_21__);
-
-
-
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core */ "@material-ui/core");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_awesome_tabs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-awesome-tabs */ "react-awesome-tabs");
+/* harmony import */ var react_awesome_tabs__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_awesome_tabs__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _resources_styles_react_awesome_tabs_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../resources/styles/react-awesome-tabs.scss */ "./resources/styles/react-awesome-tabs.scss");
+/* harmony import */ var _resources_styles_react_awesome_tabs_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_resources_styles_react_awesome_tabs_scss__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var next_cookies__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! next-cookies */ "next-cookies");
+/* harmony import */ var next_cookies__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(next_cookies__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _components_main_Header__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/main/Header */ "./components/main/Header.js");
+/* harmony import */ var _Home__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Home */ "./pages/Home.js");
+/* harmony import */ var _NewTrade__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./NewTrade */ "./pages/NewTrade.js");
+/* harmony import */ var _Trade__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./Trade */ "./pages/Trade.js");
+/* harmony import */ var _Blotter__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Blotter */ "./pages/Blotter.js");
+/* harmony import */ var _FileUpload__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./FileUpload */ "./pages/FileUpload.js");
+/* harmony import */ var next_dist_build_output_log__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! next/dist/build/output/log */ "./node_modules/next/dist/build/output/log.js");
+/* harmony import */ var next_dist_build_output_log__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(next_dist_build_output_log__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var _utils_Auth_auth__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../utils/Auth/auth */ "./utils/Auth/auth.js");
+/* harmony import */ var _utils_Auth_get_host__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../utils/Auth/get-host */ "./utils/Auth/get-host.js");
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @material-ui/core/Typography */ "@material-ui/core/Typography");
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_18__);
 
 
 
@@ -2904,7 +3028,7 @@ var Main = function Main() {
    * @type {object}
    * a number that represents the activeTab piece of state
    */
-  var activeTab = Object(react_redux__WEBPACK_IMPORTED_MODULE_9__["useSelector"])(function (state) {
+  var activeTab = Object(react_redux__WEBPACK_IMPORTED_MODULE_6__["useSelector"])(function (state) {
     return state.TabReducer.activeTab;
   });
   /**
@@ -2913,7 +3037,7 @@ var Main = function Main() {
    * an array of objects representing the tabs, with each object in the format { title, index, component }
    */
 
-  var tabs = Object(react_redux__WEBPACK_IMPORTED_MODULE_9__["useSelector"])(function (state) {
+  var tabs = Object(react_redux__WEBPACK_IMPORTED_MODULE_6__["useSelector"])(function (state) {
     return state.TabReducer.tabs;
   });
   /**
@@ -2922,19 +3046,19 @@ var Main = function Main() {
    * gives access to dispatch function from Redux store
    */
 
-  var dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_9__["useDispatch"])();
+  var dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_6__["useDispatch"])();
   /**
    * @constant tradeProps
    * receives data from addNewTrade function and updates the most recent TradeProps
    */
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_5__["useState"])({
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])({
     data: {
       columns: [],
       rows: []
     }
   }),
-      _useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_4__["default"])(_useState, 2),
+      _useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__["default"])(_useState, 2),
       tradeProps = _useState2[0],
       changeProps = _useState2[1];
   /**
@@ -2947,23 +3071,23 @@ var Main = function Main() {
 
   var MAIN_TABS = [{
     key: 'Home',
-    component: Object(_Home__WEBPACK_IMPORTED_MODULE_13__["default"])({
+    component: Object(_Home__WEBPACK_IMPORTED_MODULE_10__["default"])({
       onClick: handleClick.bind(_this)
     })
   }, {
     key: 'NewTrade',
-    component: Object(_NewTrade__WEBPACK_IMPORTED_MODULE_14__["default"])({
+    component: Object(_NewTrade__WEBPACK_IMPORTED_MODULE_11__["default"])({
       onClick: handleClick
     })
   }, {
     key: 'Trade',
-    component: Object(_Trade__WEBPACK_IMPORTED_MODULE_15__["default"])(tradeProps)
+    component: Object(_Trade__WEBPACK_IMPORTED_MODULE_12__["default"])(tradeProps)
   }, {
     key: 'Blotter',
-    component: Object(_Blotter__WEBPACK_IMPORTED_MODULE_16__["default"])()
+    component: Object(_Blotter__WEBPACK_IMPORTED_MODULE_13__["default"])()
   }, {
     key: 'FileNewTrade',
-    component: Object(_FileUpload__WEBPACK_IMPORTED_MODULE_17__["default"])()
+    component: Object(_FileUpload__WEBPACK_IMPORTED_MODULE_14__["default"])()
   }];
   /**
    * @constant openTabs
@@ -2971,8 +3095,8 @@ var Main = function Main() {
    * used in handleClick method to redirect to a tab if it is already open
    */
 
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_5__["useState"])(['Home']),
-      _useState4 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_4__["default"])(_useState3, 2),
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(['Home']),
+      _useState4 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__["default"])(_useState3, 2),
       openTabs = _useState4[0],
       changeTabs = _useState4[1];
   /**
@@ -2994,7 +3118,7 @@ var Main = function Main() {
       }
     }
 
-    return new next_dist_build_output_log__WEBPACK_IMPORTED_MODULE_18__["error"]('Component Not Found');
+    return new next_dist_build_output_log__WEBPACK_IMPORTED_MODULE_15__["error"]('Component Not Found');
   }
   /**
    * @function handleTabSwitch
@@ -3079,7 +3203,7 @@ var Main = function Main() {
         payload: newTabContent
       });
 
-      var newOpen = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_3__["default"])(openTabs);
+      var newOpen = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(openTabs);
 
       newOpen.push(link);
       changeTabs(newOpen);
@@ -3097,17 +3221,17 @@ var Main = function Main() {
    */
 
 
-  return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__["Grid"], {
+  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Grid"], {
     container: true,
     spacing: 2
-  }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__["Grid"], {
+  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Grid"], {
     item: true,
     xs: 12,
     style: {
       maxWidth: 'min-content',
       backgroundColor: '#f5f5f5'
     }
-  }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(react_awesome_tabs__WEBPACK_IMPORTED_MODULE_7___default.a, {
+  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_awesome_tabs__WEBPACK_IMPORTED_MODULE_4___default.a, {
     active: activeTab,
     onTabSwitch: handleTabSwitch.bind(_this),
     onTabPositionChange: handleTabPositionChange.bind(_this),
@@ -3116,11 +3240,20 @@ var Main = function Main() {
     showAdd: false
   }, //maps 'tabs' piece of state to a <Tab> component, changes when 'tabs' changes
   tabs.map(function (value, index) {
-    return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(react_awesome_tabs__WEBPACK_IMPORTED_MODULE_7__["Tab"], {
+    return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_awesome_tabs__WEBPACK_IMPORTED_MODULE_4__["Tab"], {
       key: value.title + index,
       title: value.title,
       showClose: index !== 0
-    }, MAIN_TABS[value.component].component);
+    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Grid"], {
+      container: true,
+      spacing: 4
+    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Grid"], {
+      item: true,
+      xs: 12
+    }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_main_Header__WEBPACK_IMPORTED_MODULE_9__["default"], null)), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Grid"], {
+      item: true,
+      xs: 12
+    }, MAIN_TABS[value.component].component)));
   }))));
 };
 /**
@@ -3130,85 +3263,43 @@ var Main = function Main() {
  * @return {Promise<boolean|any|Promise<boolean>>}
  */
 
+/*Main.getInitialProps = async ctx => {
+    const { token } = nextCookie(ctx);
+    const apiUrl = getHost(ctx.req) + '/api/profile';
 
-Main.getInitialProps =
-/*#__PURE__*/
-function () {
-  var _ref = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  /*#__PURE__*/
-  _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(ctx) {
-    var _nextCookie, token, apiUrl, redirectOnError, response, js;
+    const redirectOnError = () =>
+        typeof window !== 'undefined'
+            ? Router.push('/Login')
+            : ctx.res.writeHead(302, { Location: '/Login' }).end();
 
-    return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            _nextCookie = next_cookies__WEBPACK_IMPORTED_MODULE_10___default()(ctx), token = _nextCookie.token;
-            apiUrl = Object(_utils_Auth_get_host__WEBPACK_IMPORTED_MODULE_20__["default"])(ctx.req) + '/api/profile';
-
-            redirectOnError = function redirectOnError() {
-              return  false ? undefined : ctx.res.writeHead(302, {
-                Location: '/Login'
-              }).end();
-            };
-
-            _context.prev = 3;
-            _context.next = 6;
-            return fetch(apiUrl, {
-              credentials: 'include',
-              headers: {
-                Authorization: _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_1___default()({
-                  token: token
-                })
-              }
-            });
-
-          case 6:
-            response = _context.sent;
-
-            if (!response.ok) {
-              _context.next = 15;
-              break;
+    try {
+        const response = await fetch(apiUrl, {
+            credentials: 'include',
+            headers: {
+                Authorization: JSON.stringify({ token })
             }
+        });
 
-            _context.next = 10;
-            return response.json();
-
-          case 10:
-            js = _context.sent;
-            console.log('js', js);
-            return _context.abrupt("return", js);
-
-          case 15:
-            _context.next = 17;
-            return redirectOnError();
-
-          case 17:
-            return _context.abrupt("return", _context.sent);
-
-          case 18:
-            _context.next = 23;
-            break;
-
-          case 20:
-            _context.prev = 20;
-            _context.t0 = _context["catch"](3);
-            return _context.abrupt("return", redirectOnError());
-
-          case 23:
-          case "end":
-            return _context.stop();
+        if (response.ok) {
+            const js = await response.json()
+            console.log('js', js)
+            return js
+        } else {
+            // https://github.com/developit/unfetch#caveats
+            return await redirectOnError()
         }
-      }
-    }, _callee, null, [[3, 20]]);
-  }));
+    } catch (error) {
+        // Implementation or Network error
+        return redirectOnError()
+    }
+};
 
-  return function (_x) {
-    return _ref.apply(this, arguments);
-  };
-}();
+export default withAuthSync(Main);
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(_utils_Auth_auth__WEBPACK_IMPORTED_MODULE_19__["withAuthSync"])(Main));
+ */
+
+
+/* harmony default export */ __webpack_exports__["default"] = (Main);
 
 /***/ }),
 
@@ -3249,6 +3340,12 @@ function NewTrade(props) {
   var fields = Object(react_redux__WEBPACK_IMPORTED_MODULE_7__["useSelector"])(function (state) {
     return state.NewTradeReducer.NEW_TRADE_FIELDS;
   });
+  var schema = Object(react_redux__WEBPACK_IMPORTED_MODULE_7__["useSelector"])(function (state) {
+    return state.NewTradeReducer.schema;
+  });
+  var validationFunctions = Object(react_redux__WEBPACK_IMPORTED_MODULE_7__["useSelector"])(function (state) {
+    return state.NewTradeReducer.validationFunctions;
+  });
   var counterpartyList = Object(react_redux__WEBPACK_IMPORTED_MODULE_7__["useSelector"])(function (state) {
     return state.NewTradeReducer.counterpartyList;
   });
@@ -3279,11 +3376,12 @@ function NewTrade(props) {
               case 2:
                 res = _context.sent;
 
-                if (!(res.status === 'success')) {
+                if (true) {
                   _context.next = 7;
                   break;
                 }
 
+                //res.status === 'success') {
                 dispatch({
                   type: 'CHANGE_COUNTERPARTYLIST',
                   payload: res.counterpartyList
@@ -3312,19 +3410,15 @@ function NewTrade(props) {
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_5__["Grid"], {
     item: true,
     xs: 12
-  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_main_Header__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    items: ['Home', 'Blotter', 'New Trade'],
-    links: ['Home', 'Blotter', 'NewTrade']
-  })), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_5__["Grid"], {
-    item: true,
-    xs: 12
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Drawer, {
     items: ['Create New Trade', 'Go To Blotter'],
     links: ['NewTrade', 'Blotter'],
     onClick: props.onClick,
     fields: fields,
     counterpartyList: counterpartyList,
-    trades_length: trades_length
+    trades_length: trades_length,
+    schema: schema,
+    validationFunctions: validationFunctions
   }))));
 }
 
@@ -3334,12 +3428,13 @@ function Drawer(props) {
       onClick = props.onClick;
   var fields = props.fields,
       counterpartyList = props.counterpartyList,
-      trades_length = props.trades_length;
+      trades_length = props.trades_length,
+      schema = props.schema,
+      validationFunctions = props.validationFunctions;
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
     style: {
       display: 'flex',
       flexGrow: 1,
-      alignItems: "center",
       justifyContent: "space-around"
     }
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
@@ -3359,7 +3454,9 @@ function Drawer(props) {
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_newtrade_NewTradeContent__WEBPACK_IMPORTED_MODULE_6__["default"], {
     fields: fields,
     counterpartyList: counterpartyList,
-    trades_length: trades_length
+    trades_length: trades_length,
+    schema: schema,
+    validationFunctions: validationFunctions
   })));
 }
 
@@ -3476,12 +3573,6 @@ function Trade(props) {
     container: true,
     spacing: 2
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Grid"], {
-    item: true,
-    xs: 12
-  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_main_Header__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    items: ['Home', 'Blotter', 'New Trade'],
-    links: ['Home', 'Blotter', 'NewTrade']
-  })), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Grid"], {
     item: true,
     xs: 12
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Tabs"], {
@@ -3904,7 +3995,7 @@ TabContainer.propTypes = {
 
 /***/ }),
 
-/***/ 7:
+/***/ 6:
 /*!*****************************!*\
   !*** multi ./pages/Main.js ***!
   \*****************************/

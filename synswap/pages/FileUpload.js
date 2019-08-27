@@ -115,12 +115,6 @@ export default function FileUpload(props) {
     return (
         <Grid container spacing={ 2 } className={ classes.root }>
             <Grid item xs={ 12 }>
-                <Header
-                    items={ ['Home', 'Blotter', 'New Trade'] }
-                    links={ ['Home', 'Blotter', 'NewTrade'] }
-                />
-            </Grid>
-            <Grid item xs={ 12 }>
                 <Typography variant="overline" align="center"> UPLOAD NEW TRADE </Typography>
                 <Divider dark={ true } />
             </Grid>
