@@ -1,8 +1,11 @@
 const mta = (require('./MasterTradeAgreement.js')).MasterTradeAgreement;
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const express = require('express');
 
 const app = express();
+
+app.use(cors());
 
 const mockSetup = function(){
     mta.addCounterParty("Bank1");
