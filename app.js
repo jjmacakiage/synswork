@@ -1,13 +1,15 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const axios = require('axios');
 
 const app = express();
 
 app.use(bodyParser.json());
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-const address = 'http://localhost:4500';
+const address = 'http://127.0.0.1:4500';
 
 /**
  * This creates a trade agreement between the two parties given, allowing them to allege trades to the other.
@@ -127,8 +129,10 @@ app.get('/api/parties/:id/trades', (req, res) => {
 /**
  * This alleges a new trade from the party with the url id to the counterparty given in the body.
  */
-app.post('/api/parties/:id/trades', (req, res) => {
-    if(!req.body.counterPartyId){
+let id_count = 0;
+app.post('/api/parties/trades', (req, res) => {
+    console.log(req.body.result);
+    if(!req.body.result.counterPartyId){
         res.status(400).send({
             success: 'false',
             message: 'Missing parameter.'
@@ -136,12 +140,14 @@ app.post('/api/parties/:id/trades', (req, res) => {
         return;
     }
 
-    const id = parseInt(req.params.id, 10);
-    axios.post(address + '/parties/' + id + '/trades', req.body)
+    const id = parseInt(id_count.toString(), 10);
+    id_count++;
+    axios.post(address + '/parties/' + id + '/trades', req.body.result)
         .then(response => {
             return res.status(200).send({
                 success: true,
                 message: "New trade succesfully added.",
+                data: req.body.result
             });
         })
         .catch(error => {
