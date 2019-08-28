@@ -19,8 +19,8 @@ export default function NewTrade(props) {
 
     useEffect(() => {
         async function fetchList() {
-            const res = await fetchCounterpartyList(currentUser);
             if (1 === 0) { //res.status === 'success') {
+                const res = await fetchCounterpartyList(currentUser);
                 dispatch({ type: 'CHANGE_COUNTERPARTYLIST', payload: res.counterpartyList });
             } else {
                 return;

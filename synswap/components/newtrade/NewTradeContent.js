@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import fetch from 'isomorphic-unfetch';
+import axios from 'axios';
 import { useSelector, useDispatch } from "react-redux";
 import {Button, Grid, makeStyles, Tabs, Tab, Select, TextField, MenuItem, Divider, Typography} from '@material-ui/core';
 import {Eclipse} from "react-loading-io";
 import {ErrorMessage, Field, Formik, Form} from "formik";
 import LoadingOverlay from "react-loading-overlay";
 
-
-
 import { TabContainer } from "../../utils/tradehelpers";
-import { extractByKey } from "../../js/new_trade_fields";
+
 
 
 /**
@@ -37,25 +37,65 @@ const useStyles = makeStyles(theme => ({
 export default function NewTradeContent(props) {
     const classes = useStyles();
     const { fields, counterpartyList, trades_length, schema, validationFunctions } = props;
+    const { IRS } = schema;
     const [isLoading, changeLoading] = useState(false);
     const [counterparty, changeCounterparty] = useState('');
     const dispatch = useDispatch();
     const [value, setValue] = useState(0);
 
+    const irsSchema = (values) => {
+        const generateSchema = (object, values) => {
+            let keys = Object.keys(object);
+            let valueCount = 0;
+            let result = {};
+            for (let i = 0; i < keys.length; i++) {
+                let key = keys[i];
+                let obj = object[key];
+                if (typeof obj === 'string' || typeof obj === 'number') {
+                    result = { ...result, [key]: values[valueCount]};
+                    valueCount++;
+                }
+                else {
+                    result = { ...result, [key]: generateSchema(obj, values.slice(valueCount, valueCount + Object.keys(object).length))};
+                    valueCount = valueCount + Object.keys(object).length
+                }
+            }
+            return result;
+        };
+        return generateSchema(IRS, values)
+    };
 
     /**
      * @function handleSubmit
      * @param result
-     * takes fields passed in from the form and appends to 'tradeStates' piece of state
+     * takes fields passed in from the form and sends to api
      */
-    function handleSubmit(result) {
-        const nameRemoved = result.filter((value, index) => {
-            return index !== result.length - 1;
-        });
-        const payload = { id: trades_length, value: nameRemoved };
-        dispatch({ type: 'NEW_TRADE', payload: payload });
-    }
+    const handleSubmit = async result => {
+        const url = 'http://localhost:4000/api/parties/trades';
 
+        try {
+            axios.post(url, {
+                result
+            })
+                .then(function (response) {
+                    if (response.status === 200) {
+                        console.log(response);
+                        return 'Trade Sent';
+                    } else {
+                        console.log('Trade register failed.', response.status);
+                        let error = new Error(response.statusText);
+                        error.response = response;
+                        throw error
+                    }
+                });
+        } catch (error) {
+            console.error(
+                'You have an error in your code or there are Network issues.',
+                error
+            );
+            return error;
+        }
+    };
 
     /**
      * @function addFields
@@ -72,18 +112,17 @@ export default function NewTradeContent(props) {
      * @param newValue
      * eventHandler helper function that takes the desired tab as a parameter and makes it the new active tab
      */
-
     function tabChange(e, newValue) {
         setValue(newValue);
     }
 
-    /**
-     * @return
-     * @type Grid
-     * @type TabContainer
-     * @type div
-     */
-
+    function generateInitial(array, values) {
+        let result = {};
+        for (let i = 0; i < array.length; i++) {
+            result = {...result, [array[i][0]]: values[i]};
+        }
+        return result;
+    }
     function handleCounterpartyChange(e) {
         changeCounterparty(e.target.value);
     }
@@ -101,11 +140,12 @@ export default function NewTradeContent(props) {
                                        render={({ field, form: { isSubmitting } }) => (
                                            <TextField {...field} label={ (value[1] === 'date') ? '' : value[0]}
                                                       disabled={counterparty === '' || isSubmitting}
-                                                      variant="outlined" type={ value[1] }
+                                                      variant="outlined" type={ value[1]}
+                                                      helperText={ (value[1] === 'date') ? value[0] : ''}
                                            />
                                        )}
                                 />
-                                <ErrorMessage name={value[0]} />
+                                <ErrorMessage name={value[0]} component="div"/>
                             </Grid>
                         );
                     }
@@ -114,7 +154,11 @@ export default function NewTradeContent(props) {
                             <Grid item xs={ 4 }>
                                 <Field name={value[0]}
                                        key={value[0]}
+                                       placeholder={ value[0] }
+                                       component="select"
+                                       /*
                                        render= {({ field, form: { isSubmitting } }) => (
+
                                                 <div>
                                                     <TextField
                                                         select
@@ -124,15 +168,24 @@ export default function NewTradeContent(props) {
                                                         type={ value[1] }
                                                         style={{ width: '100%' }}
                                                     >
-                                                        <MenuItem>
+                                                        <MenuItem value={ value[0] }>
                                                             Default
                                                         </MenuItem>
                                                     </TextField>
-                                                    <ErrorMessage name={value[0]}/>
                                                </div>
                                             )
                                        }
-                                />
+                                        */
+                                >
+                                        {
+                                            value[3].map((option, index) => {
+                                                return (
+                                                    <option value={option}> {option} </option>
+                                                )
+                                            })
+                                        }
+                                    </Field>
+                                    <ErrorMessage name={value[0]} component="div"/>
                             </Grid>
                         )
                     }
@@ -151,13 +204,19 @@ export default function NewTradeContent(props) {
         return (
             <Grid container spacing={ 2 }>
                 {
-                    [[0], [1,2,3], [4], [5,6], [7,8,9], [10,11,12], [13,14,15], [16,17], [18,19,20], [21,22,23]].map((value, index) => {
+                    [[0], [1,2,3], [4,5,6], [7,8], [9,10,11], [12,13,14], [15,16,17], [18,19]].map((value, index) => {
                         const temp = [];
                         for (let i = 0; i < value.length; i++) {
                             temp.push(returnExtended(value[i]));
                         }
                         return (
                             <Grid item xs={ 12 }>
+                                { (index === 0 || index === 5) ?
+                                    <Typography variant="overline" style={{ marginBottom: 20 }}>
+                                        {index === 0 ? "Floating Leg" : "Fixed Leg"}
+                                    </Typography>
+                                    : null
+                                }
                                 <Grid container spacing={ 2 }>
                                     { createFormColumns(temp) }
                                 </Grid>
@@ -169,10 +228,16 @@ export default function NewTradeContent(props) {
         );
     }
 
+    /**
+     * @return
+     * @type Grid
+     * @type TabContainer
+     * @type div
+     */
     return (
         <div className={ classes.root }>
             <div>
-                <Typography variant="overline"> New Trade </Typography>
+                <Typography variant="overline" style={{ marginBottom: 20 }}> { (counterparty === '') ? 'New Trade' : counterparty }</Typography>
                 <LoadingOverlay
                     active={ isLoading }
                     spinner={ <Eclipse />}
@@ -184,15 +249,11 @@ export default function NewTradeContent(props) {
                     }}
                 >
                     <Formik
-                        initialValues={ () => {
-                            return fields.map(field => {
-                                return field[0];
-                            })
-                        } }
+                        initialValues={generateInitial(fields, new Array(fields.length).fill(''))}
                         enableReinitialize={ true }
                         onSubmit={(values, actions) => {
-                            const extractByKey = validationFunctions[0];
-                            console.log(values);
+                            //console.log(irsSchema(Object.values(values)));
+                            handleSubmit(IRS);
                             actions.setSubmitting(false)
                         }}
                         validateOnBlur={ true }
@@ -235,7 +296,7 @@ export default function NewTradeContent(props) {
                                 <Button
                                     variant="contained"
                                     type="submit"
-                                    disabled={ isValidating || isSubmitting }
+                                    disabled={ isValidating || isSubmitting || counterparty === ''}
                                     style={{ marginTop: 20 }}
                                 >
                                     Submit

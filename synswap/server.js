@@ -1,6 +1,7 @@
 const { createServer } = require("http");
 const httpProxy = require("http-proxy");
 const { parse } = require("url");
+const cors = require('cors');
 const next = require("next");
 const cookie = require('js-cookie');
 const dev = process.env.NODE_ENV !== "production";
@@ -9,6 +10,7 @@ const handle = app.getRequestHandler();
 
 const proxy = httpProxy.createProxyServer();
 const target = "http://localhost:3001";
+
 
 app.prepare().then(() => {
     createServer((req, res) => {

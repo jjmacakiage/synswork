@@ -4,47 +4,44 @@
 /*!********************************!*\
   !*** ./js/new_trade_fields.js ***!
   \********************************/
-/*! exports provided: extractByKey, new_trade_fields, IRS */
+/*! exports provided: new_trade_fields, IRS */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "extractByKey", function() { return extractByKey; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "new_trade_fields", function() { return new_trade_fields; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IRS", function() { return IRS; });
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0__);
+
+
 function extractByKey(obj, key) {
-  //Pull all values of specified key from nested JSON
-  var arr = [];
+  if (obj[key]) {
+    return obj[key];
+  } else {
+    var result;
 
-  function extract(obj, arr, key) {
-    //Recursively search for values of key in JSON tree
-    if (obj instanceof Object) {
-      var values = obj.values();
+    var keys = _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(obj);
 
-      for (var i = 0; i < keys.length; i++) {
-        if (values[i] instanceof Object || values[i] instanceof Array) {
-          extract(values[i], arr, key);
-        } else if (values[i] === key) {
-          arr.append(values[i]);
-        }
-      }
-    } else if (obj instanceof Array) {
-      for (var _i = 0; _i < obj.length; _i++) {
-        extract(obj[_i], arr, key);
+    for (var i = 0; i < keys.length; i++) {
+      if (_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_0___default()(obj[keys[i]]).includes(key)) {
+        result = obj[keys[i]][key];
       }
     }
 
-    return arr;
+    if (result) return result;else return "Not Found";
   }
+} //FOR ALL THE 'SELECT' TAGS, APPEND A LIST OF OPTIONS TO THE END OF THE LIST
 
-  return extract(obj, arr, key);
-}
-var base_fields = [['Trade ID', 'text'], ['Trade Date', 'date'], ['Trade Type', 'select'], ['Counterparty', 'select'], ['Direction', 'select'], ['Amount', 'number'], ['Currency', 'select'], ['Fixed Rate', 'number'], ['Duration', 'select']];
-var extended_fields = [['Counterparty Trade ID', 'text'], ['Termination Date (Fixed Leg)', 'date'], ['Bus Day Convention', 'select'], ['Business Centre', 'select'], ['Rate Reference', 'select'], ['Period', 'select'], ['Day Count Fraction', 'select'], ['Fixing Date Offset', 'select'], ['Bus Day Convention', 'select'], ['Business Centre', 'select'], ['Effective Date', 'date'], ['Bus Day Convention', 'select'], ['Business Centre', 'select'], ['Termination Date', 'date'], ['Bus Day Convention', 'select'], ['Business Centre', 'select'], ['Period (Fixed Leg)', 'select'], ['Day Count Fraction (Fixed Leg)', 'select'], ['Effective Date (Fixed Leg)', 'date'], ['Bus Day Convention', 'select'], ['Business Centre', 'select'], ['Termination Date (Fixed Leg)', 'date'], ['Bus Day Convention (Fixed Leg)', 'select'], ['Business Centre(Fixed Leg)', 'select']];
+
+var base_fields = [['Trade Date', 'date'], ['Trade Type', 'select', ['IRS']], ['Direction', 'select', ['PayFixed']], ['Amount', 'number'], ['Currency', 'select', ['GBP']], ['Fixed Rate', 'number'], ['Duration', 'select', ['5Y']], ['Counterparty ID', 'select', [1, 2]], ['Termination Date', 'date'], ['Bus Day Convention', 'select', ['ModFollowing']], ['Business Centre', 'select', ['GBLO']]];
+var extended_fields = [//Floating Leg
+['Rate Reference', 'select', ['EURIBOR']], ['Effective Date (Floating)', 'date'], ['Bus Day Convention (Effective, Floating)', 'select', ['ModFollowing']], ['Business Centre (Effective, Floating)', 'select', ['GBLO']], ['Termination Date (Floating)', 'date'], ['Bus Day Convention (Termination, Floating)', 'select', ['ModFollowing']], ['Business Centre (Termination, Floating)', 'select', ['GBLO']], ['Period (Floating)', 'select', ['6M']], ['Day Count Fraction (Floating)', 'select', ['ACT/360']], ['Fixing Date Offset (Floating)', 'select', ['-2D']], ['Bus Day Convention (Floating)', 'select', ['ModFollowing']], ['Business Centre (Floating)', 'select', ['GBLO']], //Fixed Leg
+['Effective Date (Fixed)', 'date'], ['Bus Day Convention (Effective, Fixed)', 'select', ['ModFollowing']], ['Business Centre (Effective, Fixed)', 'select', ['GBLO']], ['Termination Date (Fixed)', 'date'], ['Bus Day Convention (Termination, Fixed)', 'select', ['ModFollowing']], ['Business Centre (Termination, Fixed)', 'select', ['GBLO']], ['Period (Fixed)', 'select', ['6M']], ['Day Count Fraction (Fixed)', 'select', ['ACT/360']]];
 var new_trade_fields = function new_trade_fields() {
   var base = function base() {
     for (var i = 0; i < base_fields.length; i++) {
-      base_fields[i].push('0');
+      base_fields[i].splice(2, 0, '0');
     }
 
     return base_fields;
@@ -52,7 +49,7 @@ var new_trade_fields = function new_trade_fields() {
 
   var extended = function extended() {
     for (var i = 0; i < extended_fields.length; i++) {
-      extended_fields[i].push('1');
+      extended_fields[i].splice(2, 0, '1');
     }
 
     return extended_fields;
@@ -11983,16 +11980,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 var INITIAL_STATE = {
   tabs: [],
   NEW_TRADE_FIELDS: Object(_js_new_trade_fields__WEBPACK_IMPORTED_MODULE_1__["new_trade_fields"])(),
   AUTOFILL_FIELDS: [],
   FIELD_DATA: [],
-  testSchema: _js_new_trade_fields__WEBPACK_IMPORTED_MODULE_1__["IRS"],
+  schema: {
+    IRS: _js_new_trade_fields__WEBPACK_IMPORTED_MODULE_1__["IRS"]
+  },
   // || API CALL TO OBTAIN DEFAULT SCHEMA
-  validationFunctions: [_js_new_trade_fields__WEBPACK_IMPORTED_MODULE_1__["extractByKey"]],
-  counterpartyList: ['A', 'B']
+  validationFunctions: {},
+  counterpartyList: ['Bank1', 'Bank2']
 };
 function NewTradeReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : INITIAL_STATE;

@@ -13,9 +13,7 @@ import Trade from './Trade';
 import Blotter from './Blotter';
 import FileUpload from './FileUpload';
 import {error} from "next/dist/build/output/log";
-import { withAuthSync } from "../utils/Auth/auth";
-import getHost from '../utils/Auth/get-host';
-import Typography from "@material-ui/core/Typography";
+
 
 /**
  * @class Main
