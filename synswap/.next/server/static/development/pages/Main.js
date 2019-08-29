@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1300,7 +1300,8 @@ function NewTradeContent(props) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              url = 'http://localhost:4000/api/parties/trades';
+              // TODO: Below using fixed user id for now. Can change this once we add user registration, login, auth...
+              url = 'http://localhost:4000/api/traders/1/trades';
               _context.prev = 1;
               axios__WEBPACK_IMPORTED_MODULE_9___default.a.post(url, {
                 result: result
@@ -1312,7 +1313,7 @@ function NewTradeContent(props) {
                   console.log('Trade register failed.', response.status);
                   var error = new Error(response.statusText);
                   error.response = response;
-                  throw error;
+                  throw errorb;
                 }
               });
               _context.next = 9;
@@ -1411,7 +1412,7 @@ function NewTradeContent(props) {
           component: "select"
           /*
           render= {({ field, form: { isSubmitting } }) => (
-                    <div>
+                     <div>
                        <TextField
                            select
                            label={ value[0] }
@@ -3948,14 +3949,14 @@ TabContainer.propTypes = {
 
 /***/ }),
 
-/***/ 3:
+/***/ 6:
 /*!*****************************!*\
   !*** multi ./pages/Main.js ***!
   \*****************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/jjmacakiage/dev/synswap-web-react/synswap/pages/Main.js */"./pages/Main.js");
+module.exports = __webpack_require__(/*! C:\Users\liams\synswap-web-react\synswap\pages\Main.js */"./pages/Main.js");
 
 
 /***/ }),

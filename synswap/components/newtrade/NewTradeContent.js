@@ -71,7 +71,8 @@ export default function NewTradeContent(props) {
      * takes fields passed in from the form and sends to api
      */
     const handleSubmit = async result => {
-        const url = 'http://localhost:4000/api/parties/trades';
+        // TODO: Below using fixed user id for now. Can change this once we add user registration, login, auth...
+        const url = 'http://localhost:4000/api/traders/1/trades';
 
         try {
             axios.post(url, {
@@ -85,7 +86,7 @@ export default function NewTradeContent(props) {
                         console.log('Trade register failed.', response.status);
                         let error = new Error(response.statusText);
                         error.response = response;
-                        throw error
+                        throw errorb
                     }
                 });
         } catch (error) {
