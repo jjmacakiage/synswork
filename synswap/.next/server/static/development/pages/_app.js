@@ -1805,8 +1805,18 @@ function TradeReducer() {
       var new_trade_result = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__["default"])(state.tradeStates);
 
       new_trade_result.push(action.payload);
+      console.log(new_trade_result);
       return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
         tradeStates: new_trade_result
+      });
+
+    case 'FETCH_TRADES':
+      var trades = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__["default"])(state.tradeStates);
+
+      trades.push(action.payload);
+      console.log(trades);
+      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+        tradeStates: trades
       });
 
     default:

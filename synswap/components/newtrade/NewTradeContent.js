@@ -67,20 +67,22 @@ export default function NewTradeContent(props) {
 
     /**
      * @function handleSubmit
-     * @param result
+     * @param values
      * takes fields passed in from the form and sends to api
      */
-    const handleSubmit = async result => {
+    const handleSubmit = async values => {
         const url = 'http://localhost:4000/api/parties/trades';
-
+        //console.log(values);
+        const data = values //irsSchema(Object.values(values));
         try {
             axios.post(url, {
-                result
+                data
             })
                 .then(function (response) {
                     if (response.status === 200) {
                         console.log(response);
-                        return 'Trade Sent';
+                        dispatch({ type: 'NEW_TRADE', payload: [response.data.data, values] });
+                        return response.data;
                     } else {
                         console.log('Trade register failed.', response.status);
                         let error = new Error(response.statusText);
@@ -154,37 +156,33 @@ export default function NewTradeContent(props) {
                             <Grid item xs={ 4 }>
                                 <Field name={value[0]}
                                        key={value[0]}
-                                       placeholder={ value[0] }
-                                       component="select"
-                                       /*
-                                       render= {({ field, form: { isSubmitting } }) => (
-
-                                                <div>
-                                                    <TextField
-                                                        select
-                                                        label={ value[0] }
-                                                        disabled={counterparty === '' || isSubmitting}
-                                                        variant="outlined"
-                                                        type={ value[1] }
-                                                        style={{ width: '100%' }}
-                                                    >
-                                                        <MenuItem value={ value[0] }>
-                                                            Default
-                                                        </MenuItem>
-                                                    </TextField>
-                                               </div>
-                                            )
+                                       render= {
+                                           ({ field, form: { isSubmitting } }) => (
+                                                <TextField
+                                                    select
+                                                    disabled={counterparty === '' || isSubmitting}
+                                                    variant="outlined"
+                                                    style={{ width: '100%' }}
+                                                    value={ value[0] }
+                                                    SelectProps={{
+                                                        native: true,
+                                                        ...field
+                                                    }}
+                                                >
+                                                        <option disabled> { value[0] } </option>
+                                                    {
+                                                        value[3].map((option, index) => {
+                                                            return (
+                                                                <option key={option + index} value={option} >
+                                                                    {option}
+                                                                </option>
+                                                            )
+                                                        })
+                                                    }
+                                                </TextField>
+                                           )
                                        }
-                                        */
-                                >
-                                        {
-                                            value[3].map((option, index) => {
-                                                return (
-                                                    <option value={option}> {option} </option>
-                                                )
-                                            })
-                                        }
-                                    </Field>
+                                />
                                     <ErrorMessage name={value[0]} component="div"/>
                             </Grid>
                         )
@@ -253,7 +251,7 @@ export default function NewTradeContent(props) {
                         enableReinitialize={ true }
                         onSubmit={(values, actions) => {
                             //console.log(irsSchema(Object.values(values)));
-                            handleSubmit(IRS);
+                            handleSubmit(IRS, values);
                             actions.setSubmitting(false)
                         }}
                         validateOnBlur={ true }

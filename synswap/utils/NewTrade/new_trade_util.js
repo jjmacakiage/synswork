@@ -1,23 +1,20 @@
-import fetch from 'isomorphic-unfetch';
+import axios from 'axios';
 
-export default async function fetchCounterpartyList(currentUser) {
-    const url = '/api/new_trade';
+export default async function fetchCounterpartyList(currentUser, url) {
     try {
-        const response = await fetch(url, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ currentUser })
-        });
-        if (response.status === 200) {
-            const { counterpartyList } = await response.json();
-            return { counterpartyList: counterpartyList, status: 'success' };
-        } else {
-            console.log('Counterparty config fetch failed.');
-
-            let error = new Error(response.statusText);
-            error.response = response;
-            throw error
-        }
+        axios.post(url)
+            .then(function (response) {
+                if (response.status === 200) {
+                    console.log(response);
+                    dispatch({ type: 'NEW_TRADE', payload: response.data});
+                    return response.data;
+                } else {
+                    console.log('Trade register failed.', response.status);
+                    let error = new Error(response.statusText);
+                    error.response = response;
+                    throw error
+                }
+            });
     } catch (error) {
         console.error(
             'You have an error in your code or there are Network issues.',

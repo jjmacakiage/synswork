@@ -156,15 +156,76 @@ function formatRows(rows, columns) {
     return result;
 }
 
+function pullStuff(obj, param) {
+    const getKeys = obj => {
+        if (typeof obj !== 'object') {
+            throw new Error('Invalid JSON');
+        }
+        let result = [];
+        const topKeys = Object.keys(obj);
+        for (let i = 0; i < topKeys.length; i++) {
+            let topKey = topKeys[i];
+            let topEntry = obj[topKey];
+            if (typeof topEntry === 'string' || typeof topEntry === 'number') {
+                result.push(topKey);
+            }
+            else if (Array.isArray(topEntry)) {
+                let arrayEntry;
+                for (arrayEntry in topEntry) {
+                    result.push(getKeys(arrayEntry, true));
+                }
+            }
+            else {
+                result.push(getKeys(topEntry))
+            }
+        }
+        return result.flat(Infinity);
+    };
+
+    const getValues = obj => {
+        if (typeof obj !== 'object') {
+            throw new Error('Invalid JSON');
+        }
+        let result = [];
+        let topValues = Object.values(obj);
+        for (let i = 0; i < topValues.length; i++) {
+            let topValue = topValues[i];
+            if (typeof topValue === 'string' || typeof topValue === 'number') {
+                result.push(topValue);
+            }
+            else if (Array.isArray(topValue)) {
+                let arrayEntry;
+                for (arrayEntry in topValue) {
+                    result.push(getValues(arrayEntry, true));
+                }
+            }
+            else {
+                result.push(getValues(topValue))
+            }
+        }
+        return result.flat(Infinity);
+    };
+    switch (param) {
+        case 'keys':
+            return getKeys(obj, false);
+        case 'values':
+            return getValues(obj, false);
+        default:
+            return;
+    }
+}
+
 
 export default function ReactVirtualizedTable(props) {
-
+    const { data } = props;
+    const columns = pullStuff(data, 'keys');
+    const rows = pullStuff(data, 'values');
     return (
         <Paper style={{ height: 400, width: '100%' }} square={ true }>
             <VirtualizedTable
-                rowCount={ props.data.rows.length }
-                rowGetter={({ index }) => formatRows(props.data.rows, props.data.columns)[index]}
-                columns={ formatColumns(props.data.columns) }
+                rowCount={ rows.length }
+                rowGetter={({ index }) => formatRows(rows, columns)[index]}
+                columns={ formatColumns(columns) }
                 onRowClick={ props.onRowClick }
             />
         </Paper>

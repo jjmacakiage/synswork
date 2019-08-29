@@ -7,7 +7,13 @@ export default function TradeReducer(state = INITIAL_STATE, action) {
         case 'NEW_TRADE':
             const new_trade_result = [...state.tradeStates];
             new_trade_result.push(action.payload);
+            console.log(new_trade_result);
             return { ...state, tradeStates: new_trade_result };
+        case 'FETCH_TRADES':
+            const trades = [...state.tradeStates];
+            trades.push(action.payload);
+            console.log(trades);
+            return { ...state, tradeStates: trades };
         default:
             return { ...state };
     }
