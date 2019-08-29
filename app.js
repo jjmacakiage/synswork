@@ -1,4 +1,4 @@
-const mta = (require('./MasterTradeAgreement.js')).MasterTradeAgreement;
+const Trader = (require('./Trader.js')).Trader;
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const express = require('express');
@@ -7,11 +7,24 @@ const app = express();
 
 app.use(cors());
 
+const mta = (require('./MasterTradeAgreement.js')).MasterTradeAgreement;
+const traders = Array();
+
+const getTrader = function(id){
+    for(const trader of traders){
+        if(id === trader.id){
+            return trader;
+        }
+    }
+
+    return null;
+};
+
 const mockSetup = function(){
     mta.addCounterParty("Bank1");
     mta.addCounterParty("Bank2");
     mta.addTradeAgreement(1, 2);
-    //mta.addTrade(1, 2);
+    traders.push(new Trader(1, 1));
 };
 
 mockSetup();
@@ -62,10 +75,10 @@ app.post('/parties/', (req, res) => {
     }
 });
 
-app.get('/parties/:partyid/trades/:tradeid', (req, res) => {
-    const partyid = parseInt(req.params.partyid, 10);
+app.get('/traders/:traderid/trades/:tradeid', (req, res) => {
+    const traderid = parseInt(req.params.traderid, 10);
     const tradeid = parseInt(req.params.tradeid, 10);
-    const info = mta.getTradeInfo(partyid, tradeid);
+    const info = mta.getTradeInfo(getTrader(traderid).counterPartyId, tradeid);
     if(Object.keys(info).length === 0){
         return res.status(400).send({
             success: false,
@@ -77,9 +90,18 @@ app.get('/parties/:partyid/trades/:tradeid', (req, res) => {
     });
 });
 
-app.post('/parties/:partyid/trades/', (req, res) => {
-    const partyId = parseInt(req.params.partyid, 10);
-    if(mta.addTrade(partyId, req.body)){
+app.get('/traders/:traderid/trades/', (req, res) => {
+    const traderid = parseInt(req.params.traderid, 10);
+    const trader = getTrader(traderid);
+    return res.status(200).send({ //TODO: Returning true either way??
+        success: true,
+        trades: mta.getAllTradeInfo(trader.counterPartyId)
+    });
+});
+
+app.post('/traders/:traderid/trades/', (req, res) => {
+    const traderid = parseInt(req.params.traderid, 10);
+    if(mta.addTrade(getTrader(traderid).counterPartyId, req.body)){
         return res.status(200).send({
             success: true,
         });
@@ -89,14 +111,6 @@ app.post('/parties/:partyid/trades/', (req, res) => {
             success: false,
         });
     }
-});
-
-app.get('/parties/:partyid/trades/', (req, res) => {
-    const partyid = parseInt(req.params.partyid, 10);
-    return res.status(200).send({ //TODO: Returning true either way??
-        success: true,
-        trades: mta.getAllTradeInfo(partyid)
-    });
 });
 
 app.use(function(req, res) {
