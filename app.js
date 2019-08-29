@@ -104,12 +104,12 @@ app.get('/api/parties/:partyid/trades/:tradeid' , (req, res) => {
 });
 
 /**
- * This gets all trades for a particular counterparty across all trade agreements.
+ * This gets all trades for a particular trader according to the counterparty they belong to.
  */
-app.get('/api/parties/:id/trades', (req, res) => {
+app.get('/api/traders/:id/trades', (req, res) => {
     const id = parseInt(req.params.id, 10);
 
-    axios.get(address + '/parties/' + id + '/trades/')
+    axios.get(address + '/traders/' + id + '/trades/')
         .then(response => {
             console.log(response);
             return res.status(200).send({
@@ -129,8 +129,7 @@ app.get('/api/parties/:id/trades', (req, res) => {
 /**
  * This alleges a new trade from the party with the url id to the counterparty given in the body.
  */
-let id_count = 0;
-app.post('/api/parties/trades', (req, res) => {
+app.post('/api/traders/:id/trades', (req, res) => {
     console.log(req.body.result);
     if(!req.body.result.counterPartyId){
         res.status(400).send({
@@ -140,9 +139,7 @@ app.post('/api/parties/trades', (req, res) => {
         return;
     }
 
-    const id = parseInt(id_count.toString(), 10);
-    id_count++;
-    axios.post(address + '/parties/' + id + '/trades', req.body.result)
+    axios.post(address + '/traders/' + req.params.id.toString() + '/trades', req.body.result)
         .then(response => {
             return res.status(200).send({
                 success: true,
