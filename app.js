@@ -83,11 +83,11 @@ app.post('/api/parties', (req, res) => {
 /**
  * This endpoint gets the trade with tradeid for the party with partyid.
  */
-app.get('/api/parties/:partyid/trades/:tradeid' , (req, res) => {
+app.get('/api/traders/:traderid/trades/:tradeid' , (req, res) => {
     const tradeid = parseInt(req.params.tradeid, 10);
-    const partyid = parseInt(req.params.partyid, 10);
+    const traderid = parseInt(req.params.traderid, 10);
 
-    axios.get(address + '/parties/' + partyid + '/trades/' + tradeid)
+    axios.get(address + '/traders/' + traderid + '/trades/' + tradeid)
         .then(response => {
             return res.status(200).send({
                 success: true,
