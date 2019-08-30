@@ -135,8 +135,8 @@ app.get('/api/traders/:id/trades', (req, res) => {
  * This alleges a new trade from the party with the url id to the counterparty given in the body.
  */
 app.post('/api/traders/:id/trades', (req, res) => {
-    console.log(req.body.result);
-    if(!req.body.result.counterPartyId){
+    console.log(req.body.data);
+    if(!req.body.data.counterPartyId){
         res.status(400).send({
             success: 'false',
             message: 'Missing parameter.'
@@ -144,12 +144,12 @@ app.post('/api/traders/:id/trades', (req, res) => {
         return;
     }
 
-    axios.post(address + '/traders/' + req.params.id.toString() + '/trades', req.body.result)
+    axios.post(address + '/traders/' + req.params.id.toString() + '/trades', req.body.data)
         .then(response => {
             return res.status(200).send({
                 success: true,
                 message: "New trade successfully added.",
-                data: req.body.result
+                data: req.body.data
             });
         })
         .catch(error => {
