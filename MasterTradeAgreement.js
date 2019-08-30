@@ -97,11 +97,30 @@ MasterTradeAgreement.prototype.getTradeInfo = function(partyId, tradeId){
     return {};
 };
 
-MasterTradeAgreement.prototype.getAllTradeInfo = function(idParty){
+MasterTradeAgreement.prototype.getTradeInfoRange = function(partyId, lastIndex, range){
     const trades = [];
     for(const ta of this.tradeAgreements){
-        if(ta.party1.id === idParty || ta.party2.id === idParty){
-            trades.push(...ta.getAllTradeInfo(idParty));
+        if(ta.party1.id === partyId || ta.party2.id === partyId){
+            trades.push(...ta.getAllTradeInfo(partyId));
+        }
+    }
+
+    const ret = [];
+    for(let i = lastIndex; i < range; i++){
+        if(i >= trades.length){
+            break;
+        }
+        ret.push(trades[i]);
+    }
+
+    return ret;
+};
+
+MasterTradeAgreement.prototype.getAllTradeInfo = function(partyId){
+    const trades = [];
+    for(const ta of this.tradeAgreements){
+        if(ta.party1.id === partyId || ta.party2.id === partyId){
+            trades.push(...ta.getAllTradeInfo(partyId));
         }
     }
     return trades;

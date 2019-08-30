@@ -1,4 +1,5 @@
 const Trader = (require('./Trader.js')).Trader;
+const MockTrade = (require('./MockTrade.js')).MockTrade;
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const express = require('express');
@@ -25,6 +26,10 @@ const mockSetup = function(){
     mta.addCounterParty("Bank2");
     mta.addTradeAgreement(1, 2);
     traders.push(new Trader(1, 1));
+
+    for(let i = 0; i < 500; i++){
+        mta.addTrade(1, MockTrade);
+    }
 };
 
 mockSetup();
@@ -90,12 +95,21 @@ app.get('/traders/:traderid/trades/:tradeid', (req, res) => {
     });
 });
 
-app.get('/traders/:traderid/trades/', (req, res) => {
+app.get('/traders/:traderid/trades', (req, res) => {
     const traderid = parseInt(req.params.traderid, 10);
     const trader = getTrader(traderid);
+    let trades;
+
+    if(req.query.lastIndex && req.query.range){
+        trades = mta.getTradeInfoRange(trader.counterPartyId, parseInt(req.query.lastIndex), parseInt(req.query.range));
+    }
+    else{
+        trades = mta.getAllTradeInfo(trader.counterPartyId);
+    }
+
     return res.status(200).send({ //TODO: Returning true either way??
         success: true,
-        trades: mta.getAllTradeInfo(trader.counterPartyId)
+        trades: trades
     });
 });
 

@@ -10,6 +10,7 @@ function TradeAgreement(party1, party2){
 }
 
 TradeAgreement.prototype.addTrade = function(tradeId, partyId, tradeParams){
+    // TODO: Should alleged trade be added to other trade list as unconfirmed?
     if(this.party1.id === partyId){
         this.tradesParty1.push(new Trade(tradeId, this.party1.id, this.party2.id, tradeParams));
     }
