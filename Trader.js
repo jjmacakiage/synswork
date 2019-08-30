@@ -1,6 +1,6 @@
-function Trader(_id, _counterPartyId){
+function Trader(_id, _orgId){
     this.id = _id;
-    this.counterPartyId = _counterPartyId; // TODO: Organisation id??
+    this.orgId = _orgId;
 }
 
 exports.Trader = Trader;

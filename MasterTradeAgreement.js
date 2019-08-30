@@ -1,17 +1,17 @@
-const CounterParty = (require('./CounterParty.js')).CounterParty;
+const Org = (require('./Org.js')).Org;
 const TradeAgreement = (require('./TradeAgreement')).TradeAgreement;
 
 function MasterTradeAgreement(){
     this.tradeAgreements = [];
-    this.counterParties = new Map();
-    this.numCounterParties = 0;
+    this.orgs = {};
+    this.numOrgs = 0;
     this.numTrades = 0;
 }
 
 MasterTradeAgreement.prototype.getCounterParties = function(id){
-    const party = this.counterParties.get(id);
-    if(!party){
-        console.error("Party does not exists, id: " + id);
+    const org = this.orgs[id];
+    if(!org){
+        console.error("Organisation does not exists, id: " + id);
         return [];
     }
 
@@ -31,17 +31,17 @@ MasterTradeAgreement.prototype.getCounterParties = function(id){
     return ret;
 };
 
-MasterTradeAgreement.prototype.addCounterParty = function(name){
-    for(const [key, value] of this.counterParties){
-        if(value.name === name){
+MasterTradeAgreement.prototype.addOrg = function(name){
+    for(const id in this.orgs){
+        if(this.orgs[id].name === name){
             console.log("Counter party already exists: " + name);
             return false;
         }
     }
 
-    this.numCounterParties++;
+    this.numOrgs++;
 
-    this.counterParties.set(this.numCounterParties, new CounterParty(this.numCounterParties, name));
+    this.orgs[this.numOrgs] = new Org(this.numOrgs, name);
     return true;
 };
 
@@ -51,8 +51,8 @@ MasterTradeAgreement.prototype.addTradeAgreement = function(idParty1, idParty2){
         return false;
     }
 
-    const cp1 = this.counterParties.get(idParty1);
-    const cp2 = this.counterParties.get(idParty2);
+    const cp1 = this.orgs[idParty1];
+    const cp2 = this.orgs[idParty2];
     if(!cp1 || !cp2){
         console.error("One or both counterparties given do not exists.");
         return false;
