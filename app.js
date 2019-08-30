@@ -105,11 +105,16 @@ app.get('/api/parties/:partyid/trades/:tradeid' , (req, res) => {
 
 /**
  * This gets all trades for a particular trader according to the counterparty they belong to.
+ * Example: localhost:4000/api/traders/:id/trades?lastIndex=87&range=50
+ * LastIndex is the last trade loaded in the blotter and range is the total trades loaded from that point.
  */
 app.get('/api/traders/:id/trades', (req, res) => {
     const id = parseInt(req.params.id, 10);
+    const lastIndex = req.query.lastIndex;
+    const range = req.query.range;
 
-    axios.get(address + '/traders/' + id + '/trades/')
+
+    axios.get(address + '/traders/' + id + '/trades/', {params: {lastIndex: lastIndex, range: range}})
         .then(response => {
             console.log(response);
             return res.status(200).send({
@@ -143,7 +148,7 @@ app.post('/api/traders/:id/trades', (req, res) => {
         .then(response => {
             return res.status(200).send({
                 success: true,
-                message: "New trade succesfully added.",
+                message: "New trade successfully added.",
                 data: req.body.result
             });
         })
@@ -157,7 +162,7 @@ app.post('/api/traders/:id/trades', (req, res) => {
 });
 
 app.use(function(req, res) {
-    res.status(404).send({url: req.originalUrl + ' not found'})
+    res.status(404).send({url: req.originalUrl + ' not found'});
 });
 
 const PORT = 4000;
