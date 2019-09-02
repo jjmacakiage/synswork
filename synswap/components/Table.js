@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import { Grid } from 'react-virtualized';
+import { MultiGrid, AutoSizer } from 'react-virtualized';
+import { Paper, Typography } from '@material-ui/core';
 
 export default function Table(props) {
     function pullStuff(obj, param) {
@@ -62,7 +63,7 @@ export default function Table(props) {
     }
 
     const formatData = data => {
-        const columns = Object.keys(data[0]);
+        const columns = pullStuff(data[0], 'keys');
         const result = [];
         result.push(columns);
         for (let i = 0; i < data.length; i++) {
@@ -72,27 +73,32 @@ export default function Table(props) {
     };
 
     const data = formatData(props.data);
+    console.log(data);
 
     const cellRenderer = ({ columnIndex, key, rowIndex, style }) => {
         return (
-            <div
-                key={key}
-                style={ style }
+            <Paper
+                key={ key }
+                style={ {...style, padding: 5, minWidth: "min-content" } }
+                square
             >
-                { data[rowIndex][columnIndex] }
-            </div>
+                <Typography variant="overline"> { data[rowIndex][columnIndex] } </Typography>
+            </Paper>
         )
     }
     return (
-        <Grid
+        <MultiGrid
             cellRenderer={cellRenderer}
             columnCount={data[0].length}
-            columnWidth={ 1800 / data[0].length }
-            height={600}
+            columnWidth={ 5000 / data[0].length }
+            fixedColumnCount={ 0 }
+            fixedRowCount={ 1 }
+            height={ 600 }
             rowCount={data.length}
             rowHeight={30}
-            width={1000}
+            width={ 1200 }
             style={{ marginLeft: 20 }}
         />
+
     )
 }
