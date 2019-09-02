@@ -21,7 +21,7 @@ const base_fields = [
     ['Trade Type', 'select', ['IRS']],
     ['Direction', 'select', ['PayFixed']],
     ['Amount', 'number'],
-    ['Currency', 'select', ['GBP']],
+    ['Currency', 'select', ['GBP', 'EUR']],
     ['Fixed Rate', 'number'],
     ['Duration', 'select', ['5Y']],
 ];

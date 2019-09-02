@@ -73,7 +73,6 @@ export default function Table(props) {
     };
 
     const data = formatData(props.data);
-    console.log(data);
 
     const cellRenderer = ({ columnIndex, key, rowIndex, style }) => {
         return (
@@ -85,7 +84,8 @@ export default function Table(props) {
                 <Typography variant="overline"> { data[rowIndex][columnIndex] } </Typography>
             </Paper>
         )
-    }
+    };
+
     return (
         <MultiGrid
             cellRenderer={cellRenderer}

@@ -72,7 +72,7 @@ export default function NewTradeContent(props) {
     const dispatch = useDispatch();
     const [value, setValue] = useState(0);
 
-    const irsSchema = (values) => {
+    const tradeSchema = (schema, values) => {
         const generateSchema = (object, values) => {
             let keys = Object.keys(object);
             let valueCount = 0;
@@ -91,7 +91,7 @@ export default function NewTradeContent(props) {
             }
             return result;
         };
-        return generateSchema(IRS, values)
+        return generateSchema(schema, values)
     };
 
     /**
@@ -102,7 +102,7 @@ export default function NewTradeContent(props) {
     const handleSubmit = async values => {
         const url = 'http://localhost:4000/api/traders/1/trades';
         //console.log(values);
-        const data = values; //irsSchema(Object.values(values));
+        const data = values; //tradeSchema(IRS, Object.values(values));
         try {
             axios.post(url, {
                 data
@@ -127,15 +127,6 @@ export default function NewTradeContent(props) {
             return error;
         }
     };
-
-    /**
-     * @function addFields
-     * @param addFields
-     * takes the custom fields created in component and appends to NEW_TRADE_FIELDS piece of state
-     */
-    function addFields(addFields) {
-        dispatch({ type: 'APPEND_FIELDS', payload: addFields });
-    }
 
     /**
      * @function tabChange
@@ -186,30 +177,32 @@ export default function NewTradeContent(props) {
                                 <Field name={value[0]}
                                        key={value[0]}
                                        render= {
-                                           ({ field, form: { isSubmitting } }) => (
-                                                <TextField
-                                                    select
-                                                    disabled={counterparty === '' || isSubmitting}
-                                                    variant="outlined"
-                                                    style={{ width: '100%' }}
-                                                    value={ value[0] }
-                                                    SelectProps={{
-                                                        native: true,
-                                                        ...field
-                                                    }}
-                                                >
-                                                        <option disabled> { value[0] } </option>
-                                                    {
-                                                        value[3].map((option, index) => {
-                                                            return (
-                                                                <option key={option + index} value={option} >
-                                                                    {option}
-                                                                </option>
-                                                            )
-                                                        })
-                                                    }
-                                                </TextField>
-                                           )
+                                           ({ field, form: { isSubmitting }, ...props }) => {
+                                               return (
+                                                   <TextField
+                                                       select
+                                                       disabled={counterparty === '' || isSubmitting}
+                                                       variant="outlined"
+                                                       style={{ width: '100%' }}
+                                                       SelectProps={{
+                                                           native: true,
+                                                       }}
+                                                       { ...field }
+                                                       { ...props }
+                                                   >
+                                                       <option> { value[0] } </option>
+                                                       {
+                                                           value[3].map(option => {
+                                                               return (
+                                                                   <option key={option} value={option}>
+                                                                       {option}
+                                                                   </option>
+                                                               )
+                                                           })
+                                                       }
+                                                   </TextField>
+                                               );
+                                           }
                                        }
                                 />
                                     <ErrorMessage name={value[0]} component="div"/>
@@ -260,6 +253,7 @@ export default function NewTradeContent(props) {
         );
     }
 
+
     /**
      * @return
      * @type Grid
@@ -285,10 +279,10 @@ export default function NewTradeContent(props) {
                     }}
                 >
                     <Formik
-                        initialValues={generateInitial(fields, new Array(fields.length).fill(''))}
+                        initialValues={ generateInitial(fields, new Array(fields.length).fill('')) }
                         enableReinitialize={ true }
                         onSubmit={(values, actions) => {
-                            //console.log(irsSchema(Object.values(values)));
+                            console.log(tradeSchema(IRS, Object.values(values)));
                             handleSubmit(IRS, values);
                             actions.setSubmitting(false)
                         }}
