@@ -3,21 +3,28 @@ import axios from 'axios';
 import { Button, Grid } from '@material-ui/core';
 import {useDispatch, useSelector} from "react-redux";
 import DataTable from '../components/DataTable';
-import Header from '../components/main/Header';
+import Table from "../components/Table";
 
 export default function Blotter() {
-    const [data, setData] = useState({ rows: [['f']], columns: ['a'] });
-    const trades = useSelector(state => state.TradeReducer.tradeStates);
+    const [data, setData] = useState({});
+    const trades = useSelector(state => state.TradeReducer.trades);
     const dispatch = useDispatch();
+    const [shouldRefresh, changeRefresh] = useState(false);
+
+    useEffect(() => {
+        setInterval(() => {
+            changeRefresh(!shouldRefresh);
+        }, 5000);
+    }, [trades]);
 
     useEffect( () => {
         //ADD AJAX REQUEST TO FETCH TRADE DATA HERE
         const fetchData = async () => {
-            const url = 'http://localhost:4000/api/parties/1/trades';
+            const url = 'http://localhost:4000/api/traders/1/trades';
             try {
                 axios.get(url)
                     .then(function (response) {
-                        console.log(response.data.trades);
+                        console.log('Trades in Blotter');
                         setData(response.data.trades);
                     });
             } catch (error) {
@@ -29,7 +36,7 @@ export default function Blotter() {
             }
         };
         fetchData();
-    }, [trades]);
+    }, [shouldRefresh === true]);
 
     function exportToCSV() {
         let csv = '';
@@ -63,8 +70,15 @@ export default function Blotter() {
                       Export to CSV
                   </Button>
               </Grid>
-              <Grid item xs={ 12 }>
-                  <DataTable data={ data }/>
+              {
+                  /*
+                  <Grid item xs={12}>
+                      <DataTable data={data}/>
+                  </Grid>
+                   */
+              }
+              <Grid item xs={ 12 } style={{ padding: 50 }}>
+                  <Table data={ data } />
               </Grid>
           </Grid>
 

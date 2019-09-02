@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
+<<<<<<< HEAD
     <bookmark url="file://$PROJECT_DIR$/synswap/components/newtrade/NewTradeContent.js" description="&lt;/Grid&gt;" line="219" />
+=======
+    <bookmark url="file://$PROJECT_DIR$/synswap/components/newtrade/NewTradeContent.js" description="&lt;/Grid&gt;" line="314" />
+>>>>>>> d6f4c51066e2b3f794f1f4d944b35ddeb69d6445
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ffb33f5-9010-4c63-94aa-8ac1cabb86bb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/synswap/.next/build-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/build-manifest.json" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/synswap/.next/cache/autodll-webpack-plugin/development_instance_0_a643e77195746246c2da99c21fe209fe/stats.json" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/cache/autodll-webpack-plugin/development_instance_0_a643e77195746246c2da99c21fe209fe/stats.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/08281cd66d296b587fe745d8289a2196.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/3711c7566c34dcb6959c0d0190b174d9.json" beforeDir="false" />
@@ -20,16 +25,132 @@
       <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/d734277a0a2cd15380382e6d888ca227.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/fb0d9f844e10b7ec867164b84d3dc3ed.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/synswap/.next/server/pages-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/server/pages-manifest.json" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/autodll-webpack-plugin/development_instance_0_a643e77195746246c2da99c21fe209fe/dll.manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/autodll-webpack-plugin/development_instance_0_a643e77195746246c2da99c21fe209fe/dll_92fa9139568d8c3d8f78.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/autodll-webpack-plugin/development_instance_0_a643e77195746246c2da99c21fe209fe/dll_92fa9139568d8c3d8f78.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/autodll-webpack-plugin/development_instance_0_a643e77195746246c2da99c21fe209fe/stats.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/027ef88279ff06f6940d3b557a89ee72.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/02c993ba0248a7e0e1e11590f8001361.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/03da77dbd7b780b2b7949b97dc1083da.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/072ada56c972760d8d9442a46d90d40a.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/07e5db470b81528babaef471e71f5d0c.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/08281cd66d296b587fe745d8289a2196.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/0a33c439d3892010d887f51b1f7a0b70.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/16b9c3e9fd263161a1aa2034d7634878.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/1772c7cd4123709d9f88b801a017c6f8.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/1a055d632aba9225b64fc78e5c678f18.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/1e5f4632227e09c0b3d26dfe51a8e4bc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/20f28d988427d62bf2b4ee8829e55643.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/244f839f8004cea404bd53c237ed3dcc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/2881ff99a5e3e5ce4631edda5d5ef064.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/2aae5bb8ef1e93bbe430a3f1958d35d2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/2e4b041d8839a2022a0979f2d8946d02.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/305e03f62994ebe545ec55a7ccf3e237.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/32af7d3fde3aceec3096c5258d5adb1e.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/335a1fdc7aa7159e28bc9eca76c415bc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/34c01abe355245c8b43a14f2e99f55e4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/3711c7566c34dcb6959c0d0190b174d9.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/3738485b94e2defb4aeb52938fa496d2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/3c9371f289d5a5c4a9f1eb9df2cb9ce6.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/3f65369eb176da359b84f3dab2f3ab72.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/42c45c725149ebc99117dd246180f2f8.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/49535708675cdd6d88495a784a1d4b6c.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/4bfe208aefc6cbc1572189b9c4820828.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/4eca8e8b8bfbb5a3e6743fe2ad145cc3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/503dd693e36c6db8331b192405e55589.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/52b1691cb1263b86197739a7a767940a.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/52b88c956171b0766902825c8da291fc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/5c5be65741c17cb59984985c08756a94.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/5d5c5c2873833fbd110e40d672db3e8c.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/5d8c2d557162875a4e5cffe7ce4fbebe.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/5f9005da463b61819a88da64dac5dcbd.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/6d34efe5946b68694af2a7fc1c156720.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/7520683caeb1fd2724c7afb180611512.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/78d9ca9dacd1c3ec3698323d06a544ce.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/7ef252813aa10f78ee14ceef5b951cc1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/80bc3e0da8c67272f46c43eb0672e1de.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/8447e7baf0763ec6638bad0c0aa01162.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/849e7448f45f5a0f0117cce92de0f2be.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/86cf129d360ed69b968b7b3eaed9fc02.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/87de718c6384b88ef77ebd729b30498b.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/88bb40ef623ba2381e43a73e289d42d2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/9014216b7a70afe583e0b2b6a3f78986.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/993cb4b711ac5f7e4a6063151bf9a3da.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/9c881c00cb572cb8daefc00853cd61cd.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/a40c6a2d07e88033627def1d740b8dd6.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/a50425f8a00f689e1fbfeaaa2375ff5e.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/a9ba6e3f3185c52a4c9c566f3e7c493b.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/aa819a6472e39eb38b2248a01a69fbe7.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/ae0230c87f9513affca2650f208202d7.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/ae1cdfd893501e55a4ffd212595df841.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/af79d4477e676e25615105ce735507e0.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/b2d71f36c1894379c37cc973456ff0a5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/ba65f35d3bb33bdc50970032fc1bc858.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/bae81709c951cb86b20681520df62aed.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/c004783b048273794f7e7cfe3501fce4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/c13e6cae94d6488fa21391bb66b197b7.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/c1bc13a9261ea5da8bfc590035aa6307.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/c428131c54b143bc359d29eaaf314877.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/cac45fb2b1b0cc7b1ec7620487fda446.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/ce908bd6ec1bec9fabc3a227a2bd4d1f.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/ce981f8c819b3654336f3df66edb5987.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/cef7ea5253e0fc717c0d86430a21b429.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/cf581449dbe6222fc71c50fb43001240.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/cfef2b6de5953a02133b45da59c7de5e.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/d25e19ebd1cd74c9acd17345fa2129ff.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/d4d1ce092c32fdd561956923529f1613.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/d734277a0a2cd15380382e6d888ca227.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/d780058573e971effab2153d2483a488.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/da84748cf97700aa4b7ee950561d1f79.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/dac7788086036280eaff581b8ffd361a.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/dc3b4ba6201e1bd946804fd329de2c0e.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/dd36c49ece1afcce86b70bac6394131e.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/df7bd3c82c5a35d6a6834413ff6bf5da.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/e67e0b8523f5f65427ea1ff3f457b7cc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/ebd2a940be9b99ae887640468b20fb40.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/ec23071e4581086d7ff4dfb03ed99106.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/edd9bcfbd57c82ad95569e180ae9ce91.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/fb0d9f844e10b7ec867164b84d3dc3ed.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/fbdc1c80e822c50d0829bbb794336985.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/cache/next-babel-loader/fdd7bec6e02176942dbccde4598115ea.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/react-loadable-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/react-loadable-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/server/pages-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/server/pages-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/server/ssr-module-cache.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/server/ssr-module-cache.js" afterDir="false" />
+>>>>>>> d6f4c51066e2b3f794f1f4d944b35ddeb69d6445
       <change beforePath="$PROJECT_DIR$/synswap/.next/server/static/development/pages/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/server/static/development/pages/Main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/synswap/.next/server/static/development/pages/Main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/server/static/development/pages/Main.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/synswap/.next/server/static/development/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/server/static/development/pages/_app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/synswap/.next/server/static/development/pages/_app.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/server/static/development/pages/_app.js.map" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/synswap/.next/static/chunks/styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/static/chunks/styles.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/synswap/.next/static/chunks/styles.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/static/chunks/styles.js.map" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/synswap/.next/server/static/development/pages/_document.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/server/static/development/pages/_document.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/server/static/development/pages/_document.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/server/static/development/pages/_document.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/server/static/development/pages/_error.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/server/static/development/pages/_error.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/server/static/development/pages/_error.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/server/static/development/pages/_error.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/chunks/0.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/static/chunks/0.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/chunks/styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/static/chunks/styles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/chunks/styles.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/static/chunks/styles.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/css/styles.chunk.css" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/static/css/styles.chunk.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/css/styles.chunk.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/static/css/styles.chunk.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/development/dll/dll_92fa9139568d8c3d8f78.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/development/dll/dll_92fa9139568d8c3d8f78.js.map" beforeDir="false" />
+>>>>>>> d6f4c51066e2b3f794f1f4d944b35ddeb69d6445
       <change beforePath="$PROJECT_DIR$/synswap/.next/static/development/pages/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/static/development/pages/Main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/synswap/.next/static/development/pages/Main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/static/development/pages/Main.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/synswap/.next/static/development/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/static/development/pages/_app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/synswap/.next/static/development/pages/_app.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/static/development/pages/_app.js.map" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/development/pages/_error.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/static/development/pages/_error.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/development/pages/_error.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/static/development/pages/_error.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/runtime/amp.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/static/runtime/amp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/runtime/amp.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/static/runtime/amp.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/runtime/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/static/runtime/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/.next/static/runtime/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/static/runtime/main.js.map" afterDir="false" />
+>>>>>>> d6f4c51066e2b3f794f1f4d944b35ddeb69d6445
       <change beforePath="$PROJECT_DIR$/synswap/.next/static/runtime/webpack.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/static/runtime/webpack.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/synswap/.next/static/runtime/webpack.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/.next/static/runtime/webpack.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/00402758de12c9b3969c.hot-update.json" beforeDir="false" />
@@ -51,12 +172,17 @@
       <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.c7397166d60b243e79b2.hot-update.js.map" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.db93073490ee268bb1c3.hot-update.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/synswap/.next/static/webpack/static/development/pages/Main.js.db93073490ee268bb1c3.hot-update.js.map" beforeDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/synswap/components/DataTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/components/DataTable.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/synswap/components/newtrade/NewTradeContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/components/newtrade/NewTradeContent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/synswap/pages/Blotter.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/pages/Blotter.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/synswap/pages/api/dev.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/synswap/reducers/TradeReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/reducers/TradeReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/synswap/utils/NewTrade/new_trade_util.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/utils/NewTrade/new_trade_util.js" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/synswap/components/newtrade/NewTradeContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/components/newtrade/NewTradeContent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/synswap/node_modules/.bin/node-sass" beforeDir="false" afterPath="$PROJECT_DIR$/synswap/node_modules/.bin/node-sass" afterDir="false" />
+>>>>>>> d6f4c51066e2b3f794f1f4d944b35ddeb69d6445
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,8 +198,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/synswap/js/new_trade_fields.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="3048">
               <caret line="138" selection-start-line="138" selection-end-line="138" />
+=======
+            <state relative-caret-position="17">
+              <caret line="139" selection-start-line="139" selection-end-line="139" />
+>>>>>>> d6f4c51066e2b3f794f1f4d944b35ddeb69d6445
             </state>
           </provider>
         </entry>
@@ -83,9 +214,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <caret column="6" selection-start-column="6" selection-end-column="6" />
-              <folding>
-                <element signature="e#0#58#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -102,11 +230,16 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/synswap/pages/NewTrade.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="433">
               <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
+=======
+            <state relative-caret-position="1071">
+              <caret line="71" selection-start-line="71" selection-end-line="71" />
+>>>>>>> d6f4c51066e2b3f794f1f4d944b35ddeb69d6445
             </state>
           </provider>
         </entry>
@@ -139,8 +272,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/synswap/components/newtrade/NewTradeContent.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="410">
               <caret line="74" column="10" selection-start-line="74" selection-start-column="10" selection-end-line="74" selection-end-column="10" />
+=======
+            <state relative-caret-position="238">
+              <caret line="74" column="54" selection-start-line="74" selection-start-column="54" selection-end-line="74" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/synswap/pages/Blotter.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="7" column="36" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="36" />
+>>>>>>> d6f4c51066e2b3f794f1f4d944b35ddeb69d6445
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -244,17 +391,19 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="29" />
-    <option name="y" value="23" />
-    <option name="width" value="1409" />
-    <option name="height" value="807" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="26" />
+    <option name="y" value="20" />
+    <option name="width" value="1410" />
+    <option name="height" value="810" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -356,8 +505,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -421,19 +568,32 @@
       <workItem from="1565358479550" duration="7105000" />
       <workItem from="1565523603670" duration="15338000" />
       <workItem from="1565953787407" duration="4925000" />
+<<<<<<< HEAD
       <workItem from="1566041288566" duration="48242000" />
       <workItem from="1567073793936" duration="8476000" />
+=======
+      <workItem from="1566041288566" duration="44525000" />
+      <workItem from="1567071398915" duration="2495000" />
+>>>>>>> d6f4c51066e2b3f794f1f4d944b35ddeb69d6445
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="181678000" />
+=======
+    <option name="totallyTimeSpent" value="171980000" />
+>>>>>>> d6f4c51066e2b3f794f1f4d944b35ddeb69d6445
   </component>
   <component name="ToolWindowManager">
-    <frame x="29" y="23" width="1409" height="807" extended-state="0" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
+<<<<<<< HEAD
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24506219" />
+=======
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16577181" />
+>>>>>>> d6f4c51066e2b3f794f1f4d944b35ddeb69d6445
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -452,6 +612,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49642345" weight="0.28531468" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5035765" side_tool="true" weight="0.2749658" />
+      <window_info anchor="right" id="Collabs" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -715,7 +876,27 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/synswap/js/scratch.txt" />
+=======
+    <entry file="file://$PROJECT_DIR$/synswap/reducers/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/synswap/js/scratch.txt" />
+    <entry file="file://$PROJECT_DIR$/synswap/utils/NewTrade/new_trade_util.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> d6f4c51066e2b3f794f1f4d944b35ddeb69d6445
     <entry file="file://$PROJECT_DIR$/synswap/components/login/LoginForm.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-164">
@@ -746,6 +927,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/synswap/utils/Auth/get-host.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -766,6 +948,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/synswap/utils/Auth/login.js">
+=======
+    <entry file="file://$PROJECT_DIR$/synswap/utils/Auth/auth.js">
+>>>>>>> d6f4c51066e2b3f794f1f4d944b35ddeb69d6445
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
           <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
@@ -841,16 +1026,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/synswap/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="17" column="46" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/synswap/js/new_trade_fields.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="139" selection-start-line="139" selection-end-line="139" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/synswap/reducers/NewTradeReducer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="6" selection-start-column="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/synswap/pages/Blotter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="36" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="36" />
           <folding>
-            <element signature="e#0#58#0" expanded="true" />
+            <element signature="e#0#51#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/synswap/js/new_trade_fields.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3048">
@@ -893,11 +1100,18 @@
             <element signature="e#0#45#0" expanded="true" />
             <element signature="n#!!block;n#pullKeys#0" />
           </folding>
+=======
+    <entry file="file://$PROJECT_DIR$/synswap/pages/NewTrade.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1071">
+          <caret line="71" selection-start-line="71" selection-end-line="71" />
+>>>>>>> d6f4c51066e2b3f794f1f4d944b35ddeb69d6445
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/synswap/components/newtrade/NewTradeContent.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="410">
           <caret line="74" column="10" selection-start-line="74" selection-start-column="10" selection-end-line="74" selection-end-column="10" />
           <folding>
@@ -913,6 +1127,10 @@
           <folding>
             <element signature="e#0#51#0" expanded="true" />
           </folding>
+=======
+        <state relative-caret-position="238">
+          <caret line="74" column="54" selection-start-line="74" selection-start-column="54" selection-end-line="74" selection-end-column="54" />
+>>>>>>> d6f4c51066e2b3f794f1f4d944b35ddeb69d6445
         </state>
       </provider>
     </entry>

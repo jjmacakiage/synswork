@@ -69,13 +69,13 @@ export default function Home(props) {
                 <Grid item xs={ 12}>
                     <Typography variant="subtitle1"> HOME </Typography>
                     <br />
-                    <Divider dark={ true } />
+                    <Divider dark/>
                 </Grid>
                 <Grid item xs={ 12 }>
                     <NotificationPane />
                     <br />
                     <br />
-                    <Divider dark={ true } />
+                    <Divider dark />
                 </Grid>
                 <Grid item xs={ 4 }>
                     <div className={ classes.pane }>

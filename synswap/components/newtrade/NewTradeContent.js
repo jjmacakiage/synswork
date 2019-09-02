@@ -71,9 +71,9 @@ export default function NewTradeContent(props) {
      * takes fields passed in from the form and sends to api
      */
     const handleSubmit = async values => {
-        const url = 'http://localhost:4000/api/parties/trades';
+        const url = 'http://localhost:4000/api/traders/1/trades';
         //console.log(values);
-        const data = values //irsSchema(Object.values(values));
+        const data = values; //irsSchema(Object.values(values));
         try {
             axios.post(url, {
                 data
@@ -208,7 +208,7 @@ export default function NewTradeContent(props) {
                             temp.push(returnExtended(value[i]));
                         }
                         return (
-                            <Grid item xs={ 12 }>
+                            <Grid item xs={ 12 } key={ value + index}>
                                 { (index === 0 || index === 5) ?
                                     <Typography variant="overline" style={{ marginBottom: 20 }}>
                                         {index === 0 ? "Floating Leg" : "Fixed Leg"}
@@ -279,7 +279,7 @@ export default function NewTradeContent(props) {
                                     fields.map((field, index) => {
                                         if (field[2] === '0') {
                                             return (
-                                                <Grid item xs={ 6 } style={{ marginTop: 2, marginBottom: 2 }}>
+                                                <Grid item xs={ 6 } style={{ marginTop: 2, marginBottom: 2 }} key={ field + index}>
                                                     {createFormColumns([field])}
                                                 </Grid>
                                             )

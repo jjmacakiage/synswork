@@ -4,10 +4,6 @@
     "static/development/dll/dll_92fa9139568d8c3d8f78.js.map"
   ],
   "pages": {
-    "/Login": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
     "/Main": [
       "static/runtime/webpack.js",
       "static/css/styles.chunk.css",

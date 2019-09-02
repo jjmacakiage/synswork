@@ -116,7 +116,7 @@ export default function FileUpload(props) {
         <Grid container spacing={ 2 } className={ classes.root }>
             <Grid item xs={ 12 }>
                 <Typography variant="overline" align="center"> UPLOAD NEW TRADE </Typography>
-                <Divider dark={ true } />
+                <Divider dark/>
             </Grid>
             <Grid item xs={12}>
                 <FileTypeList options={ options[0] } handleToggle={ handleToggle } checked={ checked }/>

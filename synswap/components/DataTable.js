@@ -215,16 +215,33 @@ function pullStuff(obj, param) {
     }
 }
 
+function tenRows(rows) {
+    let result = [];
+    for (let i = 0; i < rows.length; i++) {
+        let row = rows[i];
+        let keys = Object.keys(row);
+        let values = Object.values(row);
+        let temp = {};
+        for (let j = 0; j < 10; j++) {
+            let key = keys[j];
+            let value = values[j];
+            temp = { ...temp, [key] : value.toString() }
+        }
+        result.push(temp);
+    }
+    return result;
+}
 
 export default function ReactVirtualizedTable(props) {
     const { data } = props;
-    const columns = pullStuff(data, 'keys');
-    const rows = pullStuff(data, 'values');
+    const columns = (!data.rows) ? pullStuff(data, 'keys').slice(0, 10) : data.columns;
+    const rows = tenRows(data);
+    console.log(rows[0]);
     return (
         <Paper style={{ height: 400, width: '100%' }} square={ true }>
             <VirtualizedTable
                 rowCount={ rows.length }
-                rowGetter={({ index }) => formatRows(rows, columns)[index]}
+                rowGetter={({ index }) => rows[index]}
                 columns={ formatColumns(columns) }
                 onRowClick={ props.onRowClick }
             />

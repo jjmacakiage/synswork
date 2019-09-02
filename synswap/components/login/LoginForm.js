@@ -18,6 +18,7 @@ const FormPage = (props) => {
                     variant="outlined"
                     value={ props.password }
                     onChange={ props.changePassword }
+                    type="password"
                 />
             </Grid>
             <Grid item xs={ 12 }>

@@ -14,7 +14,7 @@ export default function NewTrade(props) {
     const validationFunctions = useSelector(state => state.NewTradeReducer.validationFunctions);
     const counterpartyList = useSelector(state => state.NewTradeReducer.counterpartyList);
     const currentUser = useSelector(state => state.AuthReducer.token);
-    const trades_length = useSelector(state => state.TradeReducer.tradeStates).length;
+    const trades_length = useSelector(state => state.TradeReducer.trades).length;
     const dispatch = useDispatch();
 
     useEffect(() => {

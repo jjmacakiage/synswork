@@ -13,7 +13,9 @@ import Trade from './Trade';
 import Blotter from './Blotter';
 import FileUpload from './FileUpload';
 import {error} from "next/dist/build/output/log";
-
+import axios from "axios";
+import { withAuthSync } from '../utils/Auth/auth';
+import getHost from '../utils/Auth/get-host';
 
 /**
  * @class Main
@@ -30,6 +32,20 @@ import {error} from "next/dist/build/output/log";
  * @class Header - Header
  */
 const Main = () => {
+    useEffect(() => {
+        const initialFetch = async () => {
+            const url = "http://localhost:4000/api/traders/1/trades";
+            try {
+                const response = await axios.get(url);
+                dispatch({type: 'INITIAL_FETCH', payload: response.data.trades});
+            } catch (e) {
+                console.error(e);
+            }
+        };
+        initialFetch();
+
+        return () => { return 'Component Unmounted'; }
+    }, []);
     /**
      * @constant activeTab
      * @type {object}
@@ -166,7 +182,6 @@ const Main = () => {
             handleTabSwitch(openTabs.indexOf(link));
         }
     }
-
     /**
      * @return
      * @type Grid
@@ -220,7 +235,7 @@ const Main = () => {
  * @return {Promise<boolean|any|Promise<boolean>>}
  */
 
-/*Main.getInitialProps = async ctx => {
+/* Main.getInitialProps = async ctx => {
     const { token } = nextCookie(ctx);
     const apiUrl = getHost(ctx.req) + '/api/profile';
 
@@ -239,7 +254,7 @@ const Main = () => {
 
         if (response.ok) {
             const js = await response.json()
-            console.log('js', js)
+            console.log('js', js);
             return js
         } else {
             // https://github.com/developit/unfetch#caveats

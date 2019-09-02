@@ -23,7 +23,7 @@ export default function OptionsList(props) {
                                         </MenuItem>
                                         {
                                             (index !== props.items.length - 1) ?
-                                                <Divider dark={ true } /> : null
+                                                <Divider dark /> : null
                                         }
                                     </div>
                                 )

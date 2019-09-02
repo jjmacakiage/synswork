@@ -71,14 +71,12 @@ export default function ProfileMenu() {
 
     return (
         <div className={ classes.root }>
-            <Button
+            <PersonOutlineSharp
                 aria-controls="customized-menu"
                 aria-haspopup="true"
                 variant="contained"
                 onClick={handleClick}
-            >
-                <PersonOutlineSharp />
-            </Button>
+            />
             <StyledMenu
                 id="customized-menu"
                 anchorEl={anchorEl}
