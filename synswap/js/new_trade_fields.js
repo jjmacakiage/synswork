@@ -24,13 +24,13 @@ const base_fields = [
     ['Currency', 'select', ['GBP']],
     ['Fixed Rate', 'number'],
     ['Duration', 'select', ['5Y']],
+];
+
+const extended_fields = [
     ['Counterparty ID', 'select', [1, 2]],
     ['Termination Date', 'date'],
     ['Bus Day Convention', 'select', ['ModFollowing']],
     ['Business Centre', 'select', ['GBLO']],
-];
-
-const extended_fields = [
     //Floating Leg
     ['Rate Reference', 'select', ['EURIBOR']],
 

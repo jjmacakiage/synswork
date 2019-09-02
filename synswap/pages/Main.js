@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
 import { Grid } from '@material-ui/core';
 import Tabs, {Tab} from "react-awesome-tabs";
 import "../resources/styles/react-awesome-tabs.scss";
@@ -31,21 +31,45 @@ import getHost from '../utils/Auth/get-host';
  * @class Trade - Trade page
  * @class Header - Header
  */
-const Main = () => {
+
+function useInterval(callback, params, delay) {
     useEffect(() => {
-        const initialFetch = async () => {
+        const interval = setInterval(() => {
+            callback(params);
+        }, delay);
+        return () => clearInterval(interval);
+    }, []);
+}
+
+const Main = () => {
+    const fetchTrades = (isFirst) => {
+        const doFetch = async () => {
             const url = "http://localhost:4000/api/traders/1/trades";
             try {
                 const response = await axios.get(url);
-                dispatch({type: 'INITIAL_FETCH', payload: response.data.trades});
+                dispatch({
+                    type:
+                        (isFirst) ? 'INITIAL_FETCH' : 'FETCH_TRADES',
+                    payload: response.data.trades
+                });
+
             } catch (e) {
-                console.error(e);
+                console.error(
+                    'You have an error in your code or there are Network issues.',
+                    error
+                );
+                return error;
             }
         };
-        initialFetch();
+        doFetch();
+    };
 
-        return () => { return 'Component Unmounted'; }
-    }, []);
+    useEffect(() => {
+        fetchTrades(true);
+    },[]);
+
+    useInterval(fetchTrades, false,5000);
+
     /**
      * @constant activeTab
      * @type {object}
@@ -68,12 +92,6 @@ const Main = () => {
     const dispatch = useDispatch();
 
     /**
-     * @constant tradeProps
-     * receives data from addNewTrade function and updates the most recent TradeProps
-     */
-    const [tradeProps, changeProps] = useState({ data: { columns: [], rows: [] }});
-
-    /**
      * @constant MAIN_TABS
      * @type {array}
      * array of objects that contains a 'key' and a 'component' that is mapped to the 'component' attribute from a tab object in....
@@ -82,7 +100,7 @@ const Main = () => {
     const MAIN_TABS= [
         { key: 'Home', component: Home({ onClick: handleClick.bind(this) }) },
         { key: 'NewTrade', component: NewTrade({ onClick : handleClick }) },
-        { key: 'Trade', component: Trade(tradeProps) },
+        { key: 'Trade', component: Trade() },
         { key: 'Blotter', component: Blotter() },
         { key: 'FileNewTrade', component: FileUpload() }
     ];
@@ -109,7 +127,7 @@ const Main = () => {
                 return i;
             }
         }
-        return new error('Component Not Found');
+        throw Error('Component Not Found');
     }
 
     /**

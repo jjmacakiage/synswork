@@ -127,8 +127,8 @@ function extractByKey(obj, key) {
 } //FOR ALL THE 'SELECT' TAGS, APPEND A LIST OF OPTIONS TO THE END OF THE LIST
 
 
-var base_fields = [['Trade Date', 'date'], ['Trade Type', 'select', ['IRS']], ['Direction', 'select', ['PayFixed']], ['Amount', 'number'], ['Currency', 'select', ['GBP']], ['Fixed Rate', 'number'], ['Duration', 'select', ['5Y']], ['Counterparty ID', 'select', [1, 2]], ['Termination Date', 'date'], ['Bus Day Convention', 'select', ['ModFollowing']], ['Business Centre', 'select', ['GBLO']]];
-var extended_fields = [//Floating Leg
+var base_fields = [['Trade Date', 'date'], ['Trade Type', 'select', ['IRS']], ['Direction', 'select', ['PayFixed']], ['Amount', 'number'], ['Currency', 'select', ['GBP']], ['Fixed Rate', 'number'], ['Duration', 'select', ['5Y']]];
+var extended_fields = [['Counterparty ID', 'select', [1, 2]], ['Termination Date', 'date'], ['Bus Day Convention', 'select', ['ModFollowing']], ['Business Centre', 'select', ['GBLO']], //Floating Leg
 ['Rate Reference', 'select', ['EURIBOR']], ['Effective Date (Floating)', 'date'], ['Bus Day Convention (Effective, Floating)', 'select', ['ModFollowing']], ['Business Centre (Effective, Floating)', 'select', ['GBLO']], ['Termination Date (Floating)', 'date'], ['Bus Day Convention (Termination, Floating)', 'select', ['ModFollowing']], ['Business Centre (Termination, Floating)', 'select', ['GBLO']], ['Period (Floating)', 'select', ['6M']], ['Day Count Fraction (Floating)', 'select', ['ACT/360']], ['Fixing Date Offset (Floating)', 'select', ['-2D']], ['Bus Day Convention (Floating)', 'select', ['ModFollowing']], ['Business Centre (Floating)', 'select', ['GBLO']], //Fixed Leg
 ['Effective Date (Fixed)', 'date'], ['Bus Day Convention (Effective, Fixed)', 'select', ['ModFollowing']], ['Business Centre (Effective, Fixed)', 'select', ['GBLO']], ['Termination Date (Fixed)', 'date'], ['Bus Day Convention (Termination, Fixed)', 'select', ['ModFollowing']], ['Business Centre (Termination, Fixed)', 'select', ['GBLO']], ['Period (Fixed)', 'select', ['6M']], ['Day Count Fraction (Fixed)', 'select', ['ACT/360']]];
 var new_trade_fields = function new_trade_fields() {
@@ -373,6 +373,17 @@ module.exports = __webpack_require__(/*! core-js/library/fn/promise */ "core-js/
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/reflect/construct */ "core-js/library/fn/reflect/construct");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/set.js":
+/*!************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/set.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/set */ "core-js/library/fn/set");
 
 /***/ }),
 
@@ -1789,8 +1800,11 @@ function TabReducer() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return TradeReducer; });
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/toConsumableArray.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_set__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/set */ "./node_modules/@babel/runtime-corejs2/core-js/set.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_set__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_set__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
+
 
 
 var INITIAL_STATE = {
@@ -1803,29 +1817,37 @@ function TradeReducer() {
   switch (action.type) {
     case 'INITIAL_FETCH':
       action.payload.length !== 0 ? console.log('Initial Fetch Done') : null;
-      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, state, {
+      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_2__["default"])({}, state, {
         trades: action.payload
       });
 
     case 'NEW_TRADE':
-      var new_trade_result = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(state.trades);
+      var new_trade_result = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__["default"])(state.trades);
 
       new_trade_result.push(action.payload);
-      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, state, {
+      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_2__["default"])({}, state, {
         trades: new_trade_result
       });
 
     case 'FETCH_TRADES':
-      var trades = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(state.trades);
+      var trades = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__["default"])(state.trades);
 
       trades.push(action.payload);
-      console.log(trades);
-      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, state, {
-        trades: trades
-      });
+
+      var uniq = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__["default"])(new _babel_runtime_corejs2_core_js_set__WEBPACK_IMPORTED_MODULE_0___default.a(trades));
+
+      if (uniq !== state.trades) {
+        console.log('Trades Updated', state.trades[length - 1].id, uniq[length - 1].id);
+        return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_2__["default"])({}, state, {
+          trades: uniq
+        });
+      }
+
+      console.log('No New Trades');
+      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_2__["default"])({}, state);
 
     default:
-      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, state);
+      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_2__["default"])({}, state);
   }
 }
 
@@ -2036,6 +2058,17 @@ module.exports = require("core-js/library/fn/promise");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/reflect/construct");
+
+/***/ }),
+
+/***/ "core-js/library/fn/set":
+/*!*****************************************!*\
+  !*** external "core-js/library/fn/set" ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/set");
 
 /***/ }),
 
