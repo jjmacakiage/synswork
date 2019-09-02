@@ -3338,16 +3338,15 @@ var Main = function Main() {
                   type: isFirst ? 'INITIAL_FETCH' : 'FETCH_TRADES',
                   payload: response.data.trades
                 });
-                _context.next = 12;
+                _context.next = 11;
                 break;
 
               case 8:
                 _context.prev = 8;
                 _context.t0 = _context["catch"](1);
-                console.error('You have an error in your code or there are Network issues.', next_dist_build_output_log__WEBPACK_IMPORTED_MODULE_17__["error"]);
-                return _context.abrupt("return", next_dist_build_output_log__WEBPACK_IMPORTED_MODULE_17__["error"]);
+                console.log(_context.t0);
 
-              case 12:
+              case 11:
               case "end":
                 return _context.stop();
             }

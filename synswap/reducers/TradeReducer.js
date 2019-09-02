@@ -16,7 +16,6 @@ export default function TradeReducer(state = INITIAL_STATE, action) {
             trades.push(action.payload);
             const uniq = [...new Set(trades)];
             if (uniq !== state.trades) {
-                console.log('Trades Updated', state.trades[length - 1].id, uniq[length - 1].id);
                 return { ...state, trades: uniq };
             }
             console.log('No New Trades');

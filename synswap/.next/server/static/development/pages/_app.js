@@ -1837,7 +1837,6 @@ function TradeReducer() {
       var uniq = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__["default"])(new _babel_runtime_corejs2_core_js_set__WEBPACK_IMPORTED_MODULE_0___default.a(trades));
 
       if (uniq !== state.trades) {
-        console.log('Trades Updated', state.trades[length - 1].id, uniq[length - 1].id);
         return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_2__["default"])({}, state, {
           trades: uniq
         });

@@ -54,11 +54,7 @@ const Main = () => {
                 });
 
             } catch (e) {
-                console.error(
-                    'You have an error in your code or there are Network issues.',
-                    error
-                );
-                return error;
+                console.log(e);
             }
         };
         doFetch();
