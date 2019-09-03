@@ -32,39 +32,55 @@ import getHost from '../utils/Auth/get-host';
  * @class Header - Header
  */
 
-function useInterval(callback, params, delay) {
-    useEffect(() => {
-        const interval = setInterval(() => {
-            callback(params);
-        }, delay);
-        return () => clearInterval(interval);
-    }, []);
-}
-
 const Main = () => {
-    const fetchTrades = (isFirst) => {
-        const doFetch = async () => {
-            const url = "http://localhost:4000/api/traders/1/trades";
-            try {
-                const response = await axios.get(url);
-                dispatch({
-                    type:
-                        (isFirst) ? 'INITIAL_FETCH' : 'FETCH_TRADES',
-                    payload: response.data.trades
-                });
+    const initialFetch = async() => {
+        const url = "http://localhost:4000/api/traders/1/trades";
+        try {
+            const response = await axios.get(url);
+            dispatch({
+                type: 'INITIAL_FETCH',
+                payload: {trades: response.data.trades,
+                          blocknumber: response.data.blocknumber}
+            });
 
-            } catch (e) {
-                console.log(e);
-            }
-        };
-        doFetch();
+        } catch (e) {
+            console.log(e);
+        }
     };
 
+    const fetchTrades = async (bn) => {
+        const url = "http://localhost:4000/api/updates/" + bn + "?traderid=1";
+        try {
+            const response = await axios.get(url);
+            if(response.data.success && response.data.trades) {
+                dispatch({
+                    type: 'FETCH_TRADES',
+                    payload: {trades: response.data.trades,
+                              blocknumber: response.data.blocknumber}});
+            }
+
+        } catch (e) {
+            console.log(e);
+        }
+    };
+
+    const [refresh, setRefresh] = useState(false);
     useEffect(() => {
-        fetchTrades(true);
+        initialFetch();
+
+        setInterval(() => {
+            setRefresh(true);
+        }, 5000);
     },[]);
 
-    //useInterval(fetchTrades, false,5000);
+
+    const blocknumber = useSelector(state => state.TradeReducer.blocknumber);
+    useEffect(() => {
+        if(refresh) {
+            setRefresh(false); // TODO: Causes react warning. How to avoid??
+            fetchTrades(blocknumber);
+        }
+    }, [refresh === true]);
 
     /**
      * @constant activeTab

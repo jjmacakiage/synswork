@@ -29,7 +29,11 @@
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
+<<<<<<< HEAD
             injectCss(link, link.href.split("?")[0] + "?unix=1567507723708");
+=======
+            injectCss(link, link.href.split("?")[0] + "?unix=1567504383199");
+>>>>>>> Get trade updates every 5 seconds
           });
       }
     }
