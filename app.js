@@ -10,6 +10,7 @@ app.use(cors());
 
 const mta = (require('./MasterTradeAgreement.js')).MasterTradeAgreement;
 const traders = {}; // {traderid: trader}
+let blocknumber = 0; // So the api knows what 'version' it is.
 
 const getTrader = function(id){
     return traders[id];
@@ -22,7 +23,7 @@ const mockSetup = function(){
     traders["1"] = new Trader(1, 1);
 
     for(let i = 0; i < 500; i++){
-        mta.addTrade(1, MockTrade);
+        mta.addTrade(1, MockTrade, ++blocknumber);
     }
 };
 
@@ -103,13 +104,14 @@ app.get('/traders/:traderid/trades', (req, res) => {
 
     return res.status(200).send({ //TODO: Returning true either way??
         success: true,
-        trades: trades
+        trades: trades,
+        blocknumber: blocknumber
     });
 });
 
 app.post('/traders/:traderid/trades/', (req, res) => {
     const traderid = parseInt(req.params.traderid, 10);
-    if(mta.addTrade(getTrader(traderid).orgId, req.body)){
+    if(mta.addTrade(getTrader(traderid).orgId, req.body, ++blocknumber)){
         return res.status(200).send({
             success: true,
         });
@@ -118,6 +120,31 @@ app.post('/traders/:traderid/trades/', (req, res) => {
         return res.status(400).send({
             success: false,
         });
+    }
+});
+
+app.get('/updates/:blocknumber', (req, res) => {
+    if(parseInt(req.params.blocknumber) === blocknumber){
+        return res.status(200).send({
+            success: true,
+            change: false,
+            blocknumber: blocknumber
+        });
+    }
+
+    const traderid = req.query.traderid.toString();
+    if(traders[traderid]){
+        const trades = mta.getAllTradeInfo(traders[traderid].orgId, req.params.blocknumber);
+
+        return res.status(200).send({
+            success: true,
+            change: true,
+            trades: trades,
+            blocknumber: blocknumber
+        });
+    }
+    else{
+        throw Error("Trader does not exist!");
     }
 });
 

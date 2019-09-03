@@ -65,7 +65,7 @@ MasterTradeAgreement.prototype.addTradeAgreement = function(idParty1, idParty2){
 /**
  * Adds a new trade between two parties given, given that a trade agreement exists between the two.
  */
-MasterTradeAgreement.prototype.addTrade = function(partyId, tradeParams){
+MasterTradeAgreement.prototype.addTrade = function(partyId, tradeParams, blocknumber){
     const [i, exists] = this.findTradeAgreement(partyId, tradeParams.counterPartyId);
     if(!exists){
         console.error("Trade agreement does not exist");
@@ -73,9 +73,7 @@ MasterTradeAgreement.prototype.addTrade = function(partyId, tradeParams){
     }
 
     try {
-        const tradeId = this.numTrades + 1;
-        this.tradeAgreements[i].addTrade(tradeId, partyId, tradeParams);
-        this.numTrades++;
+        this.tradeAgreements[i].addTrade(++this.numTrades, partyId, tradeParams, blocknumber);
     }
     catch(e){
         console.error(e.message);
@@ -116,11 +114,16 @@ MasterTradeAgreement.prototype.getTradeInfoRange = function(partyId, lastIndex, 
     return ret;
 };
 
-MasterTradeAgreement.prototype.getAllTradeInfo = function(partyId){
+MasterTradeAgreement.prototype.getAllTradeInfo = function(partyId, blocknumber = -1){
     const trades = [];
     for(const ta of this.tradeAgreements){
         if(ta.party1.id === partyId || ta.party2.id === partyId){
-            trades.push(...ta.getAllTradeInfo(partyId));
+            if(blocknumber <= -1){
+                trades.push(...ta.getAllTradeInfo(partyId));
+            }
+            else{
+                trades.push(...ta.getLatestTradeInfo(partyId, blocknumber));
+            }
         }
     }
     return trades;

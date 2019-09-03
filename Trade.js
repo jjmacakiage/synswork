@@ -9,7 +9,7 @@ const ReferenceRate = {EURIBOR: "EURIBOR", LIBOR: "LIBOR"}; // TODO: Add all ref
 const Product = {IRS: "IRS"}; // TODO: What others?
 const DayCount = {ACT360: "ACT/360", ACT365FIXED: "ACT/365.FIXED"}; //TODO: Add all day counts
 
-function Trade(tradeId, partyId, counterPartyId, tradeParams){
+function Trade(tradeId, partyId, counterPartyId, tradeParams, blocknumber){
     this.status = Status.Alleged;
 
     // Fields 1
@@ -44,6 +44,8 @@ function Trade(tradeId, partyId, counterPartyId, tradeParams){
     this.terminationDate = TradeDate(tradeParams.terminationDate.date, tradeParams.terminationDate.busDayConvention, tradeParams.terminationDate.businessCentre);
     this.floatingLeg = new FloatingLeg(tradeParams.floatingLeg);
     this.fixedLeg = new FixedLeg(tradeParams.fixedLeg);
+
+    this.blocknumber = blocknumber; // TODO: Add whether it is NEW or UPDATED??
 }
 
 function FixedLeg(params){

@@ -9,13 +9,13 @@ function TradeAgreement(party1, party2){
     this.matchedTrades = [];
 }
 
-TradeAgreement.prototype.addTrade = function(tradeId, partyId, tradeParams){
+TradeAgreement.prototype.addTrade = function(tradeId, partyId, tradeParams, blocknumber){
     // TODO: Should alleged trade be added to other trade list as unconfirmed?
     if(this.party1.id === partyId){
-        this.tradesParty1.push(new Trade(tradeId, this.party1.id, this.party2.id, tradeParams));
+        this.tradesParty1.push(new Trade(tradeId, this.party1.id, this.party2.id, tradeParams, blocknumber));
     }
     else if(this.party2.id === partyId){
-        this.tradesParty2.push(new Trade(tradeId, this.party2.id, this.party1.id, tradeParams));
+        this.tradesParty2.push(new Trade(tradeId, this.party2.id, this.party1.id, tradeParams, blocknumber));
     }
     else{
         // Don't really want to do this but seeing as it's only a mock backend.
@@ -54,6 +54,32 @@ TradeAgreement.prototype.getAllTradeInfo = function(id){
         allTradeInfo.push(...this.matchedTrades);
     }
     return allTradeInfo;
+};
+
+TradeAgreement.prototype.getLatestTradeInfo = function(id, blocknumber){
+    const trades = [];
+
+    if(id === this.party1.id){
+        for(let i = 0; i < this.tradesParty1.length; i++){
+            if(this.tradesParty1[i].blocknumber > blocknumber){
+                trades.push(this.tradesParty1[i]);
+            }
+        }
+    }
+    if(id === this.party2.id){
+        for(let i = 0; i < this.tradesParty2.length; i++){
+            if(this.tradesParty2[i].blocknumber > blocknumber){
+                trades.push(this.tradesParty2[i]);
+            }
+        }
+    }
+    for(let i = 0; i < this.matchedTrades.length; i++){
+        if(this.matchedTrades[i].blocknumber > blocknumber){
+            trades.push(this.matchedTrades[i]);
+        }
+    }
+
+    return trades;
 };
 
 exports.TradeAgreement = TradeAgreement;
