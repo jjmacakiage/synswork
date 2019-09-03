@@ -120,6 +120,7 @@ app.get('/api/traders/:id/trades', (req, res) => {
             return res.status(200).send({
                 success: true,
                 trades: response.data.trades,
+                blocknumber: response.data.blocknumber
             });
         })
         .catch(error => {
@@ -157,6 +158,26 @@ app.post('/api/traders/:id/trades', (req, res) => {
             return res.status(400).send({
                 success: false,
                 message: "Error adding trade."
+            });
+        });
+});
+
+app.get('/api/updates/:blocknumber', (req, res) => {
+    axios.get(address + '/updates/' + req.params.blocknumber, {params: {traderid: req.query.traderid}})
+        .then(response => {
+            console.log(response);
+            return res.status(200).send({
+                success: true,
+                change: response.data.change,
+                trades: response.data.trades,
+                blocknumber: response.data.blocknumber
+            });
+        })
+        .catch(error => {
+            console.log(error);
+            return res.status(400).send({
+                success: false,
+                message: "Error getting updates."
             });
         });
 });
