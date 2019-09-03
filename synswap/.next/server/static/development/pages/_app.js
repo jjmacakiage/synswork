@@ -1706,7 +1706,10 @@ function NewTradeReducer() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return NotificationReducer; });
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_set__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/set */ "./node_modules/@babel/runtime-corejs2/core-js/set.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_set__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_set__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/toConsumableArray.js");
+
 
 
 var INITIAL_STATE = {
@@ -1718,9 +1721,8 @@ function NotificationReducer() {
 
   switch (action.type) {
     case 'ADD_NOTIFICATIONS':
-      var notifications = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__["default"])(state.notifications);
+      var notifications = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_2__["default"])(new _babel_runtime_corejs2_core_js_set__WEBPACK_IMPORTED_MODULE_1___default.a(Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_2__["default"])(state.notifications).concat(Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_2__["default"])(action.payload))));
 
-      notifications.push.apply(notifications, Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__["default"])(action.payload));
       return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
         notifications: notifications
       });
@@ -1780,10 +1782,10 @@ var INITIAL_STATE = {
   tabs: [{
     title: 'Home',
     index: 0,
-    component: 0
+    component: 0,
+    key: 'Home'
   }],
-  activeTab: 0,
-  lastClickedLink: ''
+  activeTab: 0
 };
 function TabReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : INITIAL_STATE;
@@ -1846,7 +1848,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var INITIAL_STATE = {
   trades: [],
-  blocknumber: 0
+  blockNumber: 0
 };
 function TradeReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : INITIAL_STATE;
@@ -1857,7 +1859,7 @@ function TradeReducer() {
       action.payload.length !== 0 ? console.log('Initial Fetch Done') : null;
       return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_2__["default"])({}, state, {
         trades: action.payload.trades,
-        blocknumber: action.payload.blocknumber ? action.payload.blocknumber : state.blocknumber
+        blockNumber: action.payload.blockNumber ? action.payload.blockNumber : state.blockNumber
       });
 
     case 'NEW_TRADE':
@@ -1871,14 +1873,14 @@ function TradeReducer() {
     case 'FETCH_TRADES':
       var trades = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__["default"])(state.trades);
 
-      trades.push.apply(trades, Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__["default"])(action.payload.trades));
+      trades.concat(Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__["default"])(action.payload.trades));
 
       var uniq = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__["default"])(new _babel_runtime_corejs2_core_js_set__WEBPACK_IMPORTED_MODULE_0___default.a(trades));
 
       if (uniq !== state.trades) {
         return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_2__["default"])({}, state, {
           trades: uniq,
-          blocknumber: action.payload.blocknumber
+          blockNumber: action.payload.blockNumber
         });
       }
 

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import MaterialTable from 'material-table';
-import { Paper } from '@material-ui/core';
 import { forwardRef } from 'react';
 
 import {

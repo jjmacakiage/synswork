@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import { Grid } from '@material-ui/core';
 import Tabs, {Tab} from "react-awesome-tabs";
 import "../resources/styles/react-awesome-tabs.scss";
@@ -32,15 +32,32 @@ import getHost from '../utils/Auth/get-host';
  * @class Header - Header
  */
 
+function useInterval(callback, params, delay) {
+    useEffect(() => {
+        setInterval(() => {
+            callback(params);
+        }, delay);
+        return (
+            () => {
+                console.log('Component Unmounted');
+            }
+        )
+    }, []);
+}
+
 const Main = () => {
-    const initialFetch = async() => {
+    const blockNumber = useSelector(state => state.TradeReducer.blockNumber);
+
+    const initialFetch = async () => {
         const url = "http://localhost:4000/api/traders/1/trades";
         try {
             const response = await axios.get(url);
             dispatch({
                 type: 'INITIAL_FETCH',
-                payload: {trades: response.data.trades,
-                          blocknumber: response.data.blocknumber}
+                payload: {
+                    trades: response.data.trades,
+                    blockNumber: response.data.blocknumber
+                }
             });
 
         } catch (e) {
@@ -56,7 +73,7 @@ const Main = () => {
                 dispatch({
                     type: 'FETCH_TRADES',
                     payload: {trades: response.data.trades,
-                              blocknumber: response.data.blocknumber}});
+                              blockNumber: response.data.blocknumber}});
                 const notifications = response.data.trades.map((trade) => {
                     // TODO: Only new trade notifcations currently, currently cannot amend trades.
                     return {message: "Amount: " + trade.amount + " Type: " + trade.tradeType, title: "New trade with " + trade.counterPartyId +" alleged"};
@@ -72,23 +89,12 @@ const Main = () => {
         }
     };
 
-    const [refresh, setRefresh] = useState(false);
     useEffect(() => {
         initialFetch();
-
-        setInterval(() => {
-            setRefresh(true);
-        }, 5000);
+        return;
     },[]);
 
-
-    const blocknumber = useSelector(state => state.TradeReducer.blocknumber);
-    useEffect(() => {
-        if(refresh) {
-            setRefresh(false); // TODO: Causes react warning. How to avoid??
-            fetchTrades(blocknumber);
-        }
-    }, [refresh === true]);
+    useInterval(fetchTrades, blockNumber, 5000);
 
     /**
      * @constant activeTab
@@ -209,6 +215,7 @@ const Main = () => {
             let newTabContent = {
                 title: link.match(/[A-Z][a-z]+|[0-9]+/g).join(" "),
                 index: tabs.length,
+                key: link,
                 component: component
             };
             dispatch({type: 'ADD_TAB', payload: newTabContent});
@@ -253,7 +260,9 @@ const Main = () => {
                                             <Header />
                                         </Grid>
                                         <Grid item xs={ 12 }>
-                                            { MAIN_TABS[ value.component ].component }
+                                            {
+                                                createTab(value.key)
+                                            }
                                         </Grid>
                                     </Grid>
                                 </Tab>
@@ -264,6 +273,34 @@ const Main = () => {
             </Grid>
         </Grid>
     );
+
+    function createTab(key) {
+        switch (key) {
+            case ('Home'):
+                return (
+                    <Home onClick={ handleClick.bind(this) } />
+                );
+            case ('NewTrade'):
+                return (
+                    <NewTrade onClick={ handleClick }/>
+                );
+            case ('Trade'):
+                return (
+                    <Trade />
+                );
+            case ('Blotter'):
+                return (
+                    <Blotter/>
+                );
+            case ('FileNewTrade'):
+                return (
+                    <FileUpload/>
+                );
+            default:
+                throw new error('Tab Map Failed')
+        }
+    }
+
 };
 
 /**

@@ -4,11 +4,11 @@ const INITIAL_STATE = { tabs: [
         {
             title: 'Home',
             index: 0,
-            component: 0
+            component: 0,
+            key: 'Home'
         },
     ],
-    activeTab: 0,
-    lastClickedLink: ''
+    activeTab: 0
 };
 export default function TabReducer(state = INITIAL_STATE, action) {
 

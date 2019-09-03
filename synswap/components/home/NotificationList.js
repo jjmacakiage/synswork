@@ -17,7 +17,7 @@ export default function NotificationList(props) {
         <div className={ classes.root }>
             <List component="ul">
                 {!isEmpty ? props.data.map((value, index) => {
-                    return <ListItem><ListItemText key={index} secondary={value.message}>{value.title}</ListItemText></ListItem>
+                    return <ListItem key={index}><ListItemText secondary={value.message}>{value.title}</ListItemText></ListItem>
                 }) : <Typography variant="overline"> No notifications to display </Typography>}
             </List>
         </div>
