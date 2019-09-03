@@ -64,7 +64,7 @@ const Main = () => {
         fetchTrades(true);
     },[]);
 
-    useInterval(fetchTrades, false,5000);
+    //useInterval(fetchTrades, false,5000);
 
     /**
      * @constant activeTab

@@ -1,4 +1,4 @@
-import {Typography} from "@material-ui/core";
+import {Box, Typography} from "@material-ui/core";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -23,14 +23,31 @@ export function createRows(data, fields) {
  * @constructor
  */
 
-export function TabContainer(props) {
+export function TabPanel(props) {
+    const { children, value, index, ...other } = props;
+
     return (
-        <Typography component="div" style={{ padding: 8 * 3 }}>
-            {props.children}
+        <Typography
+            component="div"
+            role="tabpanel"
+            hidden={value !== index}
+            id={`simple-tabpanel-${index}`}
+            {...other}
+        >
+            <Box p={3}>{children}</Box>
         </Typography>
     );
 }
 
-TabContainer.propTypes = {
-    children: PropTypes.node.isRequired,
+TabPanel.propTypes = {
+    children: PropTypes.node,
+    index: PropTypes.any.isRequired,
+    value: PropTypes.any.isRequired,
 };
+
+export function a11yProps(index) {
+    return {
+        id: `simple-tab-${index}`,
+        'aria-controls': `simple-tabpanel-${index}`,
+    };
+}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AppBar, Button, IconButton, InputBase, Toolbar }from "@material-ui/core";
+import { Divider, IconButton, InputBase, Toolbar }from "@material-ui/core";
 import { fade, makeStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
 
@@ -96,22 +96,6 @@ export default function Header(props) {
             <div position="static">
                 <Toolbar className={ classes.toolbar }>
                     <div className={classes.search}>
-                        {
-                            /*
-                        <div className={classes.searchIcon}>
-                            <SearchIcon />
-                        </div>
-                        <InputBase
-                            placeholder="Search…"
-                            classes={{
-                                root: classes.inputRoot,
-                                input: classes.inputInput,
-                            }}
-                            inputProps={{ 'aria-label': 'search' }}
-                            onChange={ e => handleChange(e) }
-                        />
-                        */
-                        }
                         <SearchList/>
                     </div>
                     <IconButton

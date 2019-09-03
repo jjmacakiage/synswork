@@ -1,8 +1,79 @@
-import React, {useEffect, useState} from 'react';
-import { MultiGrid, AutoSizer } from 'react-virtualized';
-import { Paper, Typography } from '@material-ui/core';
+import React, { useState, useEffect } from 'react';
+import MaterialTable from 'material-table';
+import { Paper } from '@material-ui/core';
+import { forwardRef } from 'react';
 
-export default function Table(props) {
+import {
+    AddBox, ArrowUpward,
+    Check, ChevronLeft,
+    ChevronRight, Clear,
+    DeleteOutline, Edit,
+    FilterList, FirstPage,
+    LastPage, Remove,
+    SaveAlt, Search,
+    ViewColumn
+} from "@material-ui/icons";
+
+const Table = props => {
+    const { data } = props;
+    const columns = (!data.rows) ? pullStuff(data[0], 'keys') : data.columns;
+
+    const tableIcons = {
+        Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
+        Check: forwardRef((props, ref) => <Check {...props} ref={ref} />),
+        Clear: forwardRef((props, ref) => <Clear {...props} ref={ref} />),
+        Delete: forwardRef((props, ref) => <DeleteOutline {...props} ref={ref} />),
+        DetailPanel: forwardRef((props, ref) => <ChevronRight {...props} ref={ref} />),
+        Edit: forwardRef((props, ref) => <Edit {...props} ref={ref} />),
+        Export: forwardRef((props, ref) => <SaveAlt {...props} ref={ref} />),
+        Filter: forwardRef((props, ref) => <FilterList {...props} ref={ref} />),
+        FirstPage: forwardRef((props, ref) => <FirstPage {...props} ref={ref} />),
+        LastPage: forwardRef((props, ref) => <LastPage {...props} ref={ref} />),
+        NextPage: forwardRef((props, ref) => <ChevronRight {...props} ref={ref} />),
+        PreviousPage: forwardRef((props, ref) => <ChevronLeft {...props} ref={ref} />),
+        ResetSearch: forwardRef((props, ref) => <Clear {...props} ref={ref} />),
+        Search: forwardRef((props, ref) => <Search {...props} ref={ref} />),
+        SortArrow: forwardRef((props, ref) => <ArrowUpward {...props} ref={ref} />),
+        ThirdStateCheck: forwardRef((props, ref) => <Remove {...props} ref={ref} />),
+        ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />)
+    };
+
+    function formatColumns(columns) {
+        if (columns.length === 0 || columns[0].width) {
+            return columns;
+        }
+        const doText = text => {
+            const newText = text.replace(/([A-Z]+)/g, " $1");
+            return newText.charAt(0).toUpperCase() + newText.slice(1)
+        };
+        let result = [];
+        for (let i = 0; i < columns.length; i++) {
+            const column = columns[i];
+            const object = {
+                title: doText(column),
+                field: column,
+            };
+            result.push(object);
+        }
+        return result;
+    }
+    function formatRows(rows) {
+        let result = [];
+        for (let i = 0; i < rows.length; i++) {
+            let row = rows[i];
+            let temp = pullStuff(row, 'values');
+            let temp2 = generateObj(columns, temp);
+            result.push(temp2);
+        }
+        return result;
+    }
+    function generateObj(array, values) {
+        let result = {};
+        for (let i = 0; i < array.length; i++) {
+            result = {...result, [array[i]]: values[i]};
+        }
+        return result;
+    }
     function pullStuff(obj, param) {
         const getKeys = obj => {
             if (typeof obj !== 'object') {
@@ -62,43 +133,25 @@ export default function Table(props) {
         }
     }
 
-    const formatData = data => {
-        const columns = pullStuff(data[0], 'keys');
-        const result = [];
-        result.push(columns);
-        for (let i = 0; i < data.length; i++) {
-            result.push(pullStuff(data[i], 'values'))
-        }
-        return result;
-    };
-
-    const data = formatData(props.data);
-
-    const cellRenderer = ({ columnIndex, key, rowIndex, style }) => {
-        return (
-            <Paper
-                key={ key }
-                style={ {...style, padding: 5, minWidth: "min-content" } }
-                square
-            >
-                <Typography variant="overline"> { data[rowIndex][columnIndex] } </Typography>
-            </Paper>
-        )
-    };
-
     return (
-        <MultiGrid
-            cellRenderer={cellRenderer}
-            columnCount={data[0].length}
-            columnWidth={ 5000 / data[0].length }
-            fixedColumnCount={ 0 }
-            fixedRowCount={ 1 }
-            height={ 600 }
-            rowCount={data.length}
-            rowHeight={30}
-            width={ 1200 }
-            style={{ marginLeft: 20 }}
+        <MaterialTable
+            columns={ formatColumns(columns) }
+            icons={ tableIcons }
+            data={ formatRows(data) }
+            title="Blotter"
+            options={{
+                filtering: true,
+                exportButton: true,
+                headerStyle: {
+                    backgroundColor: '#039dfc'
+                },
+                cellStyle: {
+                    fontSize: 8
+                }
+            }}
         />
-
     )
-}
+};
+
+export default Table;
+

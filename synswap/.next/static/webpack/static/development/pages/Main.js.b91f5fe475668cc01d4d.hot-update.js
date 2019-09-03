@@ -1,0 +1,91 @@
+webpackHotUpdate("static/development/pages/Main.js",{
+
+/***/ "./components/Table.js":
+false,
+
+/***/ "./pages/Blotter.js":
+/*!**************************!*\
+  !*** ./pages/Blotter.js ***!
+  \**************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Blotter; });
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/index.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _components_DataTable__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/DataTable */ "./components/DataTable.js");
+/* harmony import */ var _components_TableTwo__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/TableTwo */ "./components/TableTwo.js");
+
+
+
+
+
+
+
+function Blotter() {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])({}),
+      _useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
+      data = _useState2[0],
+      setData = _useState2[1];
+
+  var trades = Object(react_redux__WEBPACK_IMPORTED_MODULE_4__["useSelector"])(function (state) {
+    return state.TradeReducer.trades;
+  });
+  var dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_4__["useDispatch"])();
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+    setData(trades);
+  }, [trades]);
+
+  function exportToCSV() {
+    var csv = '';
+
+    for (var i = 0; i < data.columns.length; i++) {
+      csv += data.columns[i] + ',';
+    }
+
+    csv += '\n';
+
+    for (var _i = 0; _i < data.rows.length; _i++) {
+      var row = data.rows[_i];
+      csv += row.join(',');
+      csv += "\n";
+    }
+
+    ;
+    var hiddenElement = document.createElement('a');
+    hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
+    hiddenElement.target = '_blank';
+    var date = new Date();
+    var month = date.getUTCMonth();
+    var day = date.getUTCDate();
+    var year = date.getUTCFullYear();
+    var name = year + '-' + month + '-' + day;
+    hiddenElement.download = name + '.csv';
+    hiddenElement.click();
+  }
+
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Grid"], {
+    container: true,
+    spacing: 2
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__["Grid"], {
+    item: true,
+    xs: 12,
+    style: {
+      padding: 50
+    }
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_TableTwo__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    data: data
+  }))));
+}
+
+/***/ })
+
+})
+//# sourceMappingURL=Main.js.b91f5fe475668cc01d4d.hot-update.js.map

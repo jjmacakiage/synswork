@@ -1,10 +1,9 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Button, Grid } from '@material-ui/core';
 import {useDispatch, useSelector} from "react-redux";
 import DataTable from '../components/DataTable';
 import Table from "../components/Table";
-
 
 
 export default function Blotter() {
@@ -44,20 +43,8 @@ export default function Blotter() {
     return (
       <div>
           <Grid container spacing={ 2 }>
-              <Grid item xs={ 12 }>
-                  <Button color="primary" onClick={ exportToCSV.bind(this) }>
-                      Export to CSV
-                  </Button>
-              </Grid>
-              {
-                  /*
-                  <Grid item xs={12}>
-                      <DataTable data={data}/>
-                  </Grid>
-                   */
-              }
               <Grid item xs={ 12 } style={{ padding: 50 }}>
-                  <Table data={ data } />
+                    <Table data={ data } />
               </Grid>
           </Grid>
 

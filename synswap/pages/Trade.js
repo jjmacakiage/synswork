@@ -3,9 +3,9 @@ import { Tab, Tabs, Grid } from "@material-ui/core";
 import { useSelector } from "react-redux";
 
 import DataTable from '../components/DataTable';
-import Header from '../components/main/Header';
-import { TabContainer } from "../utils/tradehelpers";
 import BestMatch from '../components/trade/BestMatch';
+import { TabPanel, a11yProps } from "../utils/tradehelpers";
+import Typography from "@material-ui/core/Typography";
 
 const columns= [
     {
@@ -87,46 +87,33 @@ export default function Trade(props) {
                             textColor="primary"
                             centered
                         >
-                            <Tab label="Fields"/>
-                            <Tab label="Autofill"/>
-                            <Tab label="CashFlow Schedule"/>
-                            <Tab label="Confirmation"/>
-                            <Tab label={ BEST_MATCH_TITLE } />
+                            <Tab label="Main" {...a11yProps(0)} />
+                            <Tab label="Details" {...a11yProps(1)} />
+                            <Tab label="Cashflow Schedule" {...a11yProps(2)} />
+                            <Tab label="Confirmation" {...a11yProps(3)} />
+                            <Tab label={ BEST_MATCH_TITLE } {...a11yProps(4)} />
                         </Tabs>
-                        {
-                            value === 0 &&
-                            (
-                                <TabContainer>
-                                    <DataTable data={ data } onRowClick={() => window.alert('row clicked')}/>
-                                </TabContainer>
-                            )
-                        }
-                        {
-                            value === 1 &&
-                            (
-                                <TabContainer>
-                                    <DataTable data={{columns: columns, rows: rows}} onRowClick={() => window.alert('row clicked')}/>
-                                </TabContainer>
-                            )
-                        }
-                        {
-                            value === 2 &&
-                            (
-                                <h1> CashFlow Schedule </h1>
-                            )
-                        }
-                        {
-                            value === 3 &&
-                            (
-                                <h1> Confirmation </h1>
-                            )
-                        }
-                        {
-                            value === 4 &&
-                            (
-                                <BestMatch score={ score }/>
-                            )
-                        }
+
+                        <TabPanel value={value} index={0}>
+                            <DataTable data={ data } onRowClick={() => window.alert('row clicked')}/>
+                        </TabPanel>
+
+                        <TabPanel value={value} index={1}>
+                            <DataTable data={{columns: columns, rows: rows}} onRowClick={() => window.alert('row clicked')}/>
+                        </TabPanel>
+
+                        <TabPanel value={value} index={2}>
+                            <Typography variant="overline"> Cashflow Schedule </Typography>
+                        </TabPanel>
+
+                        <TabPanel value={value} index={3}>
+                            Confirmation
+                        </TabPanel>
+
+                        <TabPanel index={4} value={value}>
+                            <BestMatch score={ score }/>
+                        </TabPanel>
+
                     </div>
                 </Grid>
             </Grid>
