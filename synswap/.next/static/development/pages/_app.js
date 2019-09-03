@@ -12556,6 +12556,43 @@ function NewTradeReducer() {
 
 /***/ }),
 
+/***/ "./reducers/NotificationReducer.js":
+/*!*****************************************!*\
+  !*** ./reducers/NotificationReducer.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return NotificationReducer; });
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/toConsumableArray.js");
+
+
+var INITIAL_STATE = {
+  notifications: []
+};
+function NotificationReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : INITIAL_STATE;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case 'ADD_NOTIFICATIONS':
+      var notifications = Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__["default"])(state.notifications);
+
+      notifications.push.apply(notifications, Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__["default"])(action.payload));
+      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+        notifications: notifications
+      });
+
+    default:
+      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state);
+  }
+}
+
+/***/ }),
+
 /***/ "./reducers/PaneDataReducer.js":
 /*!*************************************!*\
   !*** ./reducers/PaneDataReducer.js ***!
@@ -12731,6 +12768,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _NewTradeReducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./NewTradeReducer */ "./reducers/NewTradeReducer.js");
 /* harmony import */ var _TradeReducer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./TradeReducer */ "./reducers/TradeReducer.js");
 /* harmony import */ var _AuthReducer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./AuthReducer */ "./reducers/AuthReducer.js");
+/* harmony import */ var _NotificationReducer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./NotificationReducer */ "./reducers/NotificationReducer.js");
+
 
 
 
@@ -12742,7 +12781,8 @@ __webpack_require__.r(__webpack_exports__);
   PaneDataReducer: _PaneDataReducer__WEBPACK_IMPORTED_MODULE_2__["default"],
   NewTradeReducer: _NewTradeReducer__WEBPACK_IMPORTED_MODULE_3__["default"],
   TradeReducer: _TradeReducer__WEBPACK_IMPORTED_MODULE_4__["default"],
-  AuthReducer: _AuthReducer__WEBPACK_IMPORTED_MODULE_5__["default"]
+  AuthReducer: _AuthReducer__WEBPACK_IMPORTED_MODULE_5__["default"],
+  NotificationReducer: _NotificationReducer__WEBPACK_IMPORTED_MODULE_6__["default"]
 }));
 
 /***/ }),

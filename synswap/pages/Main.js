@@ -57,6 +57,14 @@ const Main = () => {
                     type: 'FETCH_TRADES',
                     payload: {trades: response.data.trades,
                               blocknumber: response.data.blocknumber}});
+                const notifications = response.data.trades.map((trade) => {
+                    // TODO: Only new trade notifcations currently, currently cannot amend trades.
+                    return {message: "Amount: " + trade.amount + " Type: " + trade.tradeType, title: "New trade with " + trade.counterPartyId +" alleged"};
+                });
+                dispatch({
+                    type: 'ADD_NOTIFICATIONS',
+                    payload: notifications
+                })
             }
 
         } catch (e) {

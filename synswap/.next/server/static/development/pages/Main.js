@@ -998,6 +998,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core */ "@material-ui/core");
 /* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _NotificationList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./NotificationList */ "./components/home/NotificationList.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_4__);
+
 
 
 
@@ -1013,18 +1016,25 @@ var useStyles = Object(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["makeStyle
 });
 function NotificationPane() {
   var classes = useStyles();
+  var notifications = Object(react_redux__WEBPACK_IMPORTED_MODULE_4__["useSelector"])(function (state) {
+    return state.NotificationReducer.notifications;
+  });
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])([]),
       _useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
-      notifications = _useState2[0],
-      addNotifications = _useState2[1];
+      data = _useState2[0],
+      setData = _useState2[1];
 
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+    setData(notifications);
+    console.log(data);
+  }, [notifications]);
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: classes.root
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__["Card"], {
     square: true
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_NotificationList__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    data: notifications
+    data: data
   })));
 }
 
@@ -3426,7 +3436,7 @@ var Main = function Main() {
     var _ref2 = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_3__["default"])(
     /*#__PURE__*/
     _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.mark(function _callee2(bn) {
-      var url, response;
+      var url, response, notifications;
       return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.wrap(function _callee2$(_context2) {
         while (1) {
           switch (_context2.prev = _context2.next) {
@@ -3446,6 +3456,17 @@ var Main = function Main() {
                     trades: response.data.trades,
                     blocknumber: response.data.blocknumber
                   }
+                });
+                notifications = response.data.trades.map(function (trade) {
+                  // TODO: Only new trade notifcations currently, currently cannot amend trades.
+                  return {
+                    message: "Amount: " + trade.amount + " Type: " + trade.tradeType,
+                    title: "New trade with " + trade.counterPartyId + " alleged"
+                  };
+                });
+                dispatch({
+                  type: 'ADD_NOTIFICATIONS',
+                  payload: notifications
                 });
               }
 
@@ -3476,11 +3497,6 @@ var Main = function Main() {
       setRefresh = _useState2[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_4__["useEffect"])(function () {
-<<<<<<< HEAD
-    fetchTrades(true);
-  }, []); //useInterval(fetchTrades, false,5000);
-
-=======
     initialFetch();
     setInterval(function () {
       setRefresh(true);
@@ -3496,7 +3512,6 @@ var Main = function Main() {
       fetchTrades(blocknumber);
     }
   }, [refresh === true]);
->>>>>>> Get trade updates every 5 seconds
   /**
    * @constant activeTab
    * @type {object}
