@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import fetch from 'isomorphic-unfetch';
 import axios from 'axios';
-import { useSelector, useDispatch } from "react-redux";
-import {Box, Button, Grid, makeStyles, Tabs, Tab, Select, TextField, MenuItem, Divider, Typography} from '@material-ui/core';
+import { useDispatch } from "react-redux";
+import { Button, Grid, makeStyles, Tabs, Tab, TextField, MenuItem, Divider, Typography} from '@material-ui/core';
 import {Eclipse} from "react-loading-io";
 import {ErrorMessage, Field, Formik, Form} from "formik";
 import LoadingOverlay from "react-loading-overlay";
 
-import { TabPanel, a11yProps } from "../../utils/tradehelpers";
 
-
+import { TabPanel, a11yProps } from "../trade/Helpers";
+import { tradeSchema, generateInitial, handleSubmit } from "../../js/tradehelpers";
 
 /**
  * @constant useStyles
@@ -37,68 +35,17 @@ const useStyles = makeStyles(theme => ({
 
 export default function NewTradeContent(props) {
     const classes = useStyles();
-    const { fields, counterpartyList, trades_length, schema, validationFunctions } = props;
+    const { fields, counterpartyList, schema } = props;
     const { IRS } = schema;
     const [isLoading, changeLoading] = useState(false);
     const [counterparty, changeCounterparty] = useState('');
     const dispatch = useDispatch();
     const [value, setValue] = useState(0);
 
-    const tradeSchema = (schema, values) => {
-        const generateSchema = (object, values) => {
-            let keys = Object.keys(object);
-            let valueCount = 0;
-            let result = {};
-            for (let i = 0; i < keys.length; i++) {
-                let key = keys[i];
-                let obj = object[key];
-                if (typeof obj === 'string' || typeof obj === 'number') {
-                    result = { ...result, [key]: values[valueCount]};
-                    valueCount++;
-                }
-                else {
-                    result = { ...result, [key]: generateSchema(obj, values.slice(valueCount, valueCount + Object.keys(object).length))};
-                    valueCount = valueCount + Object.keys(object).length
-                }
-            }
-            return result;
-        };
-        return generateSchema(schema, values)
-    };
 
-    /**
-     * @function handleSubmit
-     * @param values
-     * takes fields passed in from the form and sends to api
-     */
-    const handleSubmit = async values => {
-        const url = 'http://localhost:4000/api/traders/1/trades';
-        //console.log(values);
-        const data = values; //tradeSchema(IRS, Object.values(values));
-        try {
-            axios.post(url, {
-                data
-            })
-                .then(function (response) {
-                    if (response.status === 200) {
-                        console.log(response);
-                        dispatch({ type: 'NEW_TRADE', payload: [response.data.data, values] });
-                        return response.data;
-                    } else {
-                        console.log('Trade register failed.', response.status);
-                        let error = new Error(response.statusText);
-                        error.response = response;
-                        throw error
-                    }
-                });
-        } catch (error) {
-            console.error(
-                'You have an error in your code or there are Network issues.',
-                error
-            );
-            return error;
-        }
-    };
+    function onSubmit(values) {
+        return handleSubmit({ schema: IRS, values, dispatch })
+    }
 
     /**
      * @function tabChange
@@ -110,16 +57,10 @@ export default function NewTradeContent(props) {
         setValue(newValue);
     }
 
-    function generateInitial(array, values) {
-        let result = {};
-        for (let i = 0; i < array.length; i++) {
-            result = {...result, [array[i][0]]: values[i]};
-        }
-        return result;
-    }
     function handleCounterpartyChange(e) {
         changeCounterparty(e.target.value);
     }
+
     function createFormColumns(array) {
         return (
             <>
@@ -186,6 +127,7 @@ export default function NewTradeContent(props) {
             </>
         )
     }
+
     function extendedFields() {
         const extended = fields.filter((field) => {
             return field[2] === '1';
@@ -254,8 +196,7 @@ export default function NewTradeContent(props) {
                         initialValues={ generateInitial(fields, new Array(fields.length).fill('')) }
                         enableReinitialize={ true }
                         onSubmit={(values, actions) => {
-                            console.log(tradeSchema(IRS, Object.values(values)));
-                            handleSubmit(IRS, values);
+                            onSubmit(IRS);
                             actions.setSubmitting(false)
                         }}
                         validateOnBlur={ true }

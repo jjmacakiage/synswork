@@ -11,10 +11,9 @@ import { useDispatch } from "react-redux";
 export default function NewTrade(props) {
     const fields = useSelector(state => state.NewTradeReducer.NEW_TRADE_FIELDS);
     const schema = useSelector(state => state.NewTradeReducer.schema);
-    const validationFunctions = useSelector(state => state.NewTradeReducer.validationFunctions);
     const counterpartyList = useSelector(state => state.NewTradeReducer.counterpartyList);
     const currentUser = useSelector(state => state.AuthReducer.token);
-    const trades_length = useSelector(state => state.TradeReducer.trades).length;
+
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -39,9 +38,7 @@ export default function NewTrade(props) {
                         onClick={ props.onClick }
                         fields={ fields }
                         counterpartyList={ counterpartyList }
-                        trades_length={ trades_length }
                         schema = { schema }
-                        validationFunctions = { validationFunctions }
                     />
                 </Grid>
             </Grid>
@@ -51,7 +48,7 @@ export default function NewTrade(props) {
 
 function Drawer(props) {
     const { items, links, onClick } = props;
-    const { fields, counterpartyList, trades_length, schema, validationFunctions } = props;
+    const { fields, counterpartyList, schema, helperFunctions } = props;
     return (
         <div style={{ display: 'flex', flexGrow: 1, justifyContent: "space-around"}}>
             <div style={{ maxWidth: "min-content", left: 0 }}>
@@ -61,9 +58,8 @@ function Drawer(props) {
                 <NewTradeContent
                     fields={ fields }
                     counterpartyList={ counterpartyList }
-                    trades_length={ trades_length }
                     schema = { schema }
-                    validationFunctions = { validationFunctions }
+                    helperFunctions = { helperFunctions }
                 />
             </div>
         </div>

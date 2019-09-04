@@ -1,4 +1,5 @@
-import React, {useState, useEffect, useRef} from "react";
+import React, {useState, useEffect} from "react";
+import axios from "axios";
 import { Grid } from '@material-ui/core';
 import Tabs, {Tab} from "react-awesome-tabs";
 import "../resources/styles/react-awesome-tabs.scss";
@@ -13,9 +14,9 @@ import Trade from './Trade';
 import Blotter from './Blotter';
 import FileUpload from './FileUpload';
 import {error} from "next/dist/build/output/log";
-import axios from "axios";
 import { withAuthSync } from '../utils/Auth/auth';
 import getHost from '../utils/Auth/get-host';
+import { fetchTrades, initialFetch } from "../js/tradehelpers";
 
 /**
  * @class Main
@@ -33,69 +34,42 @@ import getHost from '../utils/Auth/get-host';
  */
 
 function useInterval(callback, params, delay) {
-    useEffect(() => {
-        setInterval(() => {
-            callback(params);
-        }, delay);
-        return (
-            () => {
-                console.log('Component Unmounted');
-            }
-        )
-    }, []);
+    setInterval(() => {
+        callback(params);
+    }, delay);
+    console.log('Fetch Done');
 }
 
 const Main = () => {
-    const blockNumber = useSelector(state => state.TradeReducer.blockNumber);
-
-    const initialFetch = async () => {
-        const url = "http://localhost:4000/api/traders/1/trades";
-        try {
-            const response = await axios.get(url);
-            dispatch({
-                type: 'INITIAL_FETCH',
-                payload: {
-                    trades: response.data.trades,
-                    blockNumber: response.data.blocknumber
-                }
-            });
-
-        } catch (e) {
-            console.log(e);
-        }
-    };
-
-    const fetchTrades = async (bn) => {
-        const url = "http://localhost:4000/api/updates/" + bn + "?traderid=1";
-        try {
-            const response = await axios.get(url);
-            if(response.data.success && response.data.trades) {
-                dispatch({
-                    type: 'FETCH_TRADES',
-                    payload: {trades: response.data.trades,
-                              blockNumber: response.data.blocknumber}});
-                const notifications = response.data.trades.map((trade) => {
-                    // TODO: Only new trade notifcations currently, currently cannot amend trades.
-                    return {message: trade.amount + " " + trade.currency + "      " + trade.direction + " " + trade.duration,
-                        title: "ALLEGED " + trade.tradeType + " trade with " + trade.counterPartyName};
-                });
-                dispatch({
-                    type: 'ADD_NOTIFICATIONS',
-                    payload: notifications
-                })
-            }
-
-        } catch (e) {
-            console.log(e);
-        }
-    };
+    const blocknumber = useSelector(state => state.TradeReducer.blocknumber);
+    const notifications = useSelector(state => state.NotificationReducer.notifications);
+    /**
+     * @constant dispatch
+     * @type {function}
+     * gives access to dispatch function from Redux store
+     */
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        initialFetch();
+        initialFetch(dispatch);
         return;
     },[]);
 
-    useInterval(fetchTrades, blockNumber, 5000);
+    //useInterval(fetchTrades, { blocknumber, dispatch, traderid: 1, notifications }, 5000);
+
+    /**
+     * @constant MAIN_TABS
+     * @type {array}
+     * array of objects that contains a 'key' and a 'component' that is mapped to the 'component' attribute from a tab object in....
+     * ....matchLink
+     */
+    const MAIN_TABS= [
+        { key: 'Home' },
+        { key: 'NewTrade' },
+        { key: 'Trade' },
+        { key: 'Blotter' },
+        { key: 'FileNewTrade' }
+    ];
 
     /**
      * @constant activeTab
@@ -110,27 +84,6 @@ const Main = () => {
      * an array of objects representing the tabs, with each object in the format { title, index, component }
      */
     const tabs = useSelector(state => state.TabReducer.tabs);
-
-    /**
-     * @constant dispatch
-     * @type {function}
-     * gives access to dispatch function from Redux store
-     */
-    const dispatch = useDispatch();
-
-    /**
-     * @constant MAIN_TABS
-     * @type {array}
-     * array of objects that contains a 'key' and a 'component' that is mapped to the 'component' attribute from a tab object in....
-     * ....matchLink
-     */
-    const MAIN_TABS= [
-        { key: 'Home', component: Home({ onClick: handleClick.bind(this) }) },
-        { key: 'NewTrade', component: NewTrade({ onClick : handleClick }) },
-        { key: 'Trade', component: Trade() },
-        { key: 'Blotter', component: Blotter() },
-        { key: 'FileNewTrade', component: FileUpload() }
-    ];
 
     /**
      * @constant openTabs
@@ -228,6 +181,33 @@ const Main = () => {
             handleTabSwitch(openTabs.indexOf(link));
         }
     }
+
+    function createTab(key) {
+        switch (key) {
+            case ('Home'):
+                return (
+                    <Home onClick={ handleClick.bind(this) } />
+                );
+            case ('NewTrade'):
+                return (
+                    <NewTrade onClick={ handleClick }/>
+                );
+            case ('Trade'):
+                return (
+                    <Trade />
+                );
+            case ('Blotter'):
+                return (
+                    <Blotter/>
+                );
+            case ('FileNewTrade'):
+                return (
+                    <FileUpload/>
+                );
+            default:
+                throw new error('Tab Map Failed')
+        }
+    }
     /**
      * @return
      * @type Grid
@@ -274,33 +254,6 @@ const Main = () => {
             </Grid>
         </Grid>
     );
-
-    function createTab(key) {
-        switch (key) {
-            case ('Home'):
-                return (
-                    <Home onClick={ handleClick.bind(this) } />
-                );
-            case ('NewTrade'):
-                return (
-                    <NewTrade onClick={ handleClick }/>
-                );
-            case ('Trade'):
-                return (
-                    <Trade />
-                );
-            case ('Blotter'):
-                return (
-                    <Blotter/>
-                );
-            case ('FileNewTrade'):
-                return (
-                    <FileUpload/>
-                );
-            default:
-                throw new error('Tab Map Failed')
-        }
-    }
 
 };
 

@@ -1,11 +1,8 @@
-import React, {useState} from 'react';
-import { Tab, Tabs, Grid } from "@material-ui/core";
-import { useSelector } from "react-redux";
-
-import DataTable from '../components/DataTable';
+import React, { useState } from 'react';
+import { Tab, Tabs, TextField, Grid, Typography } from "@material-ui/core";
 import BestMatch from '../components/trade/BestMatch';
-import { TabPanel, a11yProps } from "../utils/tradehelpers";
-import Typography from "@material-ui/core/Typography";
+import { TabPanel, a11yProps } from "../components/trade/Helpers";
+import { generateInitial } from "../js/tradehelpers";
 
 const columns= [
     {
@@ -60,8 +57,9 @@ for (let i = 0; i < 200; i += 1) {
 
 
 export default function Trade(props) {
+    const { data } = props;
+
     const [value, setValue] = useState(0);
-    const [data, setData] = useState({ rows: [], columns: []});
     const [score, setScore] = useState(0);
 
     /**
@@ -75,6 +73,12 @@ export default function Trade(props) {
     };
 
     const BEST_MATCH_TITLE = 'Best Match Score: ' + score + '%';
+
+    const generateMain = () => {
+        return (
+            <Typography variant="overline"> Lmao </Typography>
+        )
+    };
     return (
         <div>
             <Grid container spacing={ 2 }>
@@ -95,11 +99,11 @@ export default function Trade(props) {
                         </Tabs>
 
                         <TabPanel value={value} index={0}>
-                            <DataTable data={ data } onRowClick={() => window.alert('row clicked')}/>
+                            { generateMain() }
                         </TabPanel>
 
                         <TabPanel value={value} index={1}>
-                            <DataTable data={{columns: columns, rows: rows}} onRowClick={() => window.alert('row clicked')}/>
+
                         </TabPanel>
 
                         <TabPanel value={value} index={2}>

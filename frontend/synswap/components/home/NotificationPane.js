@@ -21,11 +21,12 @@ export default function NotificationPane(){
 
     useEffect(() => {
         setData(notifications);
+        console.log(data);
     }, [notifications]);
     return (
         <div className={classes.root}>
             <Card square={ true }>
-                <NotificationList data={data.reverse()}/>
+                <NotificationList data={data}/>
             </Card>
         </div>
     );

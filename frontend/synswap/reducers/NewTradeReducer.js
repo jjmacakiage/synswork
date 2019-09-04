@@ -1,13 +1,10 @@
 import { new_trade_fields } from '../js/new_trade_fields';
 import { IRS } from "../js/new_trade_fields";
 
+
 const INITIAL_STATE = {
-    tabs: [],
     NEW_TRADE_FIELDS: new_trade_fields(),
-    AUTOFILL_FIELDS: [],
-    FIELD_DATA: [],
-    schema: { IRS }, // || API CALL TO OBTAIN DEFAULT SCHEMA
-    validationFunctions: { },
+    schema: { IRS },
     counterpartyList: ['Bank1', 'Bank2'],
 };
 export default function NewTradeReducer(state = INITIAL_STATE, action) {
