@@ -8,7 +8,7 @@ import { TabPanel, a11yProps } from "../trade/Helpers";
 import { tradeSchema, generateInitial, handleSubmit } from "../../js/tradehelpers";
 
 /**
- * @constant useStyles
+ * @constant useStylesp
  * hook used for styling
  */
 const useStyles = makeStyles(theme => ({
@@ -41,7 +41,7 @@ export default function NewTradeContent(props) {
 
 
     function onSubmit(values) {
-        return handleSubmit({ schema: IRS, values, dispatch })
+        return handleSubmit({ schema: IRS, values, dispatch });
     }
 
     /**

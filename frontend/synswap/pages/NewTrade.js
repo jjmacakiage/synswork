@@ -17,15 +17,11 @@ export default function NewTrade(props) {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        async function fetchList() {
-            if (1 === 0) { //res.status === 'success') {
-                const res = await fetchCounterpartyList(currentUser);
-                dispatch({ type: 'CHANGE_COUNTERPARTYLIST', payload: res.counterpartyList });
-            } else {
-                return;
+        fetchCounterpartyList(currentUser).then((res) => {
+            if (res.success === true) {
+                dispatch({type: 'CHANGE_COUNTERPARTYLIST', payload: res.counterparties});
             }
-        }
-        fetchList();
+        });
     }, []);
 
     return (
@@ -37,7 +33,7 @@ export default function NewTrade(props) {
                         links={['NewTrade', 'Blotter']}
                         onClick={ props.onClick }
                         fields={ fields }
-                        counterpartyList={ counterpartyList }
+                        counterpartyList={ counterpartyList.map((cp) => {return cp.name;}) }
                         schema = { schema }
                     />
                 </Grid>

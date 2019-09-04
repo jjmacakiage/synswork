@@ -21,10 +21,10 @@ MasterTradeAgreement.prototype.getCounterParties = function(id){
         const cp2 = tr.party2;
 
         if(id === cp1.id){
-            ret.push(cp2);
+            ret.push({name: cp2.name, id: cp2.id});
         }
         else if(id === cp2.id){
-            ret.push(cp1);
+            ret.push({name: cp1.name, id: cp1.id});
         }
     }
 

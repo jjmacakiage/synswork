@@ -45,12 +45,12 @@ export const tradeSchema = (schema, values) => {
     return generateSchema(schema, values)
 };
 
-export const fetchTrades = async params => {
-    const url = "http://localhost:4000/api/updates/" + params.blocknumber + "?traderid=" + params.traderid;
+export const fetchTrades = async (blocknumber, traderid, notifications, dispatch) => {
+    const url = "http://localhost:4000/api/updates/" + blocknumber + "?traderid=" + traderid;
     try {
         const response = await axios.get(url);
         if(response.data.success && response.data.trades) {
-            params.dispatch({
+            dispatch({
                 type: 'FETCH_TRADES',
                 payload: {
                     trades: response.data.trades,
@@ -61,8 +61,8 @@ export const fetchTrades = async params => {
                 // TODO: Only new trade notifcations currently, currently cannot amend trades.
                 return {message: "Amount: " + trade.amount + " Type: " + trade.tradeType, title: "New trade with " + trade.counterPartyId +" alleged"};
             });
-            (newNotifications.length && newNotifications[newNotifications.length - 1] !== params.notifications[params.notifications.length - 1]) ?
-                params.dispatch({
+            (newNotifications.length && newNotifications[newNotifications.length - 1] !== notifications[notifications.length - 1]) ?
+                dispatch({
                     type: 'ADD_NOTIFICATIONS',
                     payload: newNotifications
                 }) : null
@@ -73,7 +73,7 @@ export const fetchTrades = async params => {
     }
 };
 
-export const initialFetch = async dispatch => {
+export const initialFetch = async (dispatch) => {
     const url = "http://localhost:4000/api/traders/1/trades";
     try {
         const response = await axios.get(url);

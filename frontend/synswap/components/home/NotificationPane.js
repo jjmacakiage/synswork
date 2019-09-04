@@ -21,7 +21,6 @@ export default function NotificationPane(){
 
     useEffect(() => {
         setData(notifications);
-        console.log(data);
     }, [notifications]);
     return (
         <div className={classes.root}>
