@@ -27,4 +27,3 @@ export default function TradeReducer(state = INITIAL_STATE, action) {
             return { ...state };
     }
 }
-

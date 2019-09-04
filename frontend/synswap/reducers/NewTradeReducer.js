@@ -1,11 +1,9 @@
-import { new_trade_fields } from '../js/new_trade_fields';
-import { IRS } from "../js/new_trade_fields";
-
+import { new_trade_fields, IRS } from '../js/new_trade_fields';
 
 const INITIAL_STATE = {
     NEW_TRADE_FIELDS: new_trade_fields(),
     schema: { IRS },
-    counterpartyList: ['Bank1', 'Bank2'],
+    counterpartyList: [],
 };
 export default function NewTradeReducer(state = INITIAL_STATE, action) {
     switch (action.type) {

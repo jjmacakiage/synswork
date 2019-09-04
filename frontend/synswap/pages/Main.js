@@ -53,7 +53,7 @@ const Main = () => {
     useEffect(() => {
         setInterval(() => {
             setRefresh(refresh => !refresh);
-        }, 5000);
+        }, 1000);
         return (
             () => {
                 console.log('Component Unmounted');
