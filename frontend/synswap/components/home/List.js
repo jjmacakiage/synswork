@@ -3,6 +3,7 @@ import React from "react";
 import Typography from "@material-ui/core/Typography";
 
 export default function OptionsList(props) {
+    const { items, links, onClick } = props;
     return (
         <div>
             {
@@ -11,18 +12,17 @@ export default function OptionsList(props) {
                 >
                     <MenuList>
                         {
-                            props.items.map((value, index) => {
-                                const {onClick} = props;
+                            items.map((value, index) => {
                                 return (
                                     <div key={index}>
                                         <MenuItem
-                                            value={props.links[index]}
-                                            onClick={() => onClick(props.links[index])}
+                                            value={links[index]}
+                                            onClick={() => onClick(links[index])}
                                         >
                                             <Typography variant="overline"> {value} </Typography>
                                         </MenuItem>
                                         {
-                                            (index !== props.items.length - 1) ?
+                                            (index !== items.length - 1) ?
                                                 <Divider dark /> : null
                                         }
                                     </div>

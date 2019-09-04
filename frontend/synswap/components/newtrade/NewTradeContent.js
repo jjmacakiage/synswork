@@ -1,10 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 import { useDispatch } from "react-redux";
 import { Button, Grid, makeStyles, Tabs, Tab, TextField, MenuItem, Divider, Typography} from '@material-ui/core';
-import {Eclipse} from "react-loading-io";
 import {ErrorMessage, Field, Formik, Form} from "formik";
-import LoadingOverlay from "react-loading-overlay";
 
 
 import { TabPanel, a11yProps } from "../trade/Helpers";
@@ -182,73 +179,62 @@ export default function NewTradeContent(props) {
                     <Tab label="Main" {...a11yProps(0)} />
                     <Tab label="Details" {...a11yProps(1)} />
                 </Tabs>
-                <LoadingOverlay
-                    active={ isLoading }
-                    spinner={ <Eclipse />}
-                    styles={{
-                        overlay: (base) => ({
-                            ...base,
-                            background: 'rgba(255, 255, 255, 0.1)'
-                        })
+                <Formik
+                    initialValues={ generateInitial(fields, new Array(fields.length).fill('')) }
+                    enableReinitialize={ true }
+                    onSubmit={(values, actions) => {
+                        onSubmit(tradeSchema(IRS, Object.values(values)));
+                        actions.setSubmitting(false)
                     }}
-                >
-                    <Formik
-                        initialValues={ generateInitial(fields, new Array(fields.length).fill('')) }
-                        enableReinitialize={ true }
-                        onSubmit={(values, actions) => {
-                            onSubmit(IRS);
-                            actions.setSubmitting(false)
-                        }}
-                        validateOnBlur={ true }
-                        render={({ errors, status, touched, isSubmitting, isValidating }) => (
-                            <Form>
-                                <TabPanel value={value} index={0}>
-                                    <TextField
-                                        select
-                                        label="Select Counterparty"
-                                        disabled={isSubmitting}
-                                        variant="outlined" type={ value[1] }
-                                        value={ counterparty }
-                                        onChange={ e => handleCounterpartyChange(e) }
-                                        style={{ width: '100%', marginBottom: 20 }}
-                                    >
-                                        { counterpartyList.map((value, index) => {
-                                            return (
-                                                <MenuItem key={ value + index } value={ value }>
-                                                    {value}
-                                                </MenuItem>
-                                            );
-                                        })}
-                                    </TextField>
-                                    <Grid container spacing={ 2 }>
-                                        {
-                                            fields.map((field, index) => {
-                                                if (field[2] === '0') {
-                                                    return (
-                                                        <Grid item xs={ 6 } style={{ marginTop: 2, marginBottom: 2 }} key={ field + index}>
-                                                            {createFormColumns([field])}
-                                                        </Grid>
-                                                    )
-                                                }
-                                            })
-                                        }
-                                    </Grid>
-                                </TabPanel>
-                                <TabPanel index={1} value={value}>
-                                    { extendedFields() }
-                                    <Button
-                                        variant="contained"
-                                        type="submit"
-                                        disabled={ isValidating || isSubmitting || counterparty === ''}
-                                        style={{ marginTop: 20 }}
-                                    >
-                                        Submit
-                                    </Button>
-                                </TabPanel>
-                            </Form>
-                        )}
-                    />
-                </LoadingOverlay>
+                    validateOnBlur={ true }
+                    render={({ errors, status, touched, isSubmitting, isValidating }) => (
+                        <Form>
+                            <TabPanel value={value} index={0}>
+                                <TextField
+                                    select
+                                    label="Select Counterparty"
+                                    disabled={isSubmitting}
+                                    variant="outlined" type={ value[1] }
+                                    value={ counterparty }
+                                    onChange={ e => handleCounterpartyChange(e) }
+                                    style={{ width: '100%', marginBottom: 20 }}
+                                >
+                                    { counterpartyList.map((value, index) => {
+                                        return (
+                                            <MenuItem key={ value + index } value={ value }>
+                                                {value}
+                                            </MenuItem>
+                                        );
+                                    })}
+                                </TextField>
+                                <Grid container spacing={ 2 }>
+                                    {
+                                        fields.map((field, index) => {
+                                            if (field[2] === '0') {
+                                                return (
+                                                    <Grid item xs={ 6 } style={{ marginTop: 2, marginBottom: 2 }} key={ field + index}>
+                                                        {createFormColumns([field])}
+                                                    </Grid>
+                                                )
+                                            }
+                                        })
+                                    }
+                                </Grid>
+                            </TabPanel>
+                            <TabPanel index={1} value={value}>
+                                { extendedFields() }
+                                <Button
+                                    variant="contained"
+                                    type="submit"
+                                    disabled={ isValidating || isSubmitting || counterparty === ''}
+                                    style={{ marginTop: 20 }}
+                                >
+                                    Submit
+                                </Button>
+                            </TabPanel>
+                        </Form>
+                    )}
+                />
             </div>
         </div>
     );

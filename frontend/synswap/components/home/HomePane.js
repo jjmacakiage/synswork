@@ -11,7 +11,7 @@ import Typography from "@material-ui/core/Typography";
 export default function HomePane(props) {
     const [isFlipped, flip] = useState(false);
     const anchorRef = useRef(null);
-
+    const { items, links, onClick, title } = props;
     function flipCard(e) {
         e.preventDefault();
         flip(!isFlipped);
@@ -31,13 +31,13 @@ export default function HomePane(props) {
             <CardActionArea onClick={ e => flipCard(e) }>
                 <ReactCardFlip isFlipped={ isFlipped } flipDirection="horizontal">
                     <div key="front">
-                        <Typography variant="overline"> { props.title }</Typography>
+                        <Typography variant="overline"> { title }</Typography>
                     </div>
                     <div key="back">
                         <List
-                            items={ props.items }
-                            links={ props.links }
-                            onClick={ props.onClick }
+                            items={ items }
+                            links={ links }
+                            onClick={ onClick }
                             handleClose={ e => handleClose(e)}
                         />
                     </div>

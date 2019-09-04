@@ -6,7 +6,6 @@ import { useSelector } from "react-redux";
 import NotificationPane from '../components/home/NotificationPane';
 import HomePane from '../components/home/HomePane';
 import Typography from "@material-ui/core/Typography";
-import Header from "../components/main/Header";
 
 /**
  * @constant useStyles
@@ -48,6 +47,7 @@ const useStyles = makeStyles(theme => ({
 export default function Home(props) {
     const classes = useStyles();
     const [textFieldValue, changeValue] = useState('');
+    const { onClick } = props;
     /**
      * @constant newPane, readPane, adminPane
      * useSelector hook bound to constants
@@ -83,7 +83,7 @@ export default function Home(props) {
                             title="New Trade"
                             items={ newPane.items }
                             links={ newPane.links }
-                            onClick={ props.onClick }
+                            onClick={ onClick }
                         />
                     </div>
                 </Grid>
@@ -93,12 +93,7 @@ export default function Home(props) {
                             title="Read"
                             items={ readPane.items }
                             links={ readPane.links }
-                            onClick={ props.onClick }
-                            showTextField = { props.showTextField }
-                            textFieldLabel="Enter Trade ID"
-                            textFieldValue={ textFieldValue }
-                            onChange={ e => changeValue(e.target.value) }
-                            textFieldSubmit={ () => { return; } }
+                            onClick={ onClick }
                         />
                     </div>
                 </Grid>
@@ -108,7 +103,7 @@ export default function Home(props) {
                             title="Admin"
                             items={ adminPane.items }
                             links={ adminPane.links }
-                            onClick={ props.onClick }
+                            onClick={ onClick }
                         />
                     </div>
                 </Grid>

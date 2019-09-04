@@ -5,7 +5,8 @@ const INITIAL_STATE = { tabs: [
             title: 'Home',
             index: 0,
             component: 0,
-            key: 'Home'
+            key: 'Home',
+            props: {}
         },
     ],
     activeTab: 0

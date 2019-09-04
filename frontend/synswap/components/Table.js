@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import MaterialTable from 'material-table';
 import { forwardRef } from 'react';
+import Trade from '../pages/Trade';
 
 import {
     AddBox, ArrowUpward,
@@ -14,7 +15,7 @@ import {
 } from "@material-ui/icons";
 
 const Table = props => {
-    const { data } = props;
+    const { data, onRowClick } = props;
     const columns = (!data.rows) ? pullStuff(data[0], 'keys') : data.columns;
 
     const tableIcons = {
@@ -146,8 +147,13 @@ const Table = props => {
                 },
                 cellStyle: {
                     fontSize: 8
-                }
+                },
             }}
+            onRowClick={
+                (e, rowData) => {
+                    onRowClick('Trade', { data: rowData })
+                }
+            }
         />
     )
 };

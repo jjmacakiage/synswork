@@ -158,18 +158,20 @@ const Main = () => {
     /**
      * @function handleClick
      * @param link
+     * @param linkProps
      * eventHandler helper function that takes the link as a param and returns a component number from matchLink()
      * if the tab is already open (!indexOf(link) === -1) then switch to that tab with handleTabSwitch
      * else dispatch a new tab object containing a title, index, and component keys to be appended to 'tabs'...
      * ...piece of state
      */
-    function handleClick(link) {
+    function handleClick(link, linkProps) {
         let component = matchLink(link);
         if (openTabs.indexOf(link) === -1) {
             let newTabContent = {
                 title: link.match(/[A-Z][a-z]+|[0-9]+/g).join(" "),
                 index: tabs.length,
                 key: link,
+                props: (linkProps ? linkProps : {}),
                 component: component
             };
             dispatch({type: 'ADD_TAB', payload: newTabContent});
@@ -182,27 +184,27 @@ const Main = () => {
         }
     }
 
-    function createTab(key) {
+    function createTab(key, props) {
         switch (key) {
-            case ('Home'):
+            case 'Home':
                 return (
-                    <Home onClick={ handleClick.bind(this) } />
+                    <Home {...props} onClick={ handleClick } />
                 );
-            case ('NewTrade'):
+            case 'NewTrade':
                 return (
-                    <NewTrade onClick={ handleClick }/>
+                    <NewTrade {...props} onClick={ handleClick} />
                 );
-            case ('Trade'):
+            case 'Trade':
                 return (
-                    <Trade />
+                    <Trade {...props} />
                 );
-            case ('Blotter'):
+            case 'Blotter':
                 return (
-                    <Blotter/>
+                    <Blotter onRowClick={ handleClick} />
                 );
-            case ('FileNewTrade'):
+            case 'FileNewTrade':
                 return (
-                    <FileUpload/>
+                    <FileUpload {...props} />
                 );
             default:
                 throw new error('Tab Map Failed')
@@ -242,7 +244,7 @@ const Main = () => {
                                         </Grid>
                                         <Grid item xs={ 12 }>
                                             {
-                                                createTab(value.key)
+                                                createTab(value.key, value.props)
                                             }
                                         </Grid>
                                     </Grid>
