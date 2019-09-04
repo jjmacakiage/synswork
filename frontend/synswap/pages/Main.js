@@ -33,13 +33,6 @@ import { fetchTrades, initialFetch } from "../js/tradehelpers";
  * @class Header - Header
  */
 
-function useInterval(callback, params, delay) {
-    setInterval(() => {
-        callback(params);
-    }, delay);
-    console.log('Fetch Done');
-}
-
 const Main = () => {
     const blocknumber = useSelector(state => state.TradeReducer.blocknumber);
     const notifications = useSelector(state => state.NotificationReducer.notifications);
@@ -50,12 +43,29 @@ const Main = () => {
      */
     const dispatch = useDispatch();
 
+    const [initFetchDone, setInitFetchDone] = useState(false);
     useEffect(() => {
         initialFetch(dispatch);
-        return;
+        setInitFetchDone(true);
     },[]);
 
-    //useInterval(fetchTrades, { blocknumber, dispatch, traderid: 1, notifications }, 5000);
+    const [refresh, setRefresh] = useState(true);
+    useEffect(() => {
+        setInterval(() => {
+            setRefresh(refresh => !refresh);
+        }, 5000);
+        return (
+            () => {
+                console.log('Component Unmounted');
+            }
+        )
+    }, []);
+    useEffect(() => {
+        if(initFetchDone) {
+            // TODO: Traderid currently fixed
+            fetchTrades(blocknumber, 1, notifications, dispatch);
+        }
+    }, [refresh]);
 
     /**
      * @constant MAIN_TABS
