@@ -76,7 +76,8 @@ const Main = () => {
                               blockNumber: response.data.blocknumber}});
                 const notifications = response.data.trades.map((trade) => {
                     // TODO: Only new trade notifcations currently, currently cannot amend trades.
-                    return {message: "Amount: " + trade.amount + " Type: " + trade.tradeType, title: "New trade with " + trade.counterPartyId +" alleged"};
+                    return {message: trade.amount + " " + trade.currency + "      " + trade.direction + " " + trade.duration,
+                        title: "ALLEGED " + trade.tradeType + " trade with " + trade.counterPartyName};
                 });
                 dispatch({
                     type: 'ADD_NOTIFICATIONS',
