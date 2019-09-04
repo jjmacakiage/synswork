@@ -1,1 +1,0 @@
-# synswap-rates-platform
