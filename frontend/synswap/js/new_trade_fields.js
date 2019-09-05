@@ -1,27 +1,12 @@
-function extractByKey(obj, key) {
-    if (obj[key]) {
-        return obj[key];
-    }
-    else {
-        var result;
-        let keys = Object.keys(obj);
-        for (let i = 0; i < keys.length; i++) {
-            if (Object.keys(obj[keys[i]]).includes(key)) {
-                result = obj[keys[i]][key];
-            }
-        }
-        if (result) return result;
-        else return "Not Found";
-    }
-}
+const {Direction, BusDayConvention, BusinessCentre, Currency, ReferenceRate, Product, DayCount} = require('../../../common/TradeFields');
 
 //FOR ALL THE 'SELECT' TAGS, APPEND A LIST OF OPTIONS TO THE END OF THE LIST
 const base_fields = [
     ['Trade Date', 'date'],
-    ['Trade Type', 'select', ['IRS']],
-    ['Direction', 'select', ['PayFixed']],
+    ['Trade Type', 'select', Object.values(Product)],
+    ['Direction', 'select', Object.values(Direction)],
     ['Amount', 'number'],
-    ['Currency', 'select', ['GBP', 'EUR']],
+    ['Currency', 'select', Object.values(Currency)],
     ['Fixed Rate', 'number'],
     ['Duration', 'select', ['5Y']],
 ];
@@ -29,37 +14,37 @@ const base_fields = [
 const extended_fields = [
     ['Counterparty ID', 'select', [1, 2]],
     ['Termination Date', 'date'],
-    ['Bus Day Convention', 'select', ['ModFollowing']],
-    ['Business Centre', 'select', ['GBLO']],
+    ['Bus Day Convention', 'select', Object.values(BusDayConvention)],
+    ['Business Centre', 'select', Object.values(BusinessCentre)],
     //Floating Leg
-    ['Rate Reference', 'select', ['EURIBOR']],
+    ['Rate Reference', 'select', Object.values(ReferenceRate)],
 
     ['Effective Date (Floating)', 'date'],
-    ['Bus Day Convention (Effective, Floating)', 'select', ['ModFollowing']],
-    ['Business Centre (Effective, Floating)', 'select', ['GBLO']],
+    ['Bus Day Convention (Effective, Floating)', 'select', Object.values(BusDayConvention)],
+    ['Business Centre (Effective, Floating)', 'select', Object.values(BusinessCentre)],
 
     ['Termination Date (Floating)', 'date'],
-    ['Bus Day Convention (Termination, Floating)', 'select', ['ModFollowing']],
-    ['Business Centre (Termination, Floating)', 'select', ['GBLO']],
+    ['Bus Day Convention (Termination, Floating)', 'select', Object.values(BusDayConvention)],
+    ['Business Centre (Termination, Floating)', 'select', Object.values(BusinessCentre)],
 
     ['Period (Floating)', 'select', ['6M']],
-    ['Day Count Fraction (Floating)', 'select', ['ACT/360']],
+    ['Day Count Fraction (Floating)', 'select', Object.values(DayCount)],
 
     ['Fixing Date Offset (Floating)', 'select', ['-2D']],
-    ['Bus Day Convention (Floating)', 'select', ['ModFollowing']],
-    ['Business Centre (Floating)', 'select', ['GBLO']],
+    ['Bus Day Convention (Floating)', 'select', Object.values(BusDayConvention)],
+    ['Business Centre (Floating)', 'select', Object.values(BusinessCentre)],
 
     //Fixed Leg
     ['Effective Date (Fixed)', 'date'],
-    ['Bus Day Convention (Effective, Fixed)', 'select', ['ModFollowing']],
-    ['Business Centre (Effective, Fixed)', 'select', ['GBLO']],
+    ['Bus Day Convention (Effective, Fixed)', 'select', Object.values(BusDayConvention)],
+    ['Business Centre (Effective, Fixed)', 'select', Object.values(BusinessCentre)],
 
     ['Termination Date (Fixed)', 'date'],
-    ['Bus Day Convention (Termination, Fixed)', 'select', ['ModFollowing']],
-    ['Business Centre (Termination, Fixed)', 'select', ['GBLO']],
+    ['Bus Day Convention (Termination, Fixed)', 'select', Object.values(BusDayConvention)],
+    ['Business Centre (Termination, Fixed)', 'select', Object.values(BusinessCentre)],
 
     ['Period (Fixed)', 'select', ['6M']],
-    ['Day Count Fraction (Fixed)', 'select', ['ACT/360']],
+    ['Day Count Fraction (Fixed)', 'select', Object.values(DayCount)],
 ];
 
 
