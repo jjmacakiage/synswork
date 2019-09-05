@@ -23,6 +23,94 @@ export const generateInitial = (array, values) => {
     return result;
 };
 
+export const doText = text => {
+    const newText = text.replace(/([A-Z]+)/g, " $1");
+    return newText.charAt(0).toUpperCase() + newText.slice(1)
+};
+
+export const pullStuff = (obj, param) => {
+    const getKeys = obj => {
+        if (typeof obj !== 'object') {
+            throw new Error('Invalid JSON');
+        }
+        let result = [];
+        const topKeys = Object.keys(obj);
+        for (let i = 0; i < topKeys.length; i++) {
+            let topKey = topKeys[i];
+            let topEntry = obj[topKey];
+            if (typeof topEntry === 'string' || typeof topEntry === 'number') {
+                result.push(topKey);
+            }
+            else if (Array.isArray(topEntry)) {
+                let arrayEntry;
+                for (arrayEntry in topEntry) {
+                    result.push(getKeys(arrayEntry, true));
+                }
+            }
+            else {
+                result.push(getKeys(topEntry))
+            }
+        }
+        return result.flat(Infinity);
+    };
+
+    const getValues = obj => {
+        if (typeof obj !== 'object') {
+            throw new Error('Invalid JSON');
+        }
+        let result = [];
+        let topValues = Object.values(obj);
+        for (let i = 0; i < topValues.length; i++) {
+            let topValue = topValues[i];
+            if (typeof topValue === 'string' || typeof topValue === 'number') {
+                result.push(topValue);
+            }
+            else if (Array.isArray(topValue)) {
+                let arrayEntry;
+                for (arrayEntry in topValue) {
+                    result.push(getValues(arrayEntry, true));
+                }
+            }
+            else {
+                result.push(getValues(topValue))
+            }
+        }
+        return result.flat(Infinity);
+    };
+    switch (param) {
+        case 'keys':
+            return getKeys(obj, false);
+        case 'values':
+            return getValues(obj, false);
+        default:
+            return;
+    }
+}
+export const flatValues = (object, parentKey) => {
+    let keys = Object.keys(object);
+    let result = {};
+    for (let i = 0; i < keys.length; i++) {
+        let key = keys[i];
+        let value = object[key];
+        let isSecondNest;
+        if (typeof value === 'object' && parentKey) isSecondNest = true;
+
+        if (typeof value === 'string' || typeof value === 'number')
+            result = { ...result, [parentKey ? doText(key) + '( ' + doText(parentKey) + ' )' : key]: value }
+
+
+        else if (isSecondNest) {
+            console.log(parentKey)
+            result = { ...result, ...flatValues(value, key + ' ,' + doText(parentKey))};
+        }
+
+        else result = { ...result, ...flatValues(value, key)}
+    }
+
+    return result;
+};
+
+
 export const tradeSchema = (schema, values) => {
     const generateSchema = (object, values) => {
         let keys = Object.keys(object);

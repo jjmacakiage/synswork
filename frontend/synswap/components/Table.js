@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import MaterialTable from 'material-table';
 import { forwardRef } from 'react';
 import Trade from '../pages/Trade';
+import { doText, flatValues } from "../js/tradehelpers";
 
 import {
     AddBox, ArrowUpward,
@@ -16,7 +17,7 @@ import {
 
 const Table = props => {
     const { data, onRowClick } = props;
-    const columns = (!data.rows) ? pullStuff(data[0], 'keys') : data.columns;
+    const columns = (!data.rows) ? Object.keys(flatValues(data[0])) : data.columns;
 
     const tableIcons = {
         Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
@@ -42,10 +43,6 @@ const Table = props => {
         if (columns.length === 0 || columns[0].width) {
             return columns;
         }
-        const doText = text => {
-            const newText = text.replace(/([A-Z]+)/g, " $1");
-            return newText.charAt(0).toUpperCase() + newText.slice(1)
-        };
         let result = [];
         for (let i = 0; i < columns.length; i++) {
             const column = columns[i];
@@ -57,11 +54,10 @@ const Table = props => {
         }
         return result;
     }
-    function formatRows(rows) {
+    function formatRows(data) {
         let result = [];
-        for (let i = 0; i < rows.length; i++) {
-            let row = rows[i];
-            let temp = pullStuff(row, 'values');
+        for (let i = 0; i < data.length; i++) {
+            let temp = Object.values(flatValues(data[i]));
             let temp2 = generateObj(columns, temp);
             result.push(temp2);
         }
@@ -73,64 +69,6 @@ const Table = props => {
             result = {...result, [array[i]]: values[i]};
         }
         return result;
-    }
-    function pullStuff(obj, param) {
-        const getKeys = obj => {
-            if (typeof obj !== 'object') {
-                throw new Error('Invalid JSON');
-            }
-            let result = [];
-            const topKeys = Object.keys(obj);
-            for (let i = 0; i < topKeys.length; i++) {
-                let topKey = topKeys[i];
-                let topEntry = obj[topKey];
-                if (typeof topEntry === 'string' || typeof topEntry === 'number') {
-                    result.push(topKey);
-                }
-                else if (Array.isArray(topEntry)) {
-                    let arrayEntry;
-                    for (arrayEntry in topEntry) {
-                        result.push(getKeys(arrayEntry, true));
-                    }
-                }
-                else {
-                    result.push(getKeys(topEntry))
-                }
-            }
-            return result.flat(Infinity);
-        };
-
-        const getValues = obj => {
-            if (typeof obj !== 'object') {
-                throw new Error('Invalid JSON');
-            }
-            let result = [];
-            let topValues = Object.values(obj);
-            for (let i = 0; i < topValues.length; i++) {
-                let topValue = topValues[i];
-                if (typeof topValue === 'string' || typeof topValue === 'number') {
-                    result.push(topValue);
-                }
-                else if (Array.isArray(topValue)) {
-                    let arrayEntry;
-                    for (arrayEntry in topValue) {
-                        result.push(getValues(arrayEntry, true));
-                    }
-                }
-                else {
-                    result.push(getValues(topValue))
-                }
-            }
-            return result.flat(Infinity);
-        };
-        switch (param) {
-            case 'keys':
-                return getKeys(obj, false);
-            case 'values':
-                return getValues(obj, false);
-            default:
-                return;
-        }
     }
 
     return (
