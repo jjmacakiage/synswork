@@ -1,13 +1,4 @@
-const Status = {Unconfirmed: "Unconfirmed", Alleged: "Alleged", Pending: "Pending", Confirmed: "Confirmed",
-                Error: "Error", Cancelled: "Cancelled", Withdrawn: "Withdrawn", CancelledAlleged: "CancelledAlleged",
-                PendingAlleged: "PendingAlleged"};
-const Direction = {PayFixed: "PayFixed", PayFloating: "PayFloating"};
-const BusDayConvention = {None: "None", ModFollowing: "ModFollowing", Following: "Following", Preceding: "Preceding"};
-const BusinessCentre = {GBLO: "GBLO", USNY: "USNY"}; // TODO: Add all business centres
-const Currency = {EUR: "EUR", GBP: "GBP", USD: "USD"}; // TODO: Add all currencies
-const ReferenceRate = {EURIBOR: "EURIBOR", LIBOR: "LIBOR"}; // TODO: Add all reference rates
-const Product = {IRS: "IRS"}; // TODO: What others?
-const DayCount = {ACT360: "ACT/360", ACT365FIXED: "ACT/365.FIXED"}; //TODO: Add all day counts
+const {Status, Direction, BusDayConvention, BusinessCentre, Currency, ReferenceRate, Product, DayCount} = require('../../common/TradeFields');
 
 function Trade(tradeId, partyId, counterPartyId, tradeParams, blocknumber){
     this.status = Status.Alleged;
@@ -41,7 +32,7 @@ function Trade(tradeId, partyId, counterPartyId, tradeParams, blocknumber){
 
     // Fields 2
     this.counterPartyId = counterPartyId;
-    this.terminationDate = TradeDate(tradeParams.terminationDate.date, tradeParams.terminationDate.busDayConvention, tradeParams.terminationDate.businessCentre);
+    this.terminationDate = new TradeDate(tradeParams.terminationDate.date, tradeParams.terminationDate.busDayConvention, tradeParams.terminationDate.businessCentre);
     this.floatingLeg = new FloatingLeg(tradeParams.floatingLeg);
     this.fixedLeg = new FixedLeg(tradeParams.fixedLeg);
 
