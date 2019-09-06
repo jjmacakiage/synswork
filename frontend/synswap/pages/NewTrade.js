@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react'
 
 import List from '../components/home/List';
-import Header from '../components/main/Header';
 import { Grid } from '@material-ui/core';
 import NewTradeContent from '../components/newtrade/NewTradeContent';
 import { useSelector } from "react-redux";

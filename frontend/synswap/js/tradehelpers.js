@@ -15,6 +15,13 @@ export const createRows = (data, fields) => {
     return result;
 };
 
+/**
+ * @function generateInitial
+ * @param array
+ * @param values
+ * creates object with initial values for Form component in NewTrade
+ */
+
 export const generateInitial = (array, values) => {
     let result = {};
     for (let i = 0; i < array.length; i++) {
@@ -23,11 +30,22 @@ export const generateInitial = (array, values) => {
     return result;
 };
 
+/**
+ * @function doText
+ * @param text
+ * converts camelCase to Sentence Case
+ */
 export const doText = text => {
     const newText = text.replace(/([A-Z]+)/g, " $1");
     return newText.charAt(0).toUpperCase() + newText.slice(1)
 };
 
+/**
+ * @function pullStuff
+ * @param obj
+ * @param param ('keys' || 'values')
+ * pulls keys or values from nested JSON and returns flat array
+ */
 export const pullStuff = (obj, param) => {
     const getKeys = obj => {
         if (typeof obj !== 'object') {
@@ -86,6 +104,14 @@ export const pullStuff = (obj, param) => {
             return;
     }
 }
+
+/**
+ * @function flatValues
+ * @param object
+ * @param parentKey
+ * converts nested JSON object to flat JSON object but deals with nested key name conflicts
+ * by appending the parent key of the conflict to the new key
+ */
 export const flatValues = (object, parentKey) => {
     let keys = Object.keys(object);
     let result = {};
@@ -94,23 +120,87 @@ export const flatValues = (object, parentKey) => {
         let value = object[key];
         let isSecondNest;
         if (typeof value === 'object' && parentKey) isSecondNest = true;
-
         if (typeof value === 'string' || typeof value === 'number')
-            result = { ...result, [parentKey ? doText(key) + '( ' + doText(parentKey) + ' )' : key]: value }
-
-
+            result = { ...result, [parentKey ? doText(key) + ' (' + doText(parentKey) + ')' : doText(key)]: value };
         else if (isSecondNest) {
-            console.log(parentKey)
-            result = { ...result, ...flatValues(value, key + ' ,' + doText(parentKey))};
+            result = { ...result, ...flatValues(value, key + ',' + doText(parentKey))};
         }
-
         else result = { ...result, ...flatValues(value, key)}
     }
-
     return result;
 };
 
+/**
+ * @function formatTradePanes
+ * @param data
+ * @param detailKeys
+ * @param nonEditable
+ * takes a trade data object and separates the non-editable keys and the main and details
+ * from each other
+ */
+export const formatTradePanes = (data, detailKeys, nonEditable) => {
+    const main = [];
+    const details = [];
+    let rawKeys = Object.keys(data);
+    let keys = rawKeys.filter(value => {
+        return !nonEditable.includes(value);
+    });
+    const hasSubString = (array, key) => {
+        for (let i = 0; i < array.length; i++) {
+            let value = array[i];
+            if (key.includes(value)) {
+                return true
+            }
+        }
+        return false;
+    };
+    for (let i = 0; i < keys.length; i++) {
+        let key = keys[i];
 
+        if (hasSubString(detailKeys, key)) {
+            details.push([key, data[key]]);
+        }
+        else main.push([key, data[key]]);
+    }
+    return { main, details }
+};
+
+/**
+ * @function isDate
+ * @param str
+ * checks if str is date
+ */
+export const isDate = (str) => {
+    let temp = Date.parse(str);
+    let isNumber = parseFloat(str) == str;
+    return !isNumber && !isNaN(temp) && Math.sign(temp) !== -1
+};
+
+/**
+ * @function formatDates
+ * @param object
+ * removes time stamps from object values that are dates
+ */
+export const formatDates = object => {
+    let result = { ...object };
+    let keys = Object.keys(object);
+    for (let i = 0; i < keys.length; i++) {
+        let key = keys[i];
+        let value = object[key];
+        if (isDate(value) && typeof value === 'string') {
+            result = { ...result, [key]: value.substring(0,10)}
+        }
+    }
+    return result;
+};
+
+/**
+ * @function tradeSchema
+ * @param schema
+ * @param values
+ * takes submission values and maps to schema object
+ * @return tradeObject
+ */
 export const tradeSchema = (schema, values) => {
     const generateSchema = (object, values) => {
         let keys = Object.keys(object);
@@ -133,6 +223,15 @@ export const tradeSchema = (schema, values) => {
     return generateSchema(schema, values)
 };
 
+/**
+ * @function fetchTrades
+ * @param blocknumber
+ * @param traderid
+ * @param notifications
+ * @param dispatch
+ * @return {Promise<void>}
+ * Opens a portal to Hogwarts
+ */
 export const fetchTrades = async (blocknumber, traderid, notifications, dispatch) => {
     const url = "http://localhost:4000/api/updates/" + blocknumber + "?traderid=" + traderid;
     try {
@@ -161,6 +260,12 @@ export const fetchTrades = async (blocknumber, traderid, notifications, dispatch
     }
 };
 
+/**
+ * @function initialFetch
+ * @param dispatch
+ * @return {Promise<void>}
+ * does the first fetch on startup
+ */
 export const initialFetch = async (dispatch) => {
     const url = "http://localhost:4000/api/traders/1/trades";
     try {
@@ -178,8 +283,14 @@ export const initialFetch = async (dispatch) => {
     }
 };
 
- export const handleSubmit = async params => {
-    const url = 'http://localhost:4000/api/traders/1/trades';
+/**
+ * @function handleSubmit
+ * @param params
+ * @param url
+ * @return {Promise<*>}
+ * does the submission for NewTrade
+ */
+export const handleSubmit = async (params, url) => {
     const data = params.values; //tradeSchema(params.schema, Object.values(params.values));
      console.log(data);
     try {

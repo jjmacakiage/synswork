@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from "react";
-import axios from "axios";
 import { Grid } from '@material-ui/core';
 import Tabs, {Tab} from "react-awesome-tabs";
 import "../resources/styles/react-awesome-tabs.scss";
@@ -194,6 +193,12 @@ const Main = () => {
         }
     }
 
+    /**
+     * @function createTab
+     * @param key
+     * @param props
+     * Takes a key from state and maps it to a component with props
+     */
     function createTab(key, props) {
         switch (key) {
             case 'Home':
@@ -220,13 +225,13 @@ const Main = () => {
                 throw new error('Tab Map Failed')
         }
     }
+
     /**
      * @return
      * @type Grid
      * @type Header
      * @type Tabs
      * @type Tab
-     * @type MAIN_TABS[component]
      */
     return (
         <Grid container spacing={ 2 }>
@@ -276,7 +281,7 @@ const Main = () => {
  * @return {Promise<boolean|any|Promise<boolean>>}
  */
 
-/* Main.getInitialProps = async ctx => {
+Main.getInitialProps = async ctx => {
     const { token } = nextCookie(ctx);
     const apiUrl = getHost(ctx.req) + '/api/profile';
 
@@ -309,5 +314,3 @@ const Main = () => {
 
 export default withAuthSync(Main);
 
- */
-export default Main;

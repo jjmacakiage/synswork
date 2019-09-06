@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import MaterialTable from 'material-table';
 import { forwardRef } from 'react';
 import Trade from '../pages/Trade';
-import { doText, flatValues } from "../js/tradehelpers";
-
+import { doText, flatValues, formatDates } from "../js/tradehelpers";
 import {
     AddBox, ArrowUpward,
     Check, ChevronLeft,
@@ -17,6 +16,11 @@ import {
 
 const Table = props => {
     const { data, onRowClick } = props;
+    /**
+     * @constant columns
+     * @type {string[]}
+     * if the data passed in has no rows key then take the Keys from the first row as column names
+     */
     const columns = (!data.rows) ? Object.keys(flatValues(data[0])) : data.columns;
 
     const tableIcons = {
@@ -39,6 +43,12 @@ const Table = props => {
         ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />)
     };
 
+    /**
+     * @function formatColumns
+     * @param columns
+     * @return {Array|*}
+     * creates the column object required by Material Table with a title and a field
+     */
     function formatColumns(columns) {
         if (columns.length === 0 || columns[0].width) {
             return columns;
@@ -59,7 +69,7 @@ const Table = props => {
         for (let i = 0; i < data.length; i++) {
             let temp = Object.values(flatValues(data[i]));
             let temp2 = generateObj(columns, temp);
-            result.push(temp2);
+            result.push(formatDates(temp2));
         }
         return result;
     }
@@ -71,15 +81,31 @@ const Table = props => {
         return result;
     }
 
+    const tableData = formatRows(data);
+    const tableColumns = formatColumns(columns);
+
     return (
         <MaterialTable
-            columns={ formatColumns(columns) }
+            columns={ tableColumns }
             icons={ tableIcons }
-            data={ formatRows(data) }
+            data={ tableData }
             title="Blotter"
             options={{
-                filtering: true,
+                filtering: false,
                 exportButton: true,
+                exportCsv: (columns, data) => {
+                    let csvContent = "data:text/csv;charset=utf-8,";
+                    let keys = Object.keys(data[0]);
+                    keys.forEach(key => {
+                        csvContent += key + ','
+                    });
+                    csvContent += '\r\n';
+                    for (let i = 0; i < data.length; i++) {
+                        let row = Object.values(data[i]).join(',');
+                        csvContent += row + '\r\n';
+                    }
+                    console.log(csvContent) //Do File Save Here
+                },
                 headerStyle: {
                     backgroundColor: '#039dfc'
                 },
@@ -89,7 +115,7 @@ const Table = props => {
             }}
             onRowClick={
                 (e, rowData) => {
-                    onRowClick('Trade', { data: rowData })
+                    onRowClick('Trade', { data: rowData, json: data[rowData.tableData.id] })
                 }
             }
         />

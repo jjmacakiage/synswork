@@ -34,14 +34,13 @@ export default function NewTradeContent(props) {
     const classes = useStyles();
     const { fields, counterpartyList, schema } = props;
     const { IRS } = schema;
-    const [isLoading, changeLoading] = useState(false);
     const [counterparty, changeCounterparty] = useState('');
     const dispatch = useDispatch();
     const [value, setValue] = useState(0);
 
 
     function onSubmit(values) {
-        return handleSubmit({ schema: IRS, values, dispatch });
+        return handleSubmit({ schema: IRS, values, dispatch }, 'http://localhost:4000/api/traders/1/trades');
     }
 
     /**
@@ -58,7 +57,13 @@ export default function NewTradeContent(props) {
         changeCounterparty(e.target.value);
     }
 
-    function createFormColumns(array) {
+    /**
+     * @function createFormRows
+     * @param array
+     * @return {*}
+     * takes an array of arrays (fields) and creates the Grid rows required
+     */
+    function createFormRows(array) {
         return (
             <>
             {
@@ -125,6 +130,11 @@ export default function NewTradeContent(props) {
         )
     }
 
+    /**
+     * @function extendedFields
+     * @return {*}
+     * creates the Details pane
+     */
     function extendedFields() {
         const extended = fields.filter((field) => {
             return field[2] === '1';
@@ -154,7 +164,7 @@ export default function NewTradeContent(props) {
                                     : null
                                 }
                                 <Grid container spacing={ 2 }>
-                                    { createFormColumns(temp) }
+                                    { createFormRows(temp) }
                                 </Grid>
                             </Grid>
                         )
@@ -167,6 +177,7 @@ export default function NewTradeContent(props) {
 
     /**
      * @return
+     * @type Formik
      * @type Grid
      * @type TabContainer
      * @type div
@@ -213,7 +224,7 @@ export default function NewTradeContent(props) {
                                             if (field[2] === '0') {
                                                 return (
                                                     <Grid item xs={ 6 } style={{ marginTop: 2, marginBottom: 2 }} key={ field + index}>
-                                                        {createFormColumns([field])}
+                                                        {createFormRows([field])}
                                                     </Grid>
                                                 )
                                             }

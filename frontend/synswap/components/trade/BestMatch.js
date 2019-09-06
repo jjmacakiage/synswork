@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button, Grid } from '@material-ui/core';
 import fetch from 'isomorphic-unfetch';
 import { useSelector } from "react-redux";
-import DataTable from '../DataTable';
+import DataTable from '../VirtualisedTable';
 
 export default function BestMatch(props) {
     const [data, setData] = useState({ columns: ['Fields', 'Party', 'Counterparty'], rows: [['stuff', 'stuff', 'stuff']] });
